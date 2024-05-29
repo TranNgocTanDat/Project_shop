@@ -9,10 +9,11 @@ interface MasterLayoutProps {
     [key: string]: any; // Kiểu cho các prop bổ sung khác
 }
 
+
 const MasterLayout: React.FC<MasterLayoutProps> = ({ children, ...props }) => {
     return(
         <div>
-        <Header/>
+        <Header />
        {children}
         <Footer/>
         </div>
