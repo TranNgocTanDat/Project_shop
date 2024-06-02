@@ -1,7 +1,18 @@
 import React from 'react'
-const Header = () => {
+import Head from './Head'
+import Navbar from './Navbar'
+import Search from './Search'
+
+interface HeaderProps{
+    CartItem: number;
+}
+
+const Header:React.FC<HeaderProps> = ({ CartItem }) => {
     return(
-        <><h1>Header</h1>
+        <>
+        <Head/>
+        <Search CartItem={CartItem} />
+        <Navbar/>
         </>
     )
 }

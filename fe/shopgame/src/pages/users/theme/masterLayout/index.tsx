@@ -5,14 +5,16 @@ import Footer from '../footer/indexFooter'
 import HomePage from '../../homePage/indexHome'
 
 interface MasterLayoutProps {
+    CartItem: number;
     children: ReactNode;
     [key: string]: any; // Kiểu cho các prop bổ sung khác
 }
 
-const MasterLayout: React.FC<MasterLayoutProps> = ({ children, ...props }) => {
+
+const MasterLayout: React.FC<MasterLayoutProps> = ({ children, CartItem, ...props }) => {
     return(
         <div>
-        <Header/>
+        <Header CartItem={CartItem}/>
        {children}
         <Footer/>
         </div>
