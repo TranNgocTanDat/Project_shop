@@ -14,8 +14,16 @@ header{
 
 .header__left--title{
     font-weight: bold;
-    font-size: 50px;
+    font-size: 10px;
     color: #dcdedf;
+}
+
+.header__img{
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    color: red;
+    background-color: #282c34;
 }
 
 
