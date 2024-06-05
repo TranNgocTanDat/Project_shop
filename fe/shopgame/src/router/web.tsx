@@ -6,10 +6,7 @@ import MasterLayout from "../pages/users/theme/masterLayout";
 import Profile from "../pages/users/profile/indexProfile";
 import Cart from "../pages/users/theme/Cart/Cart";
 import CartItem from "../pages/users/theme/Cart/Cart";
-import { CartItem as CartItemType, ProductItem } from "../component/Pdata";
-import { productItems } from "../component/Pdata";
-import GameOffline from "../component/gameOffline/gameOff";
-import GameOnline from "../component/gameOnline/gameOn";
+import { CartItem as CartItemType, Product } from "../pages/users/theme/Cart/types";
 
 
 
@@ -18,6 +15,33 @@ interface RouteConfig {
     component: React.ReactNode;
 }
 
+const renderUserRouter = (CartItem: CartItemType[]) => {
+    const userRouters: RouteConfig[] = [
+        {
+            path: '/',
+            component: <HomePage />,
+        }, {
+            path: '/profile',
+            component: <Profile />,
+        },
+        {
+            path: '/cart',
+            component: <Cart CartItem={CartItem} addToCart={() => { }} decreaseQty={() => { }} />, // Thêm dòng này
+        }
+    ]
+
+    return (
+        <MasterLayout CartItem={CartItem.length}>
+            <Routes>
+                {
+                    userRouters.map((item, key) => (
+                        <Route key={key} path={item.path} element={item.component} />
+                    ))
+                }
+            </Routes>
+        </MasterLayout>
+    )
+}
 
 const CreateBrowserRouter: React.FC = () => {
     const [CartItem, setCartItem] = useState<CartItemType[]>([]);

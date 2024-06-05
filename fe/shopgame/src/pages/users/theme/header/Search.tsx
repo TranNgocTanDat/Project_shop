@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 // import logo from "../../components/assets/images/logo.svg"
-import { Link } from "react-router-dom"
+import {Link, Outlet} from "react-router-dom"
+import User from "../../../../component/user/User";
 
 interface SearchProps{
     CartItem: number;
@@ -38,8 +39,10 @@ const Search:React.FC<SearchProps> = ({ CartItem }) => {
           </div>
 
           <div className='icon f_flex width'>
-            <i className='fa fa-user icon-circle'></i>
-            <div className='cart'>
+              <Link to='/user'>
+                  <i className='fa fa-user icon-circle'></i>
+              </Link>
+              <div className='cart'>
               <Link to='/cart'>
                 <i className='fa fa-shopping-bag icon-circle'></i>
                 <span>{CartItem === 0 ? "" : CartItem}</span>
