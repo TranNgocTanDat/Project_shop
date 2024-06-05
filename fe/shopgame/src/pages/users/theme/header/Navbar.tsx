@@ -11,11 +11,11 @@ const Navbar = () => {
           <div className='catgrories d_flex'>
             <span className='fa-solid fa-border-all'></span>
             <h4>
-              Categories <i className='fa fa-chevron-down'></i>
+              Danh mục game <i className='fa fa-chevron-down'></i>
             </h4>
           </div>
 
-          <div className='navlink'>
+          <div className='navlink'> 
             <ul className={MobileMenu ? "nav-links-MobileMenu" : "link f_flex capitalize"} onClick={() => setMobileMenu(false)}>
               {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
               <li>

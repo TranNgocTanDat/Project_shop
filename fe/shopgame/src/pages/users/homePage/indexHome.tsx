@@ -1,28 +1,26 @@
 import React from 'react'
 import Home from '../../../component/MainPage/Home'
 import FlashDeals from '../../../component/flashDeals/FlashDeals'
-import productItems from '../../../component/flashDeals/Pdata'
+import {productItems} from '../../../component/Pdata'
+import TopCate from '../../../component/top/TopCate';
+import NewArrivals from '../../../component/newarrivals/NewArrivals';
+import Discount from '../../../component/discount/Discount';
+import {ProductItem} from '../../../component/Pdata'
+import Login from '../../../component/login/login';
 
 
-
-
-// Định nghĩa kiểu cho product item
-interface ProductItem {
-    id: number;
-    name: string;
-    cover: string;
-    price: number;
-    discount: number;
+interface HomePageProps {
+    addToCart: (product: ProductItem) => void;
 }
-
-const addToCart = (product: ProductItem) => {
-    console.log("Product added to cart:", product);
-}
-const HomePage = () => {
+const HomePage: React.FC<HomePageProps> = ({ addToCart }) => {
     return (
         <>
             <Home  />
             <FlashDeals productItems={productItems} addToCart={addToCart} />
+            <TopCate/>
+            <NewArrivals/>
+            <Discount/>
+            <Login/>
         </>
     )
 }

@@ -1,0 +1,226 @@
+.container{
+    background-color: #f5f5f5;
+}
+
+.app__content{
+    padding-top: 24px;
+}
+
+.category{
+    background-color: var(--white-color);
+    border-radius: 2px;
+}
+
+.category__heading{
+    color: var(--text-color);
+    font-size: 1.6rem;
+    padding: 12px 16px;
+    margin-top: 0;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.category__heading--icon{
+    font-size: 1.4rem;
+    padding-right: 4px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.category__list{
+    padding: 0 0 8px 0;
+    list-style: none;
+
+}
+
+.category__item--active .category__item--link{
+    color: rgb(255, 106, 0);
+
+}
+
+.category__item--active .category__item--link::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 5px;
+    border: 4px solid;
+    transform: translateY(-50%);
+    border-color: transparent transparent transparent rgb(255, 106, 0);
+}
+
+.category__item--link{
+    position: relative;
+    padding: 4px 16px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    transition: right linear ;
+    right: 0;
+}
+
+.category__item--link:hover{
+    right: -4px;
+    color: rgb(255, 106, 0);
+}
+
+/* Home + filter */
+.home-filter{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.home-filter__label{
+    font-size: 1.4rem;
+    color: #555;
+    margin-right: 16px;
+
+}
+
+.home-filter__btn{
+    min-width: 90px;
+    margin-right: 12px;
+}
+
+.home-filter__page{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.home-filter__page-num{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-right: 22px;
+}
+
+.home-filter__page-num--current{
+    color: rgb(255, 106, 0);
+}
+
+.home-filter__page-control{
+    border-radius: 2px;
+    overflow: hiddens;
+    display: flex;
+    width: 72px;
+    height: 36px;
+}
+
+.home-filter__page-btn{
+    flex: 1;
+    display: flex;
+    background-color: var(--white-color);
+    text-decoration: none;
+}
+.home-filter__page-btn:first-child{
+    border-right: 1px solid #eee;
+
+}
+
+.home-filter__page-icon{
+    text-decoration: none;
+    margin: auto;
+    color: #555 ;
+    font-size: 1.4rem;
+}
+
+/* Product item */
+
+.home-product-item{
+    background-color: var(--white-color);
+    margin-top: 10px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 1px 2pxs 0 rgba(0, 0, 0, 0.1);
+    transition: transform linear 0.1s;
+    will-change: transform;
+}
+
+.home-product-item:hover {
+    transform:translateY(-1px);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.home-product-item__img{
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.home-product-item__name{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.8rem;
+    height: 3.6rem;
+    margin: 10px 10px 6px;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.home-product-item__price{
+    display: flex;
+
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.home-product-item__price--old{
+    font-size: 1.4rem;
+    color: #666;
+    margin-left: 10px;
+    text-decoration: line-through;
+}
+
+.home-product-item__price--current{
+    font-size: 1.6rem;
+    color: rgb(255, 102, 0);
+    margin-left: 10px;
+
+}
+
+.home-product-item__action{
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 10px 0;
+}
+
+.home-product-item__like{
+    font-size: 1.4rem;
+}
+
+i.icon-fill{
+    display: none;
+}
+
+.home-product-item__like--liked .icon-fill{
+    color: red;
+    display: inline-block;
+}
+
+.home-product-item__like--liked .icon-emty{
+    display: none;
+}
+
+.home-product-item__rating{
+    font-size: 0.8rem;
+    color: #666;
+
+}
+
+.home-product-item__origin{
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 10px 0;
+    color: #595959;
+    font-size: 1.2rem;
+    font-weight: 300;
+}

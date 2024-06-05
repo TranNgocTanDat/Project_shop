@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 * {
   padding: 0;
@@ -13,8 +12,7 @@ body {
   background-color: #ffffff;
 }
 .background {
-  /* background: #f6f9fc; */
-  background: #e3a113;
+  background: #f6f9fc;
   padding: 50px 0;
 }
 .container {
@@ -36,6 +34,7 @@ body {
 a {
   text-decoration: none;
   color: black;
+  display: flex;
 }
 li {
   list-style: none;
@@ -249,4 +248,3 @@ button {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
-

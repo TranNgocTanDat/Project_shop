@@ -1,0 +1,17 @@
+.flash {
+  background: #f6f9fc;
+  padding: 50px 0;
+}
+
+.top__game {
+  width: auto;
+  height: 100px;
+  background-color: antiquewhite;
+  position: relative;
+}
+.top__game .top__game--title {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translateY(-50%);
+}/*# sourceMappingURL=style.css.map */

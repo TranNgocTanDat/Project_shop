@@ -1,6 +1,6 @@
 import React from "react"
 import "./style.css"
-import { CartItem as CartItemType } from "./types";
+import { CartItem as CartItemType } from "../../../../component/Pdata";
 
 interface CartProps {
   CartItem: CartItemType[];
