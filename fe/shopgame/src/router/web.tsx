@@ -6,7 +6,9 @@ import MasterLayout from "../pages/users/theme/masterLayout";
 import Profile from "../pages/users/profile/indexProfile";
 import Cart from "../pages/users/theme/Cart/Cart";
 import CartItem from "../pages/users/theme/Cart/Cart";
+import userPage from "../pages/users/userPage/indexUser";
 import { CartItem as CartItemType, Product } from "../pages/users/theme/Cart/types";
+import UserPage from "../pages/users/userPage/indexUser";
 
 
 
@@ -27,6 +29,10 @@ const renderUserRouter = (CartItem: CartItemType[]) => {
         {
             path: '/cart',
             component: <Cart CartItem={CartItem} addToCart={() => { }} decreaseQty={() => { }} />, // Thêm dòng này
+        },
+        {
+            path: '/user',
+            component: <UserPage />
         }
     ]
 

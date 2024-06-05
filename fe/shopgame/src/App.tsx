@@ -5,12 +5,6 @@ import './App.css';
 import { BrowserRouter } from "react-router-dom";
 import CreateBrowserRouter from './router/web';
 
-
-
-
-
-
-
 function App() {
 
   return (

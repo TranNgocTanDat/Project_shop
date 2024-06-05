@@ -28,7 +28,7 @@ const SlideCard:React.FC = () => {
                   <button className='btn-primary'>Visit Collections</button>
                 </div>
                 <div className='right'>
-                  <img src={value.cover} alt='' />
+                  <img className="image" src={value.cover} alt='' />
                 </div>
               </div>
             </>

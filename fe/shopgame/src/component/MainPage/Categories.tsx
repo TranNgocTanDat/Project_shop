@@ -8,7 +8,7 @@ interface Category {
 const Categories:React.FC = () => {
   const data: Category[] = [
     {
-      cateImg: "./images/category/game1.png",
+      cateImg: "./images/category/cat1.png",
       cateName: "Fashion",
     },
     {
