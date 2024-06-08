@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import './User.css'
 import {check, checkID} from "./checkLogin";
 import Infor from "./Infor";
@@ -12,11 +12,19 @@ const User: React.FC = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [error, setError] = useState('');
 
+    // kiểm tra xem user có tồn tại trong local ko
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
         const isAuthenticated = check(userName, password);
         if (isAuthenticated) {
             setUser(isAuthenticated);
+            localStorage.setItem('user', JSON.stringify(isAuthenticated));
             setError('');
         } else {
             setUser(null);
@@ -29,6 +37,7 @@ const User: React.FC = () => {
      const handleLogout = () => {
         setUser(null);
         setIsLoggedIn(false);
+        localStorage.removeItem('user');
         setError('');
     };
 

@@ -6,7 +6,7 @@ import TopCate from '../../../component/top/TopCate';
 import NewArrivals from '../../../component/newarrivals/NewArrivals';
 import Discount from '../../../component/discount/Discount';
 import {ProductItem} from '../../../component/Pdata'
-import Login from '../../../component/login/login';
+
 
 
 interface HomePageProps {
@@ -20,7 +20,6 @@ const HomePage: React.FC<HomePageProps> = ({ addToCart }) => {
             <TopCate/>
             <NewArrivals/>
             <Discount/>
-            <Login/>
         </>
     )
 }

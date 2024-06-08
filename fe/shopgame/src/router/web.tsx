@@ -10,6 +10,8 @@ import { CartItem as CartItemType, ProductItem } from "../component/Pdata";
 import { productItems } from "../component/Pdata";
 import GameOffline from "../component/gameOffline/gameOff";
 import GameOnline from "../component/gameOnline/gameOn";
+import UserPage from "../pages/users/userPage/indexUser";
+import {productOffs, productOffs1} from "../component/gameOffline/GameoffData";
 
 
 
@@ -60,12 +62,16 @@ const CreateBrowserRouter: React.FC = () => {
                 component: <Profile />,
             },
             {
+                path: '/user',
+                component: <UserPage />,
+            },
+            {
                 path: '/cart',
                 component: <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />,
             },
             {
                 path: '/game_offline',
-                component: <GameOffline productItems={productItems} addToCart={addToCart}/>,
+                component: <GameOffline productOffs={productOffs}  productOffs1={productOffs1} addToCart={addToCart}/>,
             },
             {
                 path: '/game_online',
