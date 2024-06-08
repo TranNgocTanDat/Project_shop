@@ -31,3 +31,15 @@
     height: 25px;
     text-align: center;
 }
+
+.user__error{
+    color: red;
+}
+
+.logout{
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 400px;
+    left: 485px;
+}
