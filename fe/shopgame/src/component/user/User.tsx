@@ -1,14 +1,14 @@
 import React, {useState} from "react"
 import './User.css'
-import {DataUser} from "./dataUser";
-import {check} from "./checkLogin";
+import {check, checkID} from "./checkLogin";
 import Infor from "./Infor";
-
+import {DataUser} from "./dataUser";
 
 
 const User: React.FC = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [user, setUser] = useState<DataUser | null>(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [error, setError] = useState('');
 
@@ -16,17 +16,30 @@ const User: React.FC = () => {
         e.preventDefault();
         const isAuthenticated = check(userName, password);
         if (isAuthenticated) {
-            setIsLoggedIn(true);
+            setUser(isAuthenticated);
             setError('');
         } else {
-            setIsLoggedIn(false);
+            setUser(null);
             setError('Invalid username or password');
         }
     };
+
+    // đăng xuất
+
+     const handleLogout = () => {
+        setUser(null);
+        setIsLoggedIn(false);
+        setError('');
+    };
+
     return(
         <div>
-            {isLoggedIn? (
-               <Infor/>
+            {user? (
+                <>
+                    <Infor user={user}/>
+                    <button className="logout" onClick={handleLogout}>Logout</button>
+                </>
+
             ): (
                 <div className="user">
                     <label className="user__Tlogin">Login</label>
@@ -47,11 +60,9 @@ const User: React.FC = () => {
 
                     />
                     <button onClick={handleLogin} className="user__login">Login</button>
-
+                    {error && <div className="user__error">{error}</div>}
                 </div>
-            )
-            }
-
+            )}
         </div>
 
     );
