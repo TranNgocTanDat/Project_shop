@@ -68,7 +68,7 @@ const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart }) => {
               <div className='product mtop'>
                 <div className='img'>
                   <span className='discount'>{productItems.discount}% Off</span>
-                  <img src={productItems.cover} alt='' />
+                  <img className="img__flash" src={productItems.cover} alt='' />
                   <div className='product-like'>
                     <label>{count}</label> <br />
                     <i className='fa-regular fa-heart' onClick={increment}></i>
