@@ -3,7 +3,7 @@
 }
 .TopCate img {
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
   border-radius: 5px;
 }
 .TopCate .nametop {
@@ -28,4 +28,9 @@
   color: black;
   position: absolute;
   right: 0;
+}
+
+.img__topCat{
+  width: 396px;
+  height: 133px;
 }

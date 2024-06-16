@@ -9,9 +9,13 @@ import CartItem from "../pages/users/theme/Cart/Cart";
 import { CartItem as CartItemType, ProductItem } from "../component/Pdata";
 import { productItems } from "../component/Pdata";
 import GameOffline from "../component/gameOffline/gameOff";
-import GameOnline from "../component/gameOnline/gameOn";
+import GameOnline from "../component/gameOnline/GameOn";
 import UserPage from "../pages/users/userPage/indexUser";
 import {productOffs, productOffs1} from "../component/gameOffline/GameoffData";
+import {gameOnItem1, gameOnItem2} from "../component/gameOnline/gameOnData";
+import GamePlay from "../component/gamePlaystation/GamePlay";
+
+
 
 
 
@@ -75,7 +79,11 @@ const CreateBrowserRouter: React.FC = () => {
             },
             {
                 path: '/game_online',
-                component: <GameOnline productItems={productItems} addToCart={addToCart}/>,
+                component: <GameOnline gameOnItem1={gameOnItem1} gameOnItem2 = {gameOnItem2} addToCart={addToCart}/>,
+            },
+            {
+                path: '/game_playstation',
+                component: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart}/>,
             }
         ]
     

@@ -1,33 +1,33 @@
 const Ndata = [
   {
-    cover: "./images/arrivals/arrivals1.png",
-    name: "Sunglass",
-    price: "150",
+    cover: "./images/gameOff/gameoff-5.png",
+    name: "Plants vs zombies",
+    price: "100",
   },
   {
-    cover: "./images/arrivals/arrivals2.png",
-    name: "Makeup",
-    price: "250",
+    cover: "./images/gameOn/gameon-10.png",
+    name: "Avata Star",
+    price: "200",
   },
   {
-    cover: "./images/arrivals/arrivals3.png",
-    name: "Smart Watch",
+    cover: "./images/gameOff/gameoff-9.png",
+    name: "Temple Run",
     price: "50",
   },
   {
-    cover: "./images/arrivals/arrivals4.png",
-    name: "Lipstick",
-    price: "15",
+    cover: "./images/gameOn/gameon-1.png",
+    name: "PUBG",
+    price: "50",
   },
   {
-    cover: "./images/arrivals/arrivals5.png",
-    name: "Green Plant",
-    price: "10",
+    cover: "./images/gameOff/gameoff-7.png",
+    name: "Tom",
+    price: "20",
   },
   {
-    cover: "./images/arrivals/arrivals6.png",
-    name: "Bonsai tree",
-    price: "400",
+    cover: "./images/gameOn/gameon-4.png",
+    name: "League of Legends",
+    price: "200",
   },
 ]
 
