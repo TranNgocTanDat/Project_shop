@@ -1,23 +1,21 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, RouteObject,LoaderFunctionArgs } from "react-router-dom";
 import HomePage from "../pages/users/homePage/indexHome";
 import MasterLayout from "../pages/users/theme/masterLayout";
 import Profile from "../pages/users/profile/indexProfile";
 import Cart from "../pages/users/theme/Cart/Cart";
-import CartItem from "../pages/users/theme/Cart/Cart";
 import { CartItem as CartItemType, ProductItem } from "../component/Pdata";
 import { productItems } from "../component/Pdata";
-import GameOffline from "../component/gameOffline/gameOff";
+import { GameOffline } from "../component/gameOffline/gameOff";
 import GameOnline from "../component/gameOnline/gameOn";
+import User from "../component/user/User";
+import ProductTest from "../component/ProductTest";
+import ViewTest, { loadProduct } from "../component/ViewTest";
 
-
-
-interface RouteConfig {
-    path: string;
-    component: React.ReactNode;
+interface RouteParams {
+    id: number;
 }
-
 
 const CreateBrowserRouter: React.FC = () => {
     const [CartItem, setCartItem] = useState<CartItemType[]>([]);
@@ -50,42 +48,55 @@ const CreateBrowserRouter: React.FC = () => {
         }
     };
 
-    
-        const userRouters: RouteConfig[] = [
-            {
-                path: '/',
-                component: <HomePage addToCart={addToCart} />,
-            }, {
-                path: '/profile',
-                component: <Profile />,
-            },
-            {
-                path: '/cart',
-                component: <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />,
-            },
-            {
-                path: '/game_offline',
-                component: <GameOffline productItems={productItems} addToCart={addToCart}/>,
-            },
-            {
-                path: '/game_online',
-                component: <GameOnline productItems={productItems} addToCart={addToCart}/>,
-            }
-        ]
-    
-        return (
-            <MasterLayout CartItem={CartItem.length}>
-                <Routes>
-                    {
-                        userRouters.map((item, key) => (
-                            <Route key={key} path={item.path} element={item.component} />
-                        ))
-                    }
-                </Routes>
-            </MasterLayout>
-        )
-    
 
+    const userRouters: RouteObject[] = [
+        {
+            path: '/',
+            element: <HomePage addToCart={addToCart} />,
+        }, {
+            path: '/profile',
+            element: <Profile />,
+        },
+        {
+            path: '/cart',
+            element: <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />,
+        },
+        {
+            path: '/game_offline',
+            element: <GameOffline productItems={productItems} addToCart={addToCart} />,
+
+        },
+        {
+            path: '/game_online',
+            element: <GameOnline productItems={productItems} addToCart={addToCart} />,
+        }, {
+            path: '/user',
+            element: <User />,
+        }, {
+            path: '/pt',
+            element: <ProductTest productItems={productItems} />,
+        }, {
+            path: '/v/:id',
+            element: <ViewTest />,
+            loader: ({ params }: LoaderFunctionArgs<RouteParams>) => loadProduct({ params: { id: Number(params.id) } }),
+        }
+    ];
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <MasterLayout CartItem={CartItem.length}><Routes>
+                {userRouters.map((route, index) => (
+                    <Route key={index} path={route.path} element={route.element} loader={route.loader} />
+                ))}
+            </Routes></MasterLayout>,
+            children: userRouters
+        }
+    ]);
+
+    return (
+        <RouterProvider router={router} ></RouterProvider>
+    )
 };
 
 

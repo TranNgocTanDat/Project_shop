@@ -20,7 +20,7 @@ const HomePage: React.FC<HomePageProps> = ({ addToCart }) => {
             <TopCate/>
             <NewArrivals/>
             <Discount/>
-            <Login/>
+            
         </>
     )
 }

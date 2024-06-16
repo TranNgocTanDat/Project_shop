@@ -1,7 +1,8 @@
 import React from "react"
-import FlashCard from "./FlashCard"
+import {FlashCard} from "./FlashCard"
 import "./style.css"
 import { ProductItem } from "../Pdata"
+
 
 // Định nghĩa kiểu cho các props của FlashDeals
 interface FlashDealsProps {
