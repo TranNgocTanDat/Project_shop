@@ -3,50 +3,21 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import './style.css'
+import {GameOnItem} from "./gameOnData";
+
 
 
 // Định nghĩa kiểu cho product item
-interface ProductItem {
-    id: number;
-    name: string;
-    cover: string;
-    price: number;
-    discount: number;
-}
 
 // Định nghĩa kiểu cho các props của FlashCard
 interface GameOnlineProps {
-    productItems: ProductItem[];
-    addToCart: (product: ProductItem) => void;
+    gameOnItem1: GameOnItem[];
+    gameOnItem2: GameOnItem[];
+    addToCart: (product: GameOnItem) => void;
 }
 
-// // Định nghĩa kiểu cho SampleNextArrow và SamplePrevArrow
-// interface ArrowProps {
-//   onClick?: () => void;
-// }
 
-
-// const SampleNextArrow: React.FC<ArrowProps> = (props) => {
-//   const { onClick } = props
-//   return (
-//     <div className='control-btn' onClick={onClick}>
-//       <button className='next'>
-//         <i className='fa fa-long-arrow-alt-right'></i>
-//       </button>
-//     </div>
-//   )
-// }
-// const SamplePrevArrow: React.FC<ArrowProps> = (props) => {
-//   const { onClick } = props
-//   return (
-//     <div className='control-btn' onClick={onClick}>
-//       <button className='prev'>
-//         <i className='fa fa-long-arrow-alt-left'></i>
-//       </button>
-//     </div>
-//   )
-// }
-const GameOnline: React.FC<GameOnlineProps> = ({ productItems, addToCart }) => {
+const GameOnline: React.FC<GameOnlineProps> = ({ gameOnItem1,gameOnItem2, addToCart }) => {
     const [count, setCount] = useState(0)
     const increment = () => {
         setCount(count + 1)
@@ -66,26 +37,25 @@ const GameOnline: React.FC<GameOnlineProps> = ({ productItems, addToCart }) => {
         <>
             <div className="top__game">
                 <h1 className="top__game--title">
-                    Game Offline
+                    Game Online
                 </h1>
             </div>
             <Slider {...settings}>
-                {productItems.map((productItems) => {
+                {gameOnItem1.map((gameOnItem1) => {
                     return (
                         <>
-
                             <div className='box'>
                                 <div className='product mtop'>
                                     <div className='img'>
-                                        <span className='discount'>{productItems.discount}% Off</span>
-                                        <img src={productItems.cover} alt='' />
+                                        <span className='discount'>{gameOnItem1.discount}% Off</span>
+                                        <img className="cover__gameOn" src={gameOnItem1.cover} alt='' />
                                         <div className='product-like'>
                                             <label>{count}</label> <br />
                                             <i className='fa-regular fa-heart' onClick={increment}></i>
                                         </div>
                                     </div>
                                     <div className='product-details'>
-                                        <h3>{productItems.name}</h3>
+                                        <h3>{gameOnItem1.name}</h3>
                                         <div className='rate'>
                                             <i className='fa fa-star'></i>
                                             <i className='fa fa-star'></i>
@@ -94,11 +64,11 @@ const GameOnline: React.FC<GameOnlineProps> = ({ productItems, addToCart }) => {
                                             <i className='fa fa-star'></i>
                                         </div>
                                         <div className='price'>
-                                            <h4>${productItems.price}.00 </h4>
+                                            <h4>${gameOnItem1.price}.00 </h4>
                                             {/* step : 3
      if hami le button ma click garryo bahne
     */}
-                                            <button onClick={() => addToCart(productItems)}>
+                                            <button onClick={() => addToCart(gameOnItem1)}>
                                                 <i className='fa fa-plus'></i>
                                             </button>
                                         </div>
@@ -106,17 +76,26 @@ const GameOnline: React.FC<GameOnlineProps> = ({ productItems, addToCart }) => {
                                 </div>
                             </div><div className='box'>
 
+                            </div></>
+                    )
+                })}
+            </Slider>
+            <Slider {...settings}>
+                {gameOnItem2.map((gameOnItem2) => {
+                    return (
+                        <>
+                            <div className='box'>
                                 <div className='product mtop'>
                                     <div className='img'>
-                                        <span className='discount'>{productItems.discount}% Off</span>
-                                        <img src={productItems.cover} alt='' />
+                                        <span className='discount'>{gameOnItem2.discount}% Off</span>
+                                        <img className="cover__gameOn" src={gameOnItem2.cover} alt='' />
                                         <div className='product-like'>
                                             <label>{count}</label> <br />
                                             <i className='fa-regular fa-heart' onClick={increment}></i>
                                         </div>
                                     </div>
                                     <div className='product-details'>
-                                        <h3>{productItems.name}</h3>
+                                        <h3>{gameOnItem2.name}</h3>
                                         <div className='rate'>
                                             <i className='fa fa-star'></i>
                                             <i className='fa fa-star'></i>
@@ -125,17 +104,18 @@ const GameOnline: React.FC<GameOnlineProps> = ({ productItems, addToCart }) => {
                                             <i className='fa fa-star'></i>
                                         </div>
                                         <div className='price'>
-                                            <h4>${productItems.price}.00 </h4>
+                                            <h4>${gameOnItem2.price}.00 </h4>
                                             {/* step : 3
      if hami le button ma click garryo bahne
     */}
-                                            <button onClick={() => addToCart(productItems)}>
+                                            <button onClick={() => addToCart(gameOnItem2)}>
                                                 <i className='fa fa-plus'></i>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                            </div></>
+                            </div><div className='box'>
+                        </div></>
                     )
                 })}
             </Slider>

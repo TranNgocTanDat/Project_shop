@@ -1,6 +1,7 @@
 .flash {
   background: #f6f9fc;
   padding: 50px 0;
+  width: 100%;
 }
 
 .top__game {
@@ -16,7 +17,7 @@
   transform: translateY(-50%);
 }/*# sourceMappingURL=style.css.map */
 
-.cover__gameOff{
+.cover__gamePlay{
   width: 277px;
   height: 270px;
 }

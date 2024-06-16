@@ -1,6 +1,6 @@
 import React from "react"
 import Ndata from "./Ndata"
-
+import './style.css'
 const Cart = () => {
   return (
     <>
@@ -9,7 +9,7 @@ const Cart = () => {
           return (
             <div className='box' key={index}>
               <div className='img'>
-                <img src={val.cover} alt='' />
+                <img className="img__newA" src={val.cover} alt='' />
               </div>
               <h4>{val.name}</h4>
               <span>${val.price}</span>
