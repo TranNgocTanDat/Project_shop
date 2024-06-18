@@ -9,14 +9,10 @@ import { productItems } from './component/Pdata';
 import { useAppDispatch } from '../src/store/Store';
 
 function App() {
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(loadProduct(productItems));
-    // dispatch(loadProduct(products));
-  }, [dispatch])
+  
 
   return (
-
+      
       <div className="App">
         <CreateBrowserRouter />
         

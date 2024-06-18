@@ -5,7 +5,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-import { ProductItem, productItems } from "./Pdata";
+import { ProductItem } from "./Pdata";
 import { RootState, useAppDispatch, useAppSelector } from '../store/Store';
 
 import { loadProduct } from '../store/Action';

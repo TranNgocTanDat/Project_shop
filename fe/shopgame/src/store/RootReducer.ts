@@ -1,5 +1,5 @@
 import { ProductItem } from "../component/Pdata";
-import { AnyAction } from "@reduxjs/toolkit";
+import {  PayloadAction } from "@reduxjs/toolkit";
 
 // Hàm loadCart để tải giỏ hàng từ localStorage
 const loadCart = (): ProductItem[] => {
@@ -18,44 +18,49 @@ const initState: AppState = {
     // cart: loadCart()
 };
 
-export const root = (state: AppState = initState, action: AnyAction) => {
+// export const root = (state: AppState = initState, action: AnyAction) => {
+//     switch (action.type) {
+//         case "product/load": {
+//             let cart = loadCart();
+//             let products:ProductItem[] = action.payload;
+//             let out: (ProductItem & { isBuying: boolean })[] = [];
+//             //
+//             lop1: for (const p of products) {
+//                 for (const c of cart) {
+//                     if (p.id === c.id) {
+//                         out.push({ ...p, isBuying: true });
+//                         continue lop1;
+//                     }
+//                 }
+//                 out.push({ ...p, isBuying: false });
+//             }
+//             return {
+//                 ...state,
+//                 products: out
+//             }
+//         }
+//         default: return state;
+//     }
+// }
+export const root = (state: AppState = initState, action: PayloadAction<ProductItem[]>) => {
     switch (action.type) {
         case "product/load": {
-            let cart = loadCart();
+            // let cart = loadCart();
             let products:ProductItem[] = action.payload;
-            let out: (ProductItem & { isBuying: boolean })[] = [];
-            //
+            let out: (ProductItem )[] = [];
+            
             lop1: for (const p of products) {
-                for (const c of cart) {
-                    if (p.id === c.id) {
-                        out.push({ ...p, isBuying: true });
+                    if (p.id) {
+                        out.push({ ...p});
                         continue lop1;
                     }
-                }
-                out.push({ ...p, isBuying: false });
+                out.push({ ...p});
             }
             return {
                 ...state,
                 products: out
             }
         }
-        // case "cart/add":{
-        //     let cart = [...state.cart,action.payload];
-        //     localStorage.setItem('cart',JSON.stringify(cart));
-        //
-        //     return {
-        //         ...state,
-        //         cart: [  ...cart  ]
-        //     }
-        // }
-        // case "cart/del":{
-        //     let cart=state.cart.filter(p=>p.id!==action.payload.id);
-        //     localStorage.setItem('cart',JSON.stringify(cart));
-        //     return {
-        //         ...state,
-        //         cart: [ ...cart ]
-        //     }
-        // }
         default: return state;
     }
 }
