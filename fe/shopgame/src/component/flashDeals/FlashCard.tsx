@@ -60,15 +60,13 @@ export const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart })
         {productItems.map((productItems) => {
           return (
             <div className='box'>
-              <Link to='/cart '>
-                <div className='product mtop'>
-                  <div className='img'>
-                    <span className='discount'>{productItems.discount}% Off</span>
-                    <img src={productItems.cover} alt='' />
-                    <div className='product-like'>
-                      <label>{count}</label> <br />
-                      <i className='fa-regular fa-heart' onClick={increment}></i>
-                    </div>
+              <div className='product mtop'>
+                <div className='img'>
+                  <span className='discount'>{productItems.discount}% Off</span>
+                  <img className="img__flash" src={productItems.cover} alt='' />
+                  <div className='product-like'>
+                    <label>{count}</label> <br />
+                    <i className='fa-regular fa-heart' onClick={increment}></i>
                   </div>
                   <div className='product-details'>
                     <h3>{productItems.name}</h3>
@@ -92,7 +90,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart })
 
                 </div>
 
-              </Link>
+              </div>
             </div>
           )
         })}

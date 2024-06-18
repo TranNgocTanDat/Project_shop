@@ -3,6 +3,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Tdata from "./Tdata"
+import './style.css'
 
 const TopCart = () => {
   const settings = {
@@ -24,7 +25,7 @@ const TopCart = () => {
                   <span className='tright'>{value.desc}</span>
                 </div>
                 <div className='img'>
-                  <img src={value.cover} alt='' />
+                  <img className="img__topCat" src={value.cover} alt='' />
                 </div>
               </div>
             </>

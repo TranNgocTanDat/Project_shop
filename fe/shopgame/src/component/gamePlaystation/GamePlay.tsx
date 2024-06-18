@@ -2,48 +2,22 @@ import React, { useState } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import {GamePlayItem} from "./gamePlayData";
 import './style.css'
-import {ProductOff} from "./GameoffData";
 
 
 
 // Định nghĩa kiểu cho product item
 
-
 // Định nghĩa kiểu cho các props của FlashCard
-interface GameOfflineProps {
-    productOffs: ProductOff[];
-    productOffs1: ProductOff[];
-    addToCart: (product: ProductOff) => void;
+interface GamePlayProps {
+    gamePlayItem1: GamePlayItem[];
+    gamePlayItem2: GamePlayItem[];
+    addToCart: (product: GamePlayItem) => void;
 }
 
-// // Định nghĩa kiểu cho SampleNextArrow và SamplePrevArrow
-// interface ArrowProps {
-//   onClick?: () => void;
-// }
 
-
-// const SampleNextArrow: React.FC<ArrowProps> = (props) => {
-//   const { onClick } = props
-//   return (
-//     <div className='control-btn' onClick={onClick}>
-//       <button className='next'>
-//         <i className='fa fa-long-arrow-alt-right'></i>
-//       </button>
-//     </div>
-//   )
-// }
-// const SamplePrevArrow: React.FC<ArrowProps> = (props) => {
-//   const { onClick } = props
-//   return (
-//     <div className='control-btn' onClick={onClick}>
-//       <button className='prev'>
-//         <i className='fa fa-long-arrow-alt-left'></i>
-//       </button>
-//     </div>
-//   )
-// }
-const GameOffline: React.FC<GameOfflineProps> = ({ productOffs,productOffs1, addToCart }) => {
+const GamePlay: React.FC<GamePlayProps> = ({ gamePlayItem1,gamePlayItem2, addToCart }) => {
     const [count, setCount] = useState(0)
     const increment = () => {
         setCount(count + 1)
@@ -63,25 +37,25 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs,productOffs1, add
         <>
             <div className="top__game">
                 <h1 className="top__game--title">
-                    Game Offline
+                    Game Playstation
                 </h1>
             </div>
             <Slider {...settings}>
-                {productOffs.map((productOffs)=> {
+                {gamePlayItem1.map((gamePlayItem1) => {
                     return (
                         <>
                             <div className='box'>
                                 <div className='product mtop'>
                                     <div className='img'>
-                                        <span className='discount'>{productOffs.discount}% Off</span>
-                                        <img className="cover__gameOff" src={productOffs.cover} alt='' />
+                                        <span className='discount'>{gamePlayItem1.discount}% Off</span>
+                                        <img className="cover__gamePlay" src={gamePlayItem1.cover} alt='' />
                                         <div className='product-like'>
                                             <label>{count}</label> <br />
                                             <i className='fa-regular fa-heart' onClick={increment}></i>
                                         </div>
                                     </div>
                                     <div className='product-details'>
-                                        <h3>{productOffs.name}</h3>
+                                        <h3>{gamePlayItem1.name}</h3>
                                         <div className='rate'>
                                             <i className='fa fa-star'></i>
                                             <i className='fa fa-star'></i>
@@ -90,38 +64,38 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs,productOffs1, add
                                             <i className='fa fa-star'></i>
                                         </div>
                                         <div className='price'>
-                                            <h4>${productOffs.price}.00 </h4>
+                                            <h4>${gamePlayItem1.price}.00 </h4>
                                             {/* step : 3
      if hami le button ma click garryo bahne
     */}
-                                            <button onClick={() => addToCart(productOffs)}>
-                                                <a href="/public/gameOff.json" download="/public/gameOff.json"></a>
+                                            <button onClick={() => addToCart(gamePlayItem1)}>
                                                 <i className='fa fa-plus'></i>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </>
+                            </div><div className='box'>
+
+                            </div></>
                     )
                 })}
             </Slider>
             <Slider {...settings}>
-                {productOffs1.map((productOffs1)=> {
+                {gamePlayItem2.map((gamePlayItem2) => {
                     return (
                         <>
                             <div className='box'>
                                 <div className='product mtop'>
                                     <div className='img'>
-                                        <span className='discount'>{productOffs1.discount}% Off</span>
-                                        <img className="cover__gameOff" src={productOffs1.cover} alt='' />
+                                        <span className='discount'>{gamePlayItem2.discount}% Off</span>
+                                        <img className="cover__gamePlay" src={gamePlayItem2.cover} alt='' />
                                         <div className='product-like'>
                                             <label>{count}</label> <br />
                                             <i className='fa-regular fa-heart' onClick={increment}></i>
                                         </div>
                                     </div>
                                     <div className='product-details'>
-                                        <h3>{productOffs1.name}</h3>
+                                        <h3>{gamePlayItem2.name}</h3>
                                         <div className='rate'>
                                             <i className='fa fa-star'></i>
                                             <i className='fa fa-star'></i>
@@ -130,18 +104,18 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs,productOffs1, add
                                             <i className='fa fa-star'></i>
                                         </div>
                                         <div className='price'>
-                                            <h4>${productOffs1.price}.00 </h4>
+                                            <h4>${gamePlayItem2.price}.00 </h4>
                                             {/* step : 3
      if hami le button ma click garryo bahne
     */}
-                                            <button onClick={() => addToCart(productOffs1)}>
+                                            <button onClick={() => addToCart(gamePlayItem2)}>
                                                 <i className='fa fa-plus'></i>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </>
+                            </div><div className='box'>
+                        </div></>
                     )
                 })}
             </Slider>
@@ -149,4 +123,4 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs,productOffs1, add
     )
 }
 
-export default GameOffline
+export default GamePlay;

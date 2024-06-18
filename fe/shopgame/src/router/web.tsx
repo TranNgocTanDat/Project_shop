@@ -7,11 +7,16 @@ import Profile from "../pages/users/profile/indexProfile";
 import Cart from "../pages/users/theme/Cart/Cart";
 import { CartItem as CartItemType, ProductItem } from "../component/Pdata";
 import { productItems } from "../component/Pdata";
-import { GameOffline } from "../component/gameOffline/gameOff";
+import GameOffline from "../component/gameOffline/gameOff";
 import GameOnline from "../component/gameOnline/gameOn";
-import User from "../component/user/User";
+import UserPage from "../pages/users/userPage/indexUser";
+import {productOffs, productOffs1} from "../component/gameOffline/GameoffData";
+import {gameOnItem1, gameOnItem2} from "../component/gameOnline/gameOnData";
+import GamePlay from "../component/gamePlaystation/GamePlay";
 import ProductTest from "../component/ProductTest";
 import ViewTest, { loadProduct } from "../component/ViewTest";
+
+
 
 interface RouteParams {
     id: number;
@@ -58,21 +63,27 @@ const CreateBrowserRouter: React.FC = () => {
             element: <Profile />,
         },
         {
+            path: '/user',
+            element: <UserPage />,
+        },
+        {
             path: '/cart',
             element: <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />,
         },
         {
             path: '/game_offline',
-            element: <GameOffline productItems={productItems} addToCart={addToCart} />,
+            element: <GameOffline productOffs={productOffs}  productOffs1={productOffs1} addToCart={addToCart} />,
 
         },
         {
             path: '/game_online',
-            element: <GameOnline productItems={productItems} addToCart={addToCart} />,
-        }, {
-            path: '/user',
-            element: <User />,
-        }, {
+            element: <GameOnline gameOnItem1={gameOnItem1} gameOnItem2 = {gameOnItem2} addToCart={addToCart} />,
+        },
+        {
+            path: '/game_playstation',
+            element: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart}/>,
+        },
+        {
             path: '/pt',
             element: <ProductTest productItems={productItems} />,
         }, {

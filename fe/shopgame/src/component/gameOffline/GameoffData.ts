@@ -1,5 +1,5 @@
 
-export interface ProductItem {
+export interface ProductOff {
   id: number;
   name: string;
   price: number;
@@ -8,17 +8,31 @@ export interface ProductItem {
   [key: string]: any; // Các thuộc tính khác nếu có
 }
 
-export interface CartItem extends ProductItem {
+export interface CartItem extends ProductOff {
   qty: number;
 }
 
-const productItems: ProductItem[] = [
+const productOffs: ProductOff[] = [
+  {
+    id: 1,
+    discount: 0,
+    cover: "./images/gameOff/gameoff-1.png",
+    name: "Đào vàng",
+    price: 100,
+  },
   {
     id: 2,
     discount: 50,
     cover: "./images/gameOff/gameoff-2.png",
     name: "Goose goose Duck",
     price: 20,
+  },
+  {
+    id: 3,
+    discount: 40,
+    cover: "./images/gameOff/gameoff-3.png",
+    name: "Subway surfers",
+    price: 200,
   },
   {
     id: 4,
@@ -28,18 +42,20 @@ const productItems: ProductItem[] = [
     price: 50,
   },
   {
-    id: 9,
-    discount: 40,
-    cover: "./images/gameOff/gameoff-9.png",
-    name: "Temple Run",
-    price: 50,
+    id: 5,
+    discount: 50,
+    cover: "./images/gameOff/gameoff-5.png",
+    name: "Plants vs zombies",
+    price: 100,
   },
+];
+const productOffs1: ProductOff[] = [
   {
-    id: 8,
-    discount: 40,
-    cover: "./images/gameOff/gameoff-8.png",
-    name: "Angry birds",
-    price: 200,
+    id: 6,
+    discount: 0,
+    cover: "./images/gameOff/gameoff-6.png",
+    name: "Candy crush saga",
+    price: 100,
   },
   {
     id: 7,
@@ -49,10 +65,31 @@ const productItems: ProductItem[] = [
     price: 20,
   },
   {
+    id: 8,
+    discount: 40,
+    cover: "./images/gameOff/gameoff-8.png",
+    name: "Angry birds",
+    price: 200,
+  },
+  {
+    id: 9,
+    discount: 40,
+    cover: "./images/gameOff/gameoff-9.png",
+    name: "Temple Run",
+    price: 50,
+  },
+  {
     id: 10,
     discount: 50,
     cover: "./images/gameOff/gameoff-10.png",
     name: "Brain Out",
+    price: 100,
+  },
+  {
+    id: 11,
+    discount: 50,
+    cover: "./images/gameOff/gameoff-11.png",
+    name: "Minecraft",
     price: 100,
   },
 ];
@@ -108,5 +145,5 @@ const cartItems: CartItem[] = [
 },
 ];
 
-export { productItems, cartItems };
+export { productOffs, productOffs1, cartItems };
 
