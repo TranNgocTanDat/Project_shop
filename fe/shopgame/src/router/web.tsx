@@ -14,6 +14,11 @@ import UserPage from "../pages/users/userPage/indexUser";
 import {productOffs, productOffs1} from "../component/gameOffline/GameoffData";
 import {gameOnItem1, gameOnItem2} from "../component/gameOnline/gameOnData";
 import GamePlay from "../component/gamePlaystation/GamePlay";
+import {gamePlayItem1,gamePlayItem2} from "../component/gamePlaystation/gamePlayData";
+import GameSteam from "../component/gameSteam/GameSteam";
+import {gameSteamItem1, gameSteamItem2} from "../component/gameSteam/gameSteamData";
+import GameMoble from "../component/gameMoble/GameMobile";
+import {gameMobleItem1, gameMobleItem2} from "../component/gameMoble/gameMobleData";
 
 
 
@@ -83,7 +88,15 @@ const CreateBrowserRouter: React.FC = () => {
             },
             {
                 path: '/game_playstation',
-                component: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart}/>,
+                component: <GamePlay gamePlayItem1={gamePlayItem1} gamePlayItem2={gamePlayItem2} addToCart={addToCart}/>,
+            },
+            {
+                path: '/game_steam',
+                component: <GameSteam gameSteamItem1={gameSteamItem1} gameSteamItem2={gameSteamItem2} addToCart={addToCart}/>
+            },
+            {
+                path: '/game_moblie',
+                component: <GameMoble gameMobleItem1={gameMobleItem1} gameMobleItem2={gameMobleItem2} addToCart={addToCart}/>
             }
         ]
     

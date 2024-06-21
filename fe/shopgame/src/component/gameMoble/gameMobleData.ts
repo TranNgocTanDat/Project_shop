@@ -1,5 +1,5 @@
 
-export interface GamePlayItem {
+export interface GameMobleItem {
   id: number;
   name: string;
   price: number;
@@ -8,96 +8,96 @@ export interface GamePlayItem {
   [key: string]: any; // Các thuộc tính khác nếu có
 }
 
-export interface CartItem extends GamePlayItem {
+export interface CartItem extends GameMobleItem {
   qty: number;
 }
 
-const gamePlayItem1: GamePlayItem[] = [
+const gameMobleItem1: GameMobleItem[] = [
   {
-    id: 201,
+    id: 31,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-1.png",
-    name: "FIFA 4",
+    cover: "./images/gameMobile/gamemobile-1.png",
+    name: "Liên Quân",
     price: 20,
   },
   {
     id: 12,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-2.png",
-    name: "Super Mario",
+    cover: "./images/gameMobile/gamemobile-2.png",
+    name: "FREE FIRE",
     price: 50,
   },
   {
     id: 13,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-3.png",
-    name: "Hollow Knight",
+    cover: "./images/gameMobile/gamemobile-3.png",
+    name: "Tốc Chiến",
     price: 50,
   },
   {
     id: 14,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-4.png",
-    name: "Devil May Cry 5",
+    cover: "./images/gameMobile/gamemobile-4.png",
+    name: "Mobile Legends",
     price: 200,
   },
   {
     id: 15,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-5.png",
-    name: "Nioh",
+    cover: "./images/gameMobile/gamemobile-5.png",
+    name: "Teamfight Tactics",
     price: 200,
   },
   {
     id: 16,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-6.png",
-    name: "Cuphead",
+    cover: "./images/gameMobile/gamemobile-6.png",
+    name: "8 Ball Pool",
     price: 100,
   },
 ];
 
-const gamePlayItem2: GamePlayItem[] = [
+const gameMobleItem2: GameMobleItem[] = [
   {
     id: 17,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-7.png",
-    name: "Sonic & Sega All-Stars Racing",
+    cover: "./images/gameMobile/gamemobile-7.png",
+    name: "Roblox",
     price: 20,
   },
   {
     id: 18,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-8.png",
-    name: "Đấu Trường Thú 3",
+    cover: "./images/gameMobile/gamemobile-8.png",
+    name: "Piano Game",
     price: 50,
   },
   {
     id: 19,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-9.png",
-    name: "Disney Universe",
+    cover: "./images/gameMobile/gamemobile-9.png",
+    name: "Hungry Shack World",
     price: 50,
   },
   {
     id: 110,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-10.png",
-    name: "Renegade Ops",
+    cover: "./images/gameMobile/gamemobile-10.png",
+    name: "Zing Play",
     price: 200,
   },
   {
     id: 111,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-11.png",
-    name: "Deathspank Trilogy",
+    cover: "./images/gameMobile/gamemobile-11.png",
+    name: "Rise of Kingdoms",
     price: 20,
   },
   {
     id: 112,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-12.png",
-    name: "Naruto Shippuden Ninja Storm 3",
+    cover: "./images/gameMobile/gamemobile-12.png",
+    name: "Hơi Thở Mặt Trời",
     price: 100,
   },
 ];
@@ -152,5 +152,5 @@ const cartItems: CartItem[] = [
 },
 ];
 
-export { gamePlayItem1, gamePlayItem2, cartItems };
+export { gameMobleItem1, gameMobleItem2, cartItems };
 
