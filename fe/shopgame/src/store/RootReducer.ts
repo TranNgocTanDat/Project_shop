@@ -61,6 +61,22 @@ export const root = (state: AppState = initState, action: PayloadAction<ProductI
                 products: out
             }
         }
+        case "ADD_TO_CART":{ 
+            let products:ProductItem[] = action.payload;
+            let out: (ProductItem )[] = [];
+            
+            lop1: for (const p of products) {
+                    if (p.id) {
+                        out.push({ ...p});
+                        continue lop1;
+                    }
+                out.push({ ...p});
+            }
+            return {
+                ...state,
+                products: out
+            }
+        }
         default: return state;
     }
 }

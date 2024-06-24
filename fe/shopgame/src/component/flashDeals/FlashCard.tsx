@@ -59,7 +59,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart })
       <Slider {...settings}>
         {productItems.map((productItems) => {
           return (
-            <div className='box'>
+            <div className='box' >
               <div className='product mtop'>
                 <div className='img'>
                   <span className='discount'>{productItems.discount}% Off</span>

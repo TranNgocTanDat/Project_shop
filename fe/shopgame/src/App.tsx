@@ -2,23 +2,30 @@
 import React, { useEffect } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Outlet } from "react-router-dom";
-import CreateBrowserRouter from './router/web';
+import { Outlet } from "react-router-dom";
 import { loadProduct } from "../src/store/Action";
-import { productItems } from './component/Pdata';
 import { useAppDispatch } from '../src/store/Store';
+import { cartItems, productItems } from './component/Pdata';
+import MasterLayout from './pages/users/theme/masterLayout';
+
+import  './pages/users/theme/footer/style.css'
 
 function App() {
-  
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(loadProduct(productItems), [dispatch]);
+    // dispatch(loadProduct(products));
+  })
+return (
 
-  return (
-      
-      <div className="App">
-        <CreateBrowserRouter />
+    <div className="App">
+       
+          <Outlet/>
         
-      </div>  
+    </div>
   
-  );
-}
 
+  
+);
+}
 export default App;

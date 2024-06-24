@@ -5,10 +5,10 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-import { ProductItem } from "./Pdata";
-import { RootState, useAppDispatch, useAppSelector } from '../store/Store';
+import { ProductItem } from "../Pdata";
+import { RootState, useAppDispatch, useAppSelector } from '../../store/Store';
 
-import { loadProduct } from '../store/Action';
+import { loadProduct } from '../../store/Action';
 
 export const Test: React.FC = () => {
     const products = useAppSelector((state: RootState) => state.products);

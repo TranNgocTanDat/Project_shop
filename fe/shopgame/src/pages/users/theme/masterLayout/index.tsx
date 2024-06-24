@@ -14,7 +14,7 @@ interface MasterLayoutProps {
 const MasterLayout: React.FC<MasterLayoutProps> = ({ children, CartItem, ...props }) => {
     return(
         <div>
-        <Header CartItem={CartItem}/>
+        <Header CartItem={CartItem}/>   
        {children}
         <Footer/>
         </div>

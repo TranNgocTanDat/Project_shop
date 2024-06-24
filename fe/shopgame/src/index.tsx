@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import './App.css';
 import reportWebVitals from './reportWebVitals';
 // import {Provider} from "react-redux";
 
-
+import { RouterProvider } from "react-router-dom";
 import './pages/users/theme/footer/indexFooter'
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
 import { store } from '../src/store/Store';
+import AppRouter from './router/web';
 
 
 
@@ -19,7 +21,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <Provider store={store}>
-           <App/>
+            <AppRouter />
         </Provider>
     </React.StrictMode>
 );

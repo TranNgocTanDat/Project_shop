@@ -16,7 +16,7 @@ const productItems: ProductItem[] = [
   {
     id: 1,
     discount: 50,
-    cover: "./images/gameOff/gameoff-2.png",
+    cover: "/images/gameOff/gameoff-2.png",
     name: "Goose goose Duck",
     price: 20,
   },
