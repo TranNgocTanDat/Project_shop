@@ -15,6 +15,13 @@ import { productOffs, productOffs1 } from "../component/gameOffline/GameoffData"
 import { gameOnItem1, gameOnItem2 } from "../component/gameOnline/gameOnData";
 import GamePlay from "../component/gamePlaystation/GamePlay";
 import MasterLayout from "../pages/users/theme/masterLayout";
+import {gamePlayItem1,gamePlayItem2} from "../component/gamePlaystation/gamePlayData";
+import GameSteam from "../component/gameSteam/GameSteam";
+import {gameSteamItem1, gameSteamItem2} from "../component/gameSteam/gameSteamData";
+import GameMoble from "../component/gameMoble/GameMobile";
+import {gameMobleItem1, gameMobleItem2} from "../component/gameMoble/gameMobleData";
+
+
 
 const AppRouter: React.FC = () => {
     const [CartItem, setCartItem] = useState<CartItemType[]>([]);

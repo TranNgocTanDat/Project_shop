@@ -14,4 +14,9 @@
   top: 50%;
   left: 45%;
   transform: translateY(-50%);
-}/*# sourceMappingURL=style.css.map */
+}
+
+.cover__gameOn{
+  width: 240px;
+  height: 270px;
+}

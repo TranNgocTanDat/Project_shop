@@ -1,5 +1,5 @@
 
-export interface GamePlayItem {
+export interface GameSteamItem {
   id: number;
   name: string;
   price: number;
@@ -8,96 +8,96 @@ export interface GamePlayItem {
   [key: string]: any; // Các thuộc tính khác nếu có
 }
 
-export interface CartItem extends GamePlayItem {
+export interface CartItem extends GameSteamItem {
   qty: number;
 }
 
-const gamePlayItem1: GamePlayItem[] = [
+const gameSteamItem1: GameSteamItem[] = [
   {
     id: 201,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-1.png",
-    name: "FIFA 4",
+    cover: "./images/gameSteam/gamesteam-1.png",
+    name: "APEX",
     price: 20,
   },
   {
-    id: 12,
+    id: 202,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-2.png",
-    name: "Super Mario",
+    cover: "./images/gameSteam/gamesteam-2.png",
+    name: "Back 4 Blood",
     price: 50,
   },
   {
-    id: 13,
+    id: 203,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-3.png",
-    name: "Hollow Knight",
+    cover: "./images/gameSteam/gamesteam-3.png",
+    name: "MUCK",
     price: 50,
   },
   {
-    id: 14,
+    id: 204,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-4.png",
-    name: "Devil May Cry 5",
+    cover: "./images/gameSteam/gamesteam-4.png",
+    name: "PALADINS",
     price: 200,
   },
   {
-    id: 15,
+    id: 205,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-5.png",
-    name: "Nioh",
+    cover: "./images/gameSteam/gamesteam-5.png",
+    name: "UNDERLORDS",
     price: 200,
   },
   {
-    id: 16,
+    id: 206,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-6.png",
-    name: "Cuphead",
+    cover: "./images/gameSteam/gamesteam-6.png",
+    name: "SEA OF THIEVES",
     price: 100,
   },
 ];
 
-const gamePlayItem2: GamePlayItem[] = [
+const gameSteamItem2: GameSteamItem[] = [
   {
-    id: 17,
+    id: 207,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-7.png",
-    name: "Sonic & Sega All-Stars Racing",
+    cover: "./images/gameSteam/gamesteam-7.png",
+    name: "BRAWHALLA",
     price: 20,
   },
   {
-    id: 18,
+    id: 208,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-8.png",
-    name: "Đấu Trường Thú 3",
+    cover: "./images/gameSteam/gamesteam-8.png",
+    name: "REALM ROYALE",
     price: 50,
   },
   {
-    id: 19,
+    id: 209,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-9.png",
-    name: "Disney Universe",
+    cover: "./images/gameSteam/gamesteam-9.png",
+    name: "BUSINESS TOUR",
     price: 50,
   },
   {
-    id: 110,
+    id: 210,
     discount: 40,
-    cover: "./images/gamePlay/gameplay-10.png",
-    name: "Renegade Ops",
+    cover: "./images/gameSteam/gamesteam-10.png",
+    name: "COUNTER STRIKE",
     price: 200,
   },
   {
-    id: 111,
+    id: 211,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-11.png",
-    name: "Deathspank Trilogy",
+    cover: "./images/gameSteam/gamesteam-11.png",
+    name: "JUST ACT NATUPAL",
     price: 20,
   },
   {
-    id: 112,
+    id: 212,
     discount: 50,
-    cover: "./images/gamePlay/gameplay-12.png",
-    name: "Naruto Shippuden Ninja Storm 3",
+    cover: "./images/gameSteam/gamesteam-12.png",
+    name: "Cry of Fear",
     price: 100,
   },
 ];
@@ -152,5 +152,5 @@ const cartItems: CartItem[] = [
 },
 ];
 
-export { gamePlayItem1, gamePlayItem2, cartItems };
+export { gameSteamItem1, gameSteamItem2, cartItems };
 
