@@ -18,6 +18,7 @@
 // }
 
 import { ProductItem } from "../component/Pdata";
+import { ProductOff } from "../component/gameOffline/GameoffData";
 // Định nghĩa kiểu cho hành động (Action)
 interface LoadProductAction {
     type: 'product/load';
@@ -32,14 +33,14 @@ export const loadProduct = (data: ProductItem[]): LoadProductAction => {
     };
 };
 
-// export interface AddToCartAction {
-//     type: 'ADD_TO_CART';
-//     payload: ProductItem;
-// }
+export interface AddToCartAction {
+    type: 'ADD_TO_CART';
+    payload: ProductOff[];
+}
 
-// export const addToCart = (product: ProductItem): AddToCartAction => {
-//     return {
-//         type: 'ADD_TO_CART',
-//         payload: product,
-//     };
-// };
+export const addCart = (data: ProductOff[]): AddToCartAction => {
+    return {
+        type: 'ADD_TO_CART',
+        payload: data,
+    };
+};

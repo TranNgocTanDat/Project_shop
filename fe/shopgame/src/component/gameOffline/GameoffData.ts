@@ -16,14 +16,14 @@ const productOffs: ProductOff[] = [
   {
     id: 1,
     discount: 0,
-    cover: "./images/gameOff/gameoff-1.png",
+    cover: "/images/gameOff/gameoff-1.png",
     name: "Đào vàng",
     price: 100,
   },
   {
     id: 2,
     discount: 50,
-    cover: "./images/gameOff/gameoff-2.png",
+    cover: "/images/gameOff/gameoff-2.png",
     name: "Goose goose Duck",
     price: 20,
   },
