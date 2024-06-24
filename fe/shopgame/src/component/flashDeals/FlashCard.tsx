@@ -2,15 +2,10 @@ import React, { useState } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-
-// Định nghĩa kiểu cho product item
-interface ProductItem {
-  id: number;
-  name: string;
-  cover: string;
-  price: number;
-  discount: number;
-}
+import { ProductItem } from "../Pdata"
+// import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom"
+// import { RootState } from "../../store/Store"
 
 // Định nghĩa kiểu cho các props của FlashCard
 interface FlashCardProps {
@@ -44,8 +39,8 @@ const SamplePrevArrow: React.FC<ArrowProps> = (props) => {
     </div>
   )
 }
-const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart }) => {
-  const [count, setCount] = useState(0)
+export const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart }) => {
+  const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1)
   }
@@ -73,26 +68,28 @@ const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart }) => {
                     <label>{count}</label> <br />
                     <i className='fa-regular fa-heart' onClick={increment}></i>
                   </div>
-                </div>
-                <div className='product-details'>
-                  <h3>{productItems.name}</h3>
-                  <div className='rate'>
-                    <i className='fa fa-star'></i>
-                    <i className='fa fa-star'></i>
-                    <i className='fa fa-star'></i>
-                    <i className='fa fa-star'></i>
-                    <i className='fa fa-star'></i>
-                  </div>
-                  <div className='price'>
-                    <h4>${productItems.price}.00 </h4>
-                    {/* step : 3  
+                  <div className='product-details'>
+                    <h3>{productItems.name}</h3>
+                    <div className='rate'>
+                      <i className='fa fa-star'></i>
+                      <i className='fa fa-star'></i>
+                      <i className='fa fa-star'></i>
+                      <i className='fa fa-star'></i>
+                      <i className='fa fa-star'></i>
+                    </div>
+                    <div className='price'>
+                      <h4>${productItems.price}.00 </h4>
+                      {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}
-                    <button onClick={() => addToCart(productItems)}>
-                      <i className='fa fa-plus'></i>
-                    </button>
+                      <button onClick={() => addToCart(productItems)}>
+                        <i className='fa fa-plus'></i>
+                      </button>
+                    </div>
                   </div>
+
                 </div>
+
               </div>
             </div>
           )
@@ -102,4 +99,3 @@ const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart }) => {
   )
 }
 
-export default FlashCard

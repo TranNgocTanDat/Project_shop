@@ -1,7 +1,8 @@
 import React from "react"
-import FlashCard from "./FlashCard"
+import {FlashCard} from "./FlashCard"
 import "./style.css"
 import { ProductItem } from "../Pdata"
+
 
 // Định nghĩa kiểu cho các props của FlashDeals
 interface FlashDealsProps {
@@ -18,7 +19,7 @@ const FlashDeals: React.FC<FlashDealsProps> = ({ productItems, addToCart }) => {
             <i className='fa fa-bolt'></i>
             <h1>Flash Delas</h1>
           </div>
-          <FlashCard productItems={productItems} addToCart={addToCart} />s
+          <FlashCard productItems={productItems} addToCart={addToCart} />
         </div>
       </section>
     </>
@@ -26,3 +27,5 @@ const FlashDeals: React.FC<FlashDealsProps> = ({ productItems, addToCart }) => {
 }
 
 export default FlashDeals
+
+

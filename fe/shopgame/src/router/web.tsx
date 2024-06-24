@@ -1,34 +1,30 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, RouteObject, LoaderFunctionArgs } from "react-router-dom";
 import HomePage from "../pages/users/homePage/indexHome";
 import MasterLayout from "../pages/users/theme/masterLayout";
 import Profile from "../pages/users/profile/indexProfile";
 import Cart from "../pages/users/theme/Cart/Cart";
-import CartItem from "../pages/users/theme/Cart/Cart";
 import { CartItem as CartItemType, ProductItem } from "../component/Pdata";
 import { productItems } from "../component/Pdata";
 import GameOffline from "../component/gameOffline/gameOff";
-import GameOnline from "../component/gameOnline/GameOn";
+import GameOnline from "../component/gameOnline/gameOn";
 import UserPage from "../pages/users/userPage/indexUser";
-import {productOffs, productOffs1} from "../component/gameOffline/GameoffData";
-import {gameOnItem1, gameOnItem2} from "../component/gameOnline/gameOnData";
+import { productOffs, productOffs1 } from "../component/gameOffline/GameoffData";
+import { gameOnItem1, gameOnItem2 } from "../component/gameOnline/gameOnData";
 import GamePlay from "../component/gamePlaystation/GamePlay";
 import {gamePlayItem1,gamePlayItem2} from "../component/gamePlaystation/gamePlayData";
 import GameSteam from "../component/gameSteam/GameSteam";
 import {gameSteamItem1, gameSteamItem2} from "../component/gameSteam/gameSteamData";
 import GameMoble from "../component/gameMoble/GameMobile";
 import {gameMobleItem1, gameMobleItem2} from "../component/gameMoble/gameMobleData";
+import ProductTest from "../component/ProductTest";
+import ViewTest, { loadProduct } from "../component/ViewTest";
 
 
-
-
-
-interface RouteConfig {
-    path: string;
-    component: React.ReactNode;
+interface RouteParams {
+    id: number;
 }
-
 
 const CreateBrowserRouter: React.FC = () => {
     const [CartItem, setCartItem] = useState<CartItemType[]>([]);
@@ -61,58 +57,75 @@ const CreateBrowserRouter: React.FC = () => {
         }
     };
 
-    
-        const userRouters: RouteConfig[] = [
-            {
-                path: '/',
-                component: <HomePage addToCart={addToCart} />,
-            }, {
-                path: '/profile',
-                component: <Profile />,
-            },
-            {
-                path: '/user',
-                component: <UserPage />,
-            },
-            {
-                path: '/cart',
-                component: <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />,
-            },
-            {
-                path: '/game_offline',
-                component: <GameOffline productOffs={productOffs}  productOffs1={productOffs1} addToCart={addToCart}/>,
-            },
-            {
-                path: '/game_online',
-                component: <GameOnline gameOnItem1={gameOnItem1} gameOnItem2 = {gameOnItem2} addToCart={addToCart}/>,
-            },
-            {
-                path: '/game_playstation',
-                component: <GamePlay gamePlayItem1={gamePlayItem1} gamePlayItem2={gamePlayItem2} addToCart={addToCart}/>,
-            },
-            {
-                path: '/game_steam',
-                component: <GameSteam gameSteamItem1={gameSteamItem1} gameSteamItem2={gameSteamItem2} addToCart={addToCart}/>
-            },
-            {
-                path: '/game_moblie',
-                component: <GameMoble gameMobleItem1={gameMobleItem1} gameMobleItem2={gameMobleItem2} addToCart={addToCart}/>
-            }
-        ]
-    
-        return (
-            <MasterLayout CartItem={CartItem.length}>
-                <Routes>
-                    {
-                        userRouters.map((item, key) => (
-                            <Route key={key} path={item.path} element={item.component} />
-                        ))
-                    }
-                </Routes>
-            </MasterLayout>
-        )
-    
 
+    const userRouters: RouteObject[] = [
+        {
+            // path: '/',
+            // element: <HomePage addToCart={addToCart} />,
+        }, {
+            path: '/profile',
+            element: <Profile />,
+        },
+        {
+            path: '/user',
+            element: <UserPage />,
+        },
+        {
+            // path: '/cart',
+            // element: <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />,
+        },
+        {
+            // path: '/game_offline',
+            // element: <GameOffline productOffs={productOffs} productOffs1={productOffs1} addToCart={addToCart} />,
+
+        },
+        {
+            // path: '/game_online',
+            // element: <GameOnline gameOnItem1={gameOnItem1} gameOnItem2={gameOnItem2} addToCart={addToCart} />,
+        },
+        {
+            // path: '/game_playstation',
+            // element: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart} />,
+        },
+        {
+            path: '/pt',
+            element: <ProductTest productItems={productItems} />,
+        }, {
+            path: '/v/:id',
+            element: <ViewTest />,
+            // loader: ({ params }: LoaderFunctionArgs<RouteParams>) => loadProduct({ params: { id: Number(params.id) } }),
+            loader: loadProduct,
+        }
+    ];
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: (
+                <MasterLayout CartItem={CartItem.length}>
+                    {/* Sử dụng RouterProvider để cung cấp router cho ứng dụng */}
+
+                    <Routes>
+                        {userRouters.map((route, index) => (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                element={route.element}
+                                loader={route.loader}
+                            />
+                        ))}
+                    </Routes>
+
+                </MasterLayout>
+            ),
+            children: userRouters
+        }
+    ]);
+
+
+    return (
+        <RouterProvider router={router} ></RouterProvider>
+    )
 };
 
 

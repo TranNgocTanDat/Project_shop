@@ -14,42 +14,42 @@ export interface CartItem extends ProductItem {
 
 const productItems: ProductItem[] = [
   {
-    id: 2,
+    id: 1,
     discount: 50,
     cover: "./images/gameOff/gameoff-2.png",
     name: "Goose goose Duck",
     price: 20,
   },
   {
-    id: 4,
+    id: 2,
     discount: 40,
     cover: "./images/gameOff/gameoff-4.png",
     name: "solitaired",
     price: 50,
   },
   {
-    id: 9,
+    id: 3,
     discount: 40,
     cover: "./images/gameOff/gameoff-9.png",
     name: "Temple Run",
     price: 50,
   },
   {
-    id: 8,
+    id: 4,
     discount: 40,
     cover: "./images/gameOff/gameoff-8.png",
     name: "Angry birds",
     price: 200,
   },
   {
-    id: 7,
+    id: 5,
     discount: 50,
     cover: "./images/gameOff/gameoff-7.png",
     name: "Tom",
     price: 20,
   },
   {
-    id: 10,
+    id: 6,
     discount: 50,
     cover: "./images/gameOff/gameoff-10.png",
     name: "Brain Out",
