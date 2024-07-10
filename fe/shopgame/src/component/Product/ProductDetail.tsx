@@ -1,21 +1,13 @@
 import React, { useState } from 'react'
-import { ProductItem, productItems } from '../Pdata'
+import { ProductItem, productItems, productOffs, productOns } from '../Pdata'
 import { useLoaderData, LoaderFunctionArgs } from 'react-router-dom';
-
-
 import './styleProduct.css'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-// import './styleProduct.css'
-
-
-
-
-
 
 async function getProduct(id: number): Promise<ProductItem | undefined> {
-    return productItems.find((product) => product.id === id);
+    return productOffs.find((product) => product.id === id) || productItems.find((product) => product.id === id) ||  productOns.find((product) => product.id === id);
 
 }
 
@@ -71,87 +63,93 @@ const ViewTest: React.FC = () => {
         setCount(count + 1)
     }
     const settings = {
-        // dots: false,
-        // infinite: true,
+        dots: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        nextArrow: <SamplePrevArrow/>,
+        prevArrow: <SampleNextArrow/>,
     }
+    const renderSlides = () => {
+        return Array(4).fill(null).map((_, index) => (
+            <div className="box" key={index}>
+                <div className="product mtop">
+                    <div className="img">
+                        <img className="img__flash" src={product?.cover} alt="" />
+                    </div>
+                </div>
+            </div>
+        ));
+    };
 
     return (
+        <>
+            <div className='set_width'>
+                <Slider {...settings}>
+                    {renderSlides()}
 
-        <div>
-            {product ? (
-                <section className="section product" aria-label="product">
-                    <div className="container1">
-                        <Slider {...settings}>
-                            <div className="box">
-                                <div className="product mtop">
-                                    <div className="img">
-                                        <img src={`${product.cover}`}  alt={product.name}
-                                            className="img-flash"  width={270} height={270}/>
-                                            
+                </Slider>
+
+                {product ? (
+                    <section className="section product" aria-label="product">
+                        <div className="container1">
+
+
+                            <div className="product-content">
+
+                                <p className="product-subtitle">{product.name}</p>
+
+                                <h1 className="h1 product-title">Fall Limited Edition Sneakers</h1>
+
+                                <p className="product-text">
+                                    These low-profile sneakers are your perfect casual wear companion. Featuring a
+                                    durable rubber outer sole, they’ll withstand everything the weather can offer.
+                                </p>
+
+                                <div className="wrapper">
+
+                                    <span className="price" data-total-price>${product.price}</span>
+                                    <span className="badge">{product.discount}</span>
+
+                                    <del className="del">$40.00</del>
+
+                                </div>
+
+                                <div className="btn-group">
+
+                                    <div className="counter-wrapper">
+
+                                        <button className="counter-btn" data-qty-minus>
+                                            <i className="fa-solid fa-minus"></i>
+                                        </button>
+
+                                        <span className="span" data-qty>1</span>
+
+                                        <button className="counter-btn" data-qty-plus>
+                                            <i className="fa-solid fa-plus"></i>
+                                        </button>
+
                                     </div>
-                                </div>
 
-                            </div>
-                        </Slider>
-
-                        <div className="product-content">
-
-                            <p className="product-subtitle">{product.name}</p>
-
-                            <h1 className="h1 product-title">Fall Limited Edition Sneakers</h1>
-
-                            <p className="product-text">
-                                These low-profile sneakers are your perfect casual wear companion. Featuring a
-                                durable rubber outer sole, they’ll withstand everything the weather can offer.
-                            </p>
-
-                            <div className="wrapper">
-
-                                <span className="price" data-total-price>${product.price}</span>
-                                    <img src={`/images/gameOff/gameoff-1.png`} alt="" width={200} height={200}/>
-                                <span className="badge">{product.discount}</span>
-
-                                <del className="del">$40.00</del>
-
-                            </div>
-
-                            <div className="btn-group">
-
-                                <div className="counter-wrapper">
-
-                                    <button className="counter-btn" data-qty-minus>
-                                        <i className="fa-solid fa-minus"></i>
-                                    </button>
-
-                                    <span className="span" data-qty>1</span>
-
-                                    <button className="counter-btn" data-qty-plus>
-                                        <i className="fa-solid fa-plus"></i>
+                                    <button className="cart-btn" >
+                                        <i className="fa-solid fa-bag-shopping"></i>
+                                        <span className="span">Add to cart</span>
                                     </button>
 
                                 </div>
-
-                                <button className="cart-btn">
-                                    <i className="fa-solid fa-bag-shopping"></i>
-                                    <span className="span">Add to cart</span>
-                                </button>
 
                             </div>
 
                         </div>
-
-                    </div>
-                </section>
-            ) : (
-                <div >No product found </div>
-            )}
-        </div>
+                    </section>
+                ) : (
+                    <div >No product found </div>
+                )}
+            </div>
+        </>
     );
+
 };
 
 export default ViewTest

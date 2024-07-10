@@ -1,14 +1,20 @@
-import React from "react"
+import React, {useState} from "react"
 import "./style.css"
 import { CartItem as CartItemType } from "../../../../component/Pdata";
+import { RootState, useAppSelector } from '../../../../store/Store';
 
 interface CartProps {
-  CartItem: CartItemType[];
   addToCart: (item: CartItemType) => void;
   decreaseQty: (item: CartItemType) => void;
 }
 
-const Cart: React.FC<CartProps> = ({ CartItem, addToCart, decreaseQty }) => {
+const Cart: React.FC<CartProps> = ({addToCart, decreaseQty }) => {
+  
+  const cart = useAppSelector((state: RootState) => state.cart);
+
+  // Sử dụng useState để lưu trữ giá trị của CartItem
+  const [CartItem, setCartItem] = useState<CartItemType[]>(cart); 
+  
   // Stpe: 7   calucate total of items
   const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
 

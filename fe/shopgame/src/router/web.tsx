@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createBrowserRouter, RouterProvider, RouteObject, Routes, Route } from "react-router-dom";
 import App from "../App";
 import ProductTest from "../component/Product/ProductTest";
-import { CartItem as CartItemType, ProductItem } from "../component/Pdata";
+import {CartItem as CartItemType, ProductItem } from "../component/Pdata";
 import ViewTest, { loadProduct } from "../component/Product/ProductDetail";
 import { productItems } from "../component/Pdata";
 import HomePage from "../pages/users/homePage/indexHome";
@@ -11,8 +11,8 @@ import UserPage from "../pages/users/userPage/indexUser";
 import Cart from "../pages/users/theme/Cart/Cart";
 import GameOffline from "../component/gameOffline/gameOff";
 import GameOnline from "../component/gameOnline/gameOn";
-import { productOffs, productOffs1 } from "../component/gameOffline/GameoffData";
-import { gameOnItem1, gameOnItem2 } from "../component/gameOnline/gameOnData";
+import { productOffs } from "../component/Pdata";
+import { productOns} from "../component/Pdata";
 import GamePlay from "../component/gamePlaystation/GamePlay";
 import MasterLayout from "../pages/users/theme/masterLayout";
 import {gamePlayItem1,gamePlayItem2} from "../component/gamePlaystation/gamePlayData";
@@ -20,6 +20,7 @@ import GameSteam from "../component/gameSteam/GameSteam";
 import {gameSteamItem1, gameSteamItem2} from "../component/gameSteam/gameSteamData";
 import GameMoble from "../component/gameMoble/GameMobile";
 import {gameMobleItem1, gameMobleItem2} from "../component/gameMoble/gameMobleData";
+import Test  from "../component/Test";
 
 
 
@@ -65,20 +66,24 @@ const AppRouter: React.FC = () => {
         },
         {
             path: '/cart',
-            element: <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />,
+            element: <Cart  addToCart={addToCart} decreaseQty={decreaseQty} />,
         },
         {
             path: '/game_offline',
-            element: <GameOffline productOffs={productOffs} productOffs1={productOffs1} addToCart={addToCart} />,
+            element: <GameOffline productOffs={productOffs} addToCart={addToCart} />,
         },
         {
             path: '/game_online',
-            element: <GameOnline gameOnItem1={gameOnItem1} gameOnItem2={gameOnItem2} addToCart={addToCart} />,
+            element: <GameOnline productOns={productOns} addToCart={addToCart} />,
         },
+        // {
+        //     path: '/game_playstation',
+        //     element: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart} />,
+        // },
         {
-            path: '/game_playstation',
-            element: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart} />,
-        },
+            path: '/game',
+            element: <Test/>
+        }
     ];
 
     const router = createBrowserRouter([

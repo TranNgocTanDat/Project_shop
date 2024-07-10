@@ -18,3 +18,25 @@
         // padding: 20px 0;
     }
 }
+
+.center__game{
+    .f-grid {
+        display: flex;
+        justify-content: space-between;
+        margin-left: -1rem;
+        flex-flow: row wrap;
+    }
+    
+    .f-grid-col {
+        height: 500px;
+        flex: 1 -1;
+        margin-left: 1rem;
+        // margin-bottom: 1rem;
+        padding: 1rem; 
+    }
+}
+
+.cover__gameOff{
+    width: 240px;
+    height: 270px;
+  }
