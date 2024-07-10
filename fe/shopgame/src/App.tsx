@@ -5,7 +5,7 @@ import './App.css';
 import { Outlet } from "react-router-dom";
 import { loadProduct } from "../src/store/Action";
 import { useAppDispatch } from '../src/store/Store';
-import { cartItems, productItems } from './component/Pdata';
+import { productItems } from './component/Pdata';
 import MasterLayout from './pages/users/theme/masterLayout';
 
 import  './pages/users/theme/footer/style.css'
