@@ -8,7 +8,8 @@ import { Link } from "react-router-dom"
 import { RootState, useAppDispatch, useAppSelector } from '../../store/Store';
 import { addCart, loadProduct } from "../../store/Action"
 import { ProductItem } from "../Pdata"
-import {CartInfo} from "../CartTest"
+import { useSelector } from "react-redux"
+
 
 
 
@@ -17,7 +18,7 @@ import {CartInfo} from "../CartTest"
 
 export const Test: React.FC = () => {
     const products = useAppSelector((state: RootState) => state.products);
-    const cart = useAppSelector((state: RootState) => state.cart);
+    // const cart = useAppSelector((state: RootState) => state.cart);
 
     const dispatch = useAppDispatch();
     const handleAddToCart = (product: ProductItem) => {
@@ -66,7 +67,7 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart }) => 
                 <h1 className="top__game--title">
                     Game Offline
                 </h1>
-                <CartInfo/>
+               
             </div>
             <div className="center__game">
                 <div className="f-grid">

@@ -1,15 +1,15 @@
-import { ProductItem } from "../component/Pdata";
+import { CartItem, ProductItem } from "../component/Pdata";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 // Hàm loadCart để tải giỏ hàng từ localStorage
-const loadCart = (): ProductItem[] => {
+const loadCart = (): CartItem[] => {
     return JSON.parse(localStorage.getItem('cart') || '[]');
 };
 
 // Định nghĩa kiểu cho trạng thái ban đầu
 interface AppState {
     products: ProductItem[];
-    cart: ProductItem[];
+    cart: CartItem[];
 }
 
 // Trạng thái ban đầu
@@ -27,7 +27,7 @@ export const root = (state: AppState = initState, action: PayloadAction<any>) =>
             const out: ProductItem[] = [];
 
             for (const p of products) {
-                const cartItem = cart.find(c => c.id === p.id);
+                const cartItem = cart.find(c => c.id !== p.id);
                 if (cartItem) {
                     out.push({ ...p, isBuying: true });
                 } else {
@@ -40,7 +40,8 @@ export const root = (state: AppState = initState, action: PayloadAction<any>) =>
             };
         }
         case "cart.add": {
-            const newProduct: ProductItem = action.payload;
+            
+            const newProduct: CartItem = action.payload;
             const newCart = [...state.cart, newProduct];
             saveCart(newCart);
 
@@ -65,8 +66,9 @@ export const root = (state: AppState = initState, action: PayloadAction<any>) =>
 };
 
 // Function to save cart to localStorage
-function saveCart(cart: ProductItem[]) {
+function saveCart(cart: CartItem[]) {
     localStorage.setItem('cart', JSON.stringify(cart));
+    // localStorage.removeItem('cart');
 }
 
 export default root;

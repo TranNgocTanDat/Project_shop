@@ -6,17 +6,17 @@ export interface ProductItem {
   cover: string;
   discount: number;
   [key: string]: any; // Các thuộc tính khác nếu có
-  qty: number;
+
 }
 
 export interface CartItem extends ProductItem {
   
+  qty: number;
 }
 
 
 const productItems: ProductItem[] = [
   {
-    qty:1,
     id: 1,
     discount: 50,
     cover: "/images/gameOff/gameoff-2.png",
@@ -24,7 +24,6 @@ const productItems: ProductItem[] = [
     price: 20,
   },
   {
-    qty:1,
     id: 2,
     discount: 40,
     cover: "/images/gameOff/gameoff-4.png",
@@ -33,7 +32,6 @@ const productItems: ProductItem[] = [
     price: 50,
   },
   {
-    qty:1,
     id: 3,
     discount: 40,
     cover: "/images/gameOff/gameoff-9.png",
@@ -41,7 +39,6 @@ const productItems: ProductItem[] = [
     price: 50,
   },
   {
-    qty:1,
     id: 4,
     discount: 40,
     cover: "/images/gameOff/gameoff-8.png",
@@ -49,7 +46,6 @@ const productItems: ProductItem[] = [
     price: 200,
   },
   {
-    qty:1,
     id: 5,
     discount: 50,
     cover: "/images/gameOff/gameoff-7.png",
@@ -57,7 +53,6 @@ const productItems: ProductItem[] = [
     price: 20,
   },
   {
-    qty:1,
     id: 6,
     discount: 50,
     cover: "/images/gameOff/gameoff-10.png",
@@ -68,7 +63,6 @@ const productItems: ProductItem[] = [
 
 const productOffs: ProductItem[] = [
   {
-    qty:1,
     id: 1,
     discount: 0,
     cover: "/images/gameOff/gameoff-1.png",
@@ -76,7 +70,6 @@ const productOffs: ProductItem[] = [
     price: 100,
   },
   {
-    qty:1,
     id: 2,
     discount: 50,
     cover: "/images/gameOff/gameoff-2.png",
@@ -84,7 +77,6 @@ const productOffs: ProductItem[] = [
     price: 20,
   },
   {
-    qty:1,
     id: 3,
     discount: 40,
     cover: "./images/gameOff/gameoff-3.png",
@@ -92,7 +84,6 @@ const productOffs: ProductItem[] = [
     price: 200,
   },
   {
-    qty:1,
     id: 4,
     discount: 40,
     cover: "/images/gameOff/gameoff-4.png",
@@ -100,7 +91,6 @@ const productOffs: ProductItem[] = [
     price: 50,
   },
   {
-    qty:1,
     id: 5,
     discount: 50,
     cover: "/images/gameOff/gameoff-5.png",
@@ -108,7 +98,6 @@ const productOffs: ProductItem[] = [
     price: 100,
   },
   {
-    qty:1,
     id: 6,
     discount: 0,
     cover: "/images/gameOff/gameoff-6.png",
@@ -116,7 +105,6 @@ const productOffs: ProductItem[] = [
     price: 100,
   },
   {
-    qty:1,
     id: 7,
     discount: 50,
     cover: "/images/gameOff/gameoff-7.png",
@@ -124,7 +112,6 @@ const productOffs: ProductItem[] = [
     price: 20,
   },
   {
-    qty:1,
     id: 8,
     discount: 40,
     cover: "/images/gameOff/gameoff-8.png",
@@ -132,7 +119,6 @@ const productOffs: ProductItem[] = [
     price: 200,
   },
   {
-    qty:1,
     id: 9,
     discount: 40,
     cover: "/images/gameOff/gameoff-9.png",
@@ -140,7 +126,6 @@ const productOffs: ProductItem[] = [
     price: 50,
   },
   {
-    qty:1,
     id: 10,
     discount: 50,
     cover: "/images/gameOff/gameoff-10.png",
@@ -149,7 +134,6 @@ const productOffs: ProductItem[] = [
     price: 100,
   },
   {
-    qty:1,
     id: 11,
     discount: 50,
     cover: "/images/gameOff/gameoff-11.png",
@@ -158,7 +142,6 @@ const productOffs: ProductItem[] = [
     price: 100,
   },
   {
-    qty:1,
     id: 12,
     discount: 50,
     cover: "/images/gameOff/gameoff-11.png",
@@ -169,9 +152,9 @@ const productOffs: ProductItem[] = [
 
 ];
 
+
 const productOns:ProductItem[] = [
   {
-    qty:1,
     id: 13,
     discount: 50,
     cover: "/images/gameOn/gameon-2.png",
@@ -179,7 +162,6 @@ const productOns:ProductItem[] = [
     price: 20,
   },
   {
-    qty:1,
     id: 14,
     discount: 40,
     cover: "/images/gameOn/gameon-1.png",
@@ -187,7 +169,6 @@ const productOns:ProductItem[] = [
     price: 50,
   },
   {
-    qty:1,
     id: 15,
     discount: 40,
     cover: "/images/gameOn/gameon-3.png",
@@ -195,7 +176,6 @@ const productOns:ProductItem[] = [
     price: 50,
   },
   {
-    qty:1,
     id: 16,
     discount: 40,
     cover: "/images/gameOn/gameon-4.png",
@@ -203,7 +183,6 @@ const productOns:ProductItem[] = [
     price: 200,
   },
   {
-    qty:1,
     id: 17,
     discount: 50,
     cover: "/images/gameOn/gameon-5.png",
@@ -211,7 +190,6 @@ const productOns:ProductItem[] = [
     price: 200,
   },
   {
-    qty:1,
     id: 18,
     discount: 50,
     cover: "/images/gameOn/gameon-6.png",
@@ -219,7 +197,6 @@ const productOns:ProductItem[] = [
     price: 100,
   },
   {
-    qty:1,
     id: 19,
     discount: 50,
     cover: "/images/gameOn/gameon-7.png",
@@ -227,7 +204,6 @@ const productOns:ProductItem[] = [
     price: 20,
   },
   {
-    qty:1,
     id: 20,
     discount: 40,
     cover: "/images/gameOn/gameon-8.png",
@@ -235,7 +211,6 @@ const productOns:ProductItem[] = [
     price: 50,
   },
   {
-    qty:1,
     id: 21,
     discount: 40,
     cover: "/images/gameOn/gameon-9.png",
@@ -243,7 +218,6 @@ const productOns:ProductItem[] = [
     price: 50,
   },
   {
-    qty:1,
     id: 22,
     discount: 40,
     cover: "/images/gameOn/gameon-10.png",
@@ -251,7 +225,6 @@ const productOns:ProductItem[] = [
     price: 200,
   },
   {
-    qty:1,
     id: 23,
     discount: 50,
     cover: "/images/gameOn/gameon-11.png",
@@ -259,7 +232,6 @@ const productOns:ProductItem[] = [
     price: 20,
   },
   {
-    qty:1,
     id: 24,
     discount: 50,
     cover: "/images/gameOn/gameon-12.png",
@@ -268,6 +240,12 @@ const productOns:ProductItem[] = [
   },
 ]
 
+// Chuyển đổi ProductItem thành CartItem
+const cartItems: CartItem[] = productOffs.map(product => ({
+  ...product,
+  qty: 1, // Đặt qty mặc định là 1
+}));
 
-export { productItems, productOffs, productOns };
+
+export { productItems, productOffs, productOns, cartItems};
 

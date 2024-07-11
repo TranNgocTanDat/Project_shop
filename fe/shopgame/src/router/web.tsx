@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { createBrowserRouter, RouterProvider, RouteObject, Routes, Route } from "react-router-dom";
 import App from "../App";
-import ProductTest from "../component/Product/ProductTest";
 import {CartItem as CartItemType, ProductItem } from "../component/Pdata";
 import ViewTest, { loadProduct } from "../component/Product/ProductDetail";
 import { productItems } from "../component/Pdata";
@@ -20,11 +19,11 @@ import GameSteam from "../component/gameSteam/GameSteam";
 import {gameSteamItem1, gameSteamItem2} from "../component/gameSteam/gameSteamData";
 import GameMoble from "../component/gameMoble/GameMobile";
 import {gameMobleItem1, gameMobleItem2} from "../component/gameMoble/gameMobleData";
-import Test  from "../component/Test";
 
 
 
 const AppRouter: React.FC = () => {
+    
     const [CartItem, setCartItem] = useState<CartItemType[]>([]);
 
     const addToCart = (product: ProductItem) => {
@@ -80,10 +79,7 @@ const AppRouter: React.FC = () => {
         //     path: '/game_playstation',
         //     element: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart} />,
         // },
-        {
-            path: '/game',
-            element: <Test/>
-        }
+        
     ];
 
     const router = createBrowserRouter([
@@ -108,10 +104,6 @@ const AppRouter: React.FC = () => {
             path: '/',
             element: <App />,
             children: [
-                {
-                    path: 'list-product',
-                    element: (<MasterLayout CartItem={CartItem.length}><ProductTest productItems={productItems} /></MasterLayout>),
-                },
                 {
                     path: 'v/:id',
                     element: (<MasterLayout CartItem={CartItem.length}><ViewTest /></MasterLayout>),
