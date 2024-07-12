@@ -79,6 +79,14 @@ const AppRouter: React.FC = () => {
             path: '/game_playstation',
             element: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart} />,
         },
+        {
+            path: '/game_steam',
+            element: <GameSteam gameSteamItem1={gameSteamItem1} gameSteamItem2={gameSteamItem2} addToCart={addToCart}/>
+        },
+        {
+            path: '/game_moblie',
+            element: <GameMoble gameMobleItem1={gameMobleItem1} gameMobleItem2={gameMobleItem2} addToCart={addToCart}/>
+        }
     ];
 
     const router = createBrowserRouter([
