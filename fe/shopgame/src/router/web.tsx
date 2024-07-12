@@ -75,10 +75,10 @@ const AppRouter: React.FC = () => {
             path: '/game_online',
             element: <GameOnline productOns={productOns} addToCart={addToCart} />,
         },
-        {
-            path: '/game_playstation',
-            element: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart} />,
-        },
+        // {
+        //     path: '/game_playstation',
+        //     element: <GamePlay gamePlayItem1={gameOnItem1} gamePlayItem2={gameOnItem2} addToCart={addToCart} />,
+        // },
     ];
 
     const router = createBrowserRouter([
