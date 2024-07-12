@@ -1,6 +1,6 @@
 
 
-import { ProductItem } from "../component/Pdata";
+import { CartItem, ProductItem } from "../component/Pdata";
 // Định nghĩa kiểu cho hành động (Action)
 interface LoadProductAction {
     type: 'product/load';
@@ -17,10 +17,10 @@ export const loadProduct = (data: ProductItem[]): LoadProductAction => {
 
 export interface AddToCartAction {
     type: 'cart.add';
-    payload: ProductItem[];
+    payload: CartItem[];
 }
 
-export const addCart = (data: ProductItem[]): AddToCartAction => {
+export const addCart = (data: CartItem[]): AddToCartAction => {
     return {
         type: 'cart.add',
         payload: data,

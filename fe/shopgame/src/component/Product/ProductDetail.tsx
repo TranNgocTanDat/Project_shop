@@ -14,12 +14,12 @@ async function getProduct(id: number): Promise<ProductItem | undefined> {
 export async function loadProduct({ params }: LoaderFunctionArgs): Promise<ProductItem | null> {
     try {
         const productId = Number(params.id);
-        console.log('Params:', params);
+        // console.log('Params:', params);
         if (isNaN(productId)) {
             throw new Error("Invalid product ID");
         }
         const product = await getProduct(productId);
-        console.log(product);
+        // console.log(product);
         return product ?? null;  // Trả về null nếu sản phẩm không tồn tại
     } catch (error) {
         console.error("Error loading product:", error);
