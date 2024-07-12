@@ -6,11 +6,14 @@ export interface ProductItem {
   cover: string;
   discount: number;
   [key: string]: any; // Các thuộc tính khác nếu có
+
 }
 
 export interface CartItem extends ProductItem {
+  
   qty: number;
 }
+
 
 const productItems: ProductItem[] = [
   {
@@ -23,90 +26,226 @@ const productItems: ProductItem[] = [
   {
     id: 2,
     discount: 40,
-    cover: "./images/gameOff/gameoff-4.png",
+    cover: "/images/gameOff/gameoff-4.png",
+    
     name: "solitaired",
     price: 50,
   },
   {
     id: 3,
     discount: 40,
-    cover: "./images/gameOff/gameoff-9.png",
+    cover: "/images/gameOff/gameoff-9.png",
     name: "Temple Run",
     price: 50,
   },
   {
     id: 4,
     discount: 40,
-    cover: "./images/gameOff/gameoff-8.png",
+    cover: "/images/gameOff/gameoff-8.png",
     name: "Angry birds",
     price: 200,
   },
   {
     id: 5,
     discount: 50,
-    cover: "./images/gameOff/gameoff-7.png",
+    cover: "/images/gameOff/gameoff-7.png",
     name: "Tom",
     price: 20,
   },
   {
     id: 6,
     discount: 50,
-    cover: "./images/gameOff/gameoff-10.png",
+    cover: "/images/gameOff/gameoff-10.png",
     name: "Brain Out",
     price: 100,
   },
 ];
 
-const cartItems: CartItem[] = [
-{
-  id: 1,
-  discount: 50,
-  cover: "./images/flash/flash-1.png",
-  name: "Shoes",
-  price: 100,
-  qty: 2
-},
-{
-  id: 2,
-  discount: 40,
-  cover: "./images/flash/flash-2.png",
-  name: "Watch",
-  price: 20,
-  qty: 2
-},
-{
-  id: 3,
-  discount: 40,
-  cover: "./images/flash/flash-3.png",
-  name: "Smart Mobile Black",
-  price: 200,
-  qty: 2
-},
-{
-  id: 4,
-  discount: 40,
-  cover: "./images/flash/flash-4.png",
-  name: "Smart Watch Black",
-  price: 50,
-  qty: 2
-},
-{
-  id: 5,
-  discount: 50,
-  cover: "./images/flash/flash-1.png",
-  name: "Shoes",
-  price: 100,
-  qty: 2
-},
-{
-  id: 6,
-  discount: 50,
-  cover: "./images/flash/flash-3.png",
-  name: "Shoes",
-  price: 100,
-  qty: 2
-},
+const productOffs: ProductItem[] = [
+  {
+    id: 1,
+    discount: 0,
+    cover: "/images/gameOff/gameoff-1.png",
+    name: "Đào vàng",
+    price: 100,
+  },
+  {
+    id: 2,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-2.png",
+    name: "Goose goose Duck",
+    price: 20,
+  },
+  {
+    id: 3,
+    discount: 40,
+    cover: "./images/gameOff/gameoff-3.png",
+    name: "Subway surfers",
+    price: 200,
+  },
+  {
+    id: 4,
+    discount: 40,
+    cover: "/images/gameOff/gameoff-4.png",
+    name: "solitaired",
+    price: 50,
+  },
+  {
+    id: 5,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-5.png",
+    name: "Plants vs zombies",
+    price: 100,
+  },
+  {
+    id: 6,
+    discount: 0,
+    cover: "/images/gameOff/gameoff-6.png",
+    name: "Candy crush saga",
+    price: 100,
+  },
+  {
+    id: 7,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-7.png",
+    name: "Tom",
+    price: 20,
+  },
+  {
+    id: 8,
+    discount: 40,
+    cover: "/images/gameOff/gameoff-8.png",
+    name: "Angry birds",
+    price: 200,
+  },
+  {
+    id: 9,
+    discount: 40,
+    cover: "/images/gameOff/gameoff-9.png",
+    name: "Temple Run",
+    price: 50,
+  },
+  {
+    id: 10,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-10.png",
+
+    name: "Brain Out",
+    price: 100,
+  },
+  {
+    id: 11,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-11.png",
+
+    name: "Minecraft",
+    price: 100,
+  },
+  {
+    id: 12,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-11.png",
+
+    name: "Minecraft",
+    price: 100,
+  },
+
 ];
 
-export { productItems, cartItems };
+
+const productOns:ProductItem[] = [
+  {
+    id: 13,
+    discount: 50,
+    cover: "/images/gameOn/gameon-2.png",
+    name: "Goose goose Duck",
+    price: 20,
+  },
+  {
+    id: 14,
+    discount: 40,
+    cover: "/images/gameOn/gameon-1.png",
+    name: "PUBG",
+    price: 50,
+  },
+  {
+    id: 15,
+    discount: 40,
+    cover: "/images/gameOn/gameon-3.png",
+    name: "CROSS FIRE",
+    price: 50,
+  },
+  {
+    id: 16,
+    discount: 40,
+    cover: "/images/gameOn/gameon-4.png",
+    name: "League of Legends",
+    price: 200,
+  },
+  {
+    id: 17,
+    discount: 50,
+    cover: "/images/gameOn/gameon-5.png",
+    name: "GTA-5",
+    price: 200,
+  },
+  {
+    id: 18,
+    discount: 50,
+    cover: "/images/gameOn/gameon-6.png",
+    name: "Zing Speed",
+    price: 100,
+  },
+  {
+    id: 19,
+    discount: 50,
+    cover: "/images/gameOn/gameon-7.png",
+    name: "Audision",
+    price: 20,
+  },
+  {
+    id: 20,
+    discount: 40,
+    cover: "/images/gameOn/gameon-8.png",
+    name: "Võ Lâm",
+    price: 50,
+  },
+  {
+    id: 21,
+    discount: 40,
+    cover: "/images/gameOn/gameon-9.png",
+    name: "MU",
+    price: 50,
+  },
+  {
+    id: 22,
+    discount: 40,
+    cover: "/images/gameOn/gameon-10.png",
+    name: "Avata Star",
+    price: 200,
+  },
+  {
+    id: 23,
+    discount: 50,
+    cover: "/images/gameOn/gameon-11.png",
+    name: "Chiến Cơ Huyền Thoại",
+    price: 20,
+  },
+  {
+    id: 24,
+    discount: 50,
+    cover: "/images/gameOn/gameon-12.png",
+    name: "Quyền Vương",
+    price: 100,
+  },
+]
+
+// Chuyển đổi ProductItem thành CartItem
+const cartItems: CartItem[] = productOffs.map(product => ({
+  ...product,
+  qty: 1, // Đặt qty mặc định là 1
+}));
+
+
+export { productItems, productOffs, productOns, cartItems};
 

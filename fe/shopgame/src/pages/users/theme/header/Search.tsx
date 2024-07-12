@@ -2,12 +2,10 @@ import React, {useEffect} from "react"
 // import logo from "../../components/assets/images/logo.svg"
 import {Link, Outlet} from "react-router-dom"
 import User from "../../../../component/user/User";
+import { RootState, useAppSelector } from '../../../../store/Store';
 
-interface SearchProps{
-    CartItem: number;
-}
-
-const Search:React.FC<SearchProps> = ({ CartItem }) => {
+const Search:React.FC = () => {
+  const cart = useAppSelector((state: RootState) => state.cart);
   // fixed Header
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +43,7 @@ const Search:React.FC<SearchProps> = ({ CartItem }) => {
               <div className='cart'>
               <Link to='/cart'>
                 <i className='fa fa-shopping-bag icon-circle'></i>
-                <span>{CartItem === 0 ? "" : CartItem}</span>
+                <span>{cart.length}</span>
               </Link>
             </div>
           </div>

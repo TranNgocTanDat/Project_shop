@@ -1,16 +1,27 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import "./style.css"
 import { CartItem as CartItemType } from "../../../../component/Pdata";
+import { RootState, useAppSelector } from '../../../../store/Store';
 
 interface CartProps {
-  CartItem: CartItemType[];
   addToCart: (item: CartItemType) => void;
   decreaseQty: (item: CartItemType) => void;
 }
 
-const Cart: React.FC<CartProps> = ({ CartItem, addToCart, decreaseQty }) => {
+const Cart: React.FC<CartProps> = ({addToCart, decreaseQty }) => {
+  
+  const cart = useAppSelector((state: RootState) => state.cart);
+
+   // Sử dụng useState để lưu trữ giá trị của CartItem
+   const [cartItemsState, setCartItemsState] = useState<CartItemType[]>(cart);
+  console.log(cartItemsState)
+   // Cập nhật cartItemsState khi cart thay đổi
+   useEffect(() => {
+     setCartItemsState(cartItemsState);
+   }, [cart]);
+  
   // Stpe: 7   calucate total of items
-  const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
+  const totalPrice = cartItemsState.reduce((price, item) => price + item.qty * item.price, 0)
 
   // prodcut qty total
   return (
@@ -20,10 +31,10 @@ const Cart: React.FC<CartProps> = ({ CartItem, addToCart, decreaseQty }) => {
           {/* if hamro cart ma kunai pani item xaina bhane no diplay */}
 
           <div className='cart-details'>
-            {CartItem.length === 0 && <h1 className='no-items product'>No Items are add in Cart</h1>}
+            {cartItemsState.length === 0 && <h1 className='no-items product'>No Items are add in Cart</h1>}
 
             {/* yasma hami le cart item lai display garaaxa */}
-            {CartItem.map((item) => {
+            {cartItemsState.map((item) => {
               const productQty = item.price * item.qty
 
               return (
@@ -34,8 +45,8 @@ const Cart: React.FC<CartProps> = ({ CartItem, addToCart, decreaseQty }) => {
                   <div className='cart-details'>
                     <h3>{item.name}</h3>
                     <h4>
-                      ${item.price}.00 * {item.qty}
-                      <span>${productQty}.00</span>
+                      {item.price}.00 * {item.qty}
+                      <span>{productQty}.00</span>
                     </h4>
                   </div>
                   <div className='cart-items-function'>

@@ -11,7 +11,7 @@ const Header:React.FC<HeaderProps> = ({ CartItem }) => {
     return(
         <>
         <Head/>
-        <Search CartItem={CartItem} />
+        <Search />
         <Navbar/>
         </>
     )
