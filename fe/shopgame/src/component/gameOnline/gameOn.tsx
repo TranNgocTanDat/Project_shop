@@ -18,7 +18,7 @@ export const Test: React.FC = () => {
 
     const dispatch = useAppDispatch();
     const handleAddToCart = (product: ProductItem) => {
-        dispatch(addCart([(product)]));
+        // dispatch(addCart((product)));
     };
 
     return (<div>

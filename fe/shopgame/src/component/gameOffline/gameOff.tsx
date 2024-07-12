@@ -1,52 +1,69 @@
 import React, { useState } from "react"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import './style.css'
 import { Link } from "react-router-dom"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import './style.css'
 
-import { RootState, useAppDispatch, useAppSelector } from '../../store/Store';
-import { addCart, loadProduct } from "../../store/Action"
-import { ProductItem } from "../Pdata"
-import { useSelector } from "react-redux"
-
-
-
-
+import { addCart } from "../../store/Action"
+import { RootState, useAppDispatch, useAppSelector } from '../../store/Store'
+import { CartItem, ProductItem } from "../Pdata"
 
 
 
-export const Test: React.FC = () => {
-    const products = useAppSelector((state: RootState) => state.products);
-    // const cart = useAppSelector((state: RootState) => state.cart);
 
-    const dispatch = useAppDispatch();
-    const handleAddToCart = (product: ProductItem) => {
-        dispatch(addCart([(product)]));
-    };
 
-    return (<div>
 
-        <div className="row">
-            {products.map(product => (
-                <GameOffline key={product.id}
-                    productOffs={[product]}
-                    addToCart={handleAddToCart}
-                />
-            ))}
-        </div>
-    </div>
-    );
-}
+
+// export const Test: React.FC = () => {
+//     const products = useAppSelector((state: RootState) => state.products);
+//     let cart = useAppSelector((state: RootState) => state.cart);
+
+//     const dispatch = useAppDispatch();
+//     const handleAddToCart = (product: ProductItem) => {
+//         const productExist = cart.find((item) => item.id === product.id);
+//         let addItem;
+//         if (productExist) {
+//                 cart.map((item) => {
+//                     if (item.id = productExist.id) {
+//                         addItem = ({ ...productExist, qty: productExist.qty + 1 });
+//                         return addItem;
+//                     }
+//                     else {
+//                         return item;
+//                     }
+//                 }
+//             );
+//         } else {
+//             addItem = { ...product, qty: 1 }
+//             cart = [...cart, addItem]
+//         }
+//         dispatch(addCart(cart));
+//     };
+
+//     return (<div>
+
+//         <div className="row">
+//             {products.map(product => (
+//                 <GameOffline key={product.id}
+//                     productOffs={[product]}
+//                     addToCart={handleAddToCart}
+//                     item={{...product, qty: 0}}
+//                 />
+//             ))}
+//         </div>
+//     </div>
+//     );
+// }
 
 
 // Định nghĩa kiểu cho các props của FlashCard
 interface GameOfflineProps {
     productOffs: ProductItem[];
-    addToCart: (product: ProductItem) => void;
+    addToCart: (product: CartItem) => void;
+    item: CartItem;
 }
 
-const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart }) => {
+const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart, item}) => {
     const [count, setCount] = useState(0)
     const increment = () => {
         setCount(count + 1)
@@ -54,8 +71,8 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart }) => 
     const dispatch = useAppDispatch();
 
     const handleProductClick = (product: ProductItem) => {
-        dispatch(addCart([product]));
-        addToCart(product)
+        addToCart({...product, qty: 1})
+        // dispatch(addCart(item));
     };
 
 

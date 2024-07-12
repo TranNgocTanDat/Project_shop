@@ -41,10 +41,9 @@ export const root = (state: AppState = initState, action: PayloadAction<any>) =>
         }
         case "cart.add": {
             
-            const newProduct: CartItem = action.payload;
-            const newCart = [...state.cart, newProduct];
+            const newCart: CartItem[] = action.payload;
             saveCart(newCart);
-
+            // console.log(newCart)
             return {
                 ...state,
                 cart: newCart,
@@ -67,8 +66,8 @@ export const root = (state: AppState = initState, action: PayloadAction<any>) =>
 
 // Function to save cart to localStorage
 function saveCart(cart: CartItem[]) {
-    localStorage.setItem('cart', JSON.stringify(cart));
     // localStorage.removeItem('cart');
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 export default root;
