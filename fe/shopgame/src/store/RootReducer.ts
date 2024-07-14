@@ -43,15 +43,13 @@ export const root = (state: AppState = initState, action: PayloadAction<any>) =>
             
             const newCart: CartItem[] = action.payload;
             saveCart(newCart);
-            // console.log(newCart)
             return {
                 ...state,
                 cart: newCart,
             };
         }
         case "cart.minus": {
-            const productId: number = action.payload;
-            const newCart = state.cart.filter(product => product.id !== productId);
+            const newCart: CartItem[] = action.payload;
             saveCart(newCart);
 
             return {

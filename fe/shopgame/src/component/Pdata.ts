@@ -17,14 +17,14 @@ export interface CartItem extends ProductItem {
 
 const productItems: ProductItem[] = [
   {
-    id: 1,
+    id: 49,
     discount: 50,
     cover: "/images/gameOff/gameoff-2.png",
     name: "Goose goose Duck",
     price: 20,
   },
   {
-    id: 2,
+    id: 50,
     discount: 40,
     cover: "/images/gameOff/gameoff-4.png",
     
@@ -32,28 +32,28 @@ const productItems: ProductItem[] = [
     price: 50,
   },
   {
-    id: 3,
+    id: 51,
     discount: 40,
     cover: "/images/gameOff/gameoff-9.png",
     name: "Temple Run",
     price: 50,
   },
   {
-    id: 4,
+    id: 52,
     discount: 40,
     cover: "/images/gameOff/gameoff-8.png",
     name: "Angry birds",
     price: 200,
   },
   {
-    id: 5,
+    id: 53,
     discount: 50,
     cover: "/images/gameOff/gameoff-7.png",
     name: "Tom",
     price: 20,
   },
   {
-    id: 6,
+    id: 54,
     discount: 50,
     cover: "/images/gameOff/gameoff-10.png",
     name: "Brain Out",
@@ -79,7 +79,7 @@ const productOffs: ProductItem[] = [
   {
     id: 3,
     discount: 40,
-    cover: "./images/gameOff/gameoff-3.png",
+    cover: "/images/gameOff/gameoff-3.png",
     name: "Subway surfers",
     price: 200,
   },
@@ -240,6 +240,180 @@ const productOns:ProductItem[] = [
   },
 ]
 
+const productPlays: ProductItem[] = [
+  {
+    id: 25,
+    discount: 50,
+    cover: "./images/gamePlay/gameplay-1.png",
+    name: "FIFA 4",
+    price: 20,
+  },
+  {
+    id: 26,
+    discount: 40,
+    cover: "./images/gamePlay/gameplay-2.png",
+    name: "Super Mario",
+    price: 50,
+  },
+  {
+    id: 27,
+    discount: 40,
+    cover: "./images/gamePlay/gameplay-3.png",
+    name: "Hollow Knight",
+    price: 50,
+  },
+  {
+    id: 28,
+    discount: 40,
+    cover: "./images/gamePlay/gameplay-4.png",
+    name: "Devil May Cry 5",
+    price: 200,
+  },
+  {
+    id: 29,
+    discount: 50,
+    cover: "./images/gamePlay/gameplay-5.png",
+    name: "Nioh",
+    price: 200,
+  },
+  {
+    id: 30,
+    discount: 50,
+    cover: "./images/gamePlay/gameplay-6.png",
+    name: "Cuphead",
+    price: 100,
+  },{
+    id: 31,
+    discount: 50,
+    cover: "./images/gamePlay/gameplay-7.png",
+    name: "Sonic & Sega All-Stars Racing",
+    price: 20,
+  },
+  {
+    id: 32,
+    discount: 40,
+    cover: "./images/gamePlay/gameplay-8.png",
+    name: "Đấu Trường Thú 3",
+    price: 50,
+  },
+  {
+    id: 33,
+    discount: 40,
+    cover: "./images/gamePlay/gameplay-9.png",
+    name: "Disney Universe",
+    price: 50,
+  },
+  {
+    id: 34,
+    discount: 40,
+    cover: "./images/gamePlay/gameplay-10.png",
+    name: "Renegade Ops",
+    price: 200,
+  },
+  {
+    id: 35,
+    discount: 50,
+    cover: "./images/gamePlay/gameplay-11.png",
+    name: "Deathspank Trilogy",
+    price: 20,
+  },
+  {
+    id: 36,
+    discount: 50,
+    cover: "./images/gamePlay/gameplay-12.png",
+    name: "Naruto Shippuden Ninja Storm 3",
+    price: 100,
+  },
+];
+
+const productSteams: ProductItem[] = [
+  {
+    id: 37,
+    discount: 50,
+    cover: "./images/gameSteam/gamesteam-1.png",
+    name: "APEX",
+    price: 20,
+  },
+  {
+    id: 38,
+    discount: 40,
+    cover: "./images/gameSteam/gamesteam-2.png",
+    name: "Back 4 Blood",
+    price: 50,
+  },
+  {
+    id: 39,
+    discount: 40,
+    cover: "./images/gameSteam/gamesteam-3.png",
+    name: "MUCK",
+    price: 50,
+  },
+  {
+    id: 40,
+    discount: 40,
+    cover: "./images/gameSteam/gamesteam-4.png",
+    name: "PALADINS",
+    price: 200,
+  },
+  {
+    id: 41,
+    discount: 50,
+    cover: "./images/gameSteam/gamesteam-5.png",
+    name: "UNDERLORDS",
+    price: 200,
+  },
+  {
+    id: 42,
+    discount: 50,
+    cover: "./images/gameSteam/gamesteam-6.png",
+    name: "SEA OF THIEVES",
+    price: 100,
+  },
+  {
+    id: 43,
+    discount: 50,
+    cover: "./images/gameSteam/gamesteam-7.png",
+    name: "BRAWHALLA",
+    price: 20,
+  },
+  {
+    id: 44,
+    discount: 40,
+    cover: "./images/gameSteam/gamesteam-8.png",
+    name: "REALM ROYALE",
+    price: 50,
+  },
+  {
+    id: 45,
+    discount: 40,
+    cover: "./images/gameSteam/gamesteam-9.png",
+    name: "BUSINESS TOUR",
+    price: 50,
+  },
+  {
+    id: 46,
+    discount: 40,
+    cover: "./images/gameSteam/gamesteam-10.png",
+    name: "COUNTER STRIKE",
+    price: 200,
+  },
+  {
+    id: 47,
+    discount: 50,
+    cover: "./images/gameSteam/gamesteam-11.png",
+    name: "JUST ACT NATUPAL",
+    price: 20,
+  },
+  {
+    id: 48,
+    discount: 50,
+    cover: "./images/gameSteam/gamesteam-12.png",
+    name: "Cry of Fear",
+    price: 100,
+  },
+];
+
+
 // Chuyển đổi ProductItem thành CartItem
 const cartItems: CartItem[] = productOffs.map(product => ({
   ...product,
@@ -247,5 +421,5 @@ const cartItems: CartItem[] = productOffs.map(product => ({
 }));
 
 
-export { productItems, productOffs, productOns, cartItems};
+export { productItems, productOffs, productOns, productPlays, productSteams, cartItems};
 

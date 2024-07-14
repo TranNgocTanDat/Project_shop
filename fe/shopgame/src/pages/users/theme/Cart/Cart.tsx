@@ -32,7 +32,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty }) => {
 
             {/* yasma hami le cart item lai display garaaxa */}
             {cart.map((item, index) => {
-              const productQty = item.price * item.qty
+              const productQty = ((item.price * item.discount)/100) * item.qty
               if (item.id)
               return (
                 <div className='cart-list product d_flex' key={index}>
@@ -42,8 +42,8 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty }) => {
                   <div className='cart-details'>
                     <h3>{item.name}</h3>
                     <h4>
-                      {item.price}.00 * {item.qty}
-                      <span>{productQty}.00</span>
+                      {item.price} * {item.qty}
+                      <span >{productQty}.00</span>
                     </h4>
                   </div>
                   <div className='cart-items-function'>
@@ -59,7 +59,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty }) => {
                       <button className='incCart' onClick={() => addToCart(item)}>
                         <i className='fa-solid fa-plus'></i>
                       </button>
-                      <span>{item.qty}</span>
+                      <span className="cart-qty">{item.qty}</span>
                       <button className='desCart' onClick={() => decreaseQty(item)}>
                         <i className='fa-solid fa-minus'></i>
                       </button>
