@@ -2,15 +2,13 @@ import React, { useState } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { ProductItem } from "../Pdata"
-// import { useDispatch, useSelector } from "react-redux";
+import { CartItem, ProductItem } from "../Pdata"
 import { Link } from "react-router-dom"
-// import { RootState } from "../../store/Store"
 
 // Định nghĩa kiểu cho các props của FlashCard
 interface FlashCardProps {
   productItems: ProductItem[];
-  addToCart: (product: ProductItem) => void;
+  addToCart: (product: CartItem) => void;
 }
 
 // Định nghĩa kiểu cho SampleNextArrow và SamplePrevArrow
@@ -44,6 +42,14 @@ export const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart })
   const increment = () => {
     setCount(count + 1)
   }
+
+  const handleProductClick = (product: ProductItem) => {
+    addToCart({ ...product, qty: 1 })
+
+  };
+
+  const [products, setProducts] = useState(productItems);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -57,38 +63,41 @@ export const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart })
   return (
     <>
       <Slider {...settings}>
-        {productItems.map((productItems) => {
+        {products.map((product) => {
           return (
             <div className='box' >
               <div className='product mtop'>
+                <Link to={`/productDetail/${product.id}`}>
                 <div className='img'>
-                  <span className='discount'>{productItems.discount}% Off</span>
-                  <img className="img__flash" src={productItems.cover1} alt='' />
+                  <span className='discount'>{product.discount}% Off</span>
+                  <img className="img__flash" src={product.cover} alt='' />
                   <div className='product-like'>
                     <label>{count}</label> <br />
                     <i className='fa-regular fa-heart' onClick={increment}></i>
                   </div>
-                  <div className='product-details'>
-                    <h3>{productItems.name}</h3>
-                    <div className='rate'>
-                      <i className='fa fa-star'></i>
-                      <i className='fa fa-star'></i>
-                      <i className='fa fa-star'></i>
-                      <i className='fa fa-star'></i>
-                      <i className='fa fa-star'></i>
-                    </div>
-                    <div className='price'>
-                      <h4>${productItems.price}.00 </h4>
-                      {/* step : 3  
+                </div>
+                </Link>
+                <div className='product-details'>
+                  <h3>{product.name}</h3>
+                  <div className='rate'>
+                    <i className='fa fa-star'></i>
+                    <i className='fa fa-star'></i>
+                    <i className='fa fa-star'></i>
+                    <i className='fa fa-star'></i>
+                    <i className='fa fa-star'></i>
+                  </div>
+                  <div className='price'>
+                    <h4>${product.price}.00 </h4>
+                    {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}
-                      <button onClick={() => addToCart(productItems)}>
-                        <i className='fa fa-plus'></i>
-                      </button>
-                    </div>
+                    <button onClick={() => handleProductClick(product)}>
+                      <i className='fa fa-plus'></i>
+                    </button>
                   </div>
-
                 </div>
+
+
 
               </div>
             </div>

@@ -11,10 +11,10 @@ interface MasterLayoutProps {
 }
 
 
-const MasterLayout: React.FC<MasterLayoutProps> = ({ children, CartItem, ...props }) => {
+const MasterLayout: React.FC<MasterLayoutProps> = ({ children, ...props }) => {
     return(
         <div>
-        <Header CartItem={CartItem}/>   
+        <Header />   
        {children}
         <Footer/>
         </div>

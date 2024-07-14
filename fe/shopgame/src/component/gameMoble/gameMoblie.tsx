@@ -8,13 +8,13 @@ import { CartItem, ProductItem } from "../Pdata"
 
 
 // Định nghĩa kiểu cho các props của FlashCard
-interface GameOfflineProps {
+interface GameMoblieProps {
     productOffs: ProductItem[];
     addToCart: (product: CartItem) => void;
     
 }
 
-const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart}) => {
+const GameMoblie: React.FC<GameMoblieProps> = ({ productOffs, addToCart}) => {
     const [count, setCount] = useState(0)
     const increment = () => {
         setCount(count + 1)
@@ -32,7 +32,7 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart}) => {
         <>
             <div className="top__game">
                 <h1 className="top__game--title">
-                    Game Offline
+                    GameeMoblie
                 </h1>
                
             </div>
@@ -86,4 +86,4 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart}) => {
     )
 }
 
-export default GameOffline
+export default GameMoblie

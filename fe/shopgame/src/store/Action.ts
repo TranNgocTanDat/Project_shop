@@ -26,3 +26,15 @@ export const addCart = (data: CartItem[]): AddToCartAction => {
         payload: data,
     };
 };
+
+export interface RmToCartAction {
+    type: 'cart.minus';
+    payload: CartItem[];
+}
+
+export const rmCart = (data: CartItem[]): RmToCartAction => {
+    return {
+        type: 'cart.minus',
+        payload: data,
+    };
+};
