@@ -104,6 +104,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty }) => {
                 </button>
               </div>
               {message && <div className="message">{message}</div>}
+              </div>
           <div className='cart-details'>
             {cart.length === 0 && <h1 className='no-items product'>No Items are add in Cart</h1>}
 
@@ -155,6 +156,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty }) => {
               <h4>Total Price :</h4>
               <h3>{total}.00</h3>
             </div>
+          </div>
           </div>
         </section>
       </>
