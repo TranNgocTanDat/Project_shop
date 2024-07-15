@@ -58,30 +58,7 @@ const AppRouter: React.FC = () => {
         }
     };
 
-    // Thanh toán cập nhập số dư
-    const [user, setUser] = useState<DataUser | null>(null);
-    const [balance, setBalance] = useState<number | null>(null);
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-          const user = JSON.parse(storedUser);
-          const balance = getBalance(user);
-          setBalance(balance);
-          setUser(user);
-        }
-      }, []);
-
-      const handlePayment = (total: number) => {
-        if (user && balance !== null && balance >= total) {
-          const newBalance = balance - total;
-          setBalance(newBalance);
-          updateUser(user, newBalance);
-          return "Thanh toán thành công";
-        } else {
-          return user === null ? "Vui lòng đăng nhập" : "Số dư không đủ";
-        }
-      };
 
 
     const userRouters: RouteObject[] = [
@@ -95,7 +72,7 @@ const AppRouter: React.FC = () => {
         },
         {
             path: '/cart',
-            element: <Cart user={user} balance={balance} handlePayment={handlePayment} addToCart={addToCart} decreaseQty={decreaseQty} />,
+            element: <Cart addToCart={addToCart} decreaseQty={decreaseQty} />,
         },
         {
             path: '/game_offline',

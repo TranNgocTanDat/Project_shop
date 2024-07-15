@@ -1,45 +1,109 @@
-.user {
-    width: 100%;
-    height: 100%;
-    display: grid;
+.main{
+    display: flex;
     justify-content: center;
-    padding: 100px;
-
 }
-.user__Tlogin{
-    font-weight: bold;
-    font-size: 20px;
-    padding-bottom: 50px;
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    width: 400px;
+    height: 100vh;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.user__title{
-    color: darkgray;
+.user__container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
 }
-.user__title--pass{
+
+.user__Tlogin {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.user__title {
+    color: #666;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.user__title--pass {
     margin-top: 20px;
 }
 
-.user__input{
-    border: solid black 1px;
-    padding: 10px 80px;
+.user__input {
+    border: 1px solid #ddd;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.user__login{
-    margin-top: 50px;
-    width: 100px;
-    height: 25px;
-    text-align: center;
+.user__input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
 }
 
-.user__error{
+.user__login {
+    background: #007bff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+.user__login:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.user__error {
     color: red;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.logout{
-    width: 80px;
-    height: 30px;
+.logout {
+    background: darkgray;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
     position: absolute;
     top: 400px;
-    left: 485px;
+    right: 945px;
+}
+
+.logout:hover {
+    background: #a71d2a;
+    transform: translateY(-2px);
 }
