@@ -3,11 +3,9 @@ import Head from './Head'
 import Navbar from './Navbar'
 import Search from './Search'
 
-interface HeaderProps{
-    CartItem: number;
-}
 
-const Header:React.FC<HeaderProps> = ({ CartItem }) => {
+
+const Header:React.FC = () => {
     return(
         <>
         <Head/>

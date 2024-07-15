@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ProductItem, productItems, productOffs, productOns } from '../Pdata'
+import { CartItem, ProductItem, productItems, productOffs, productOns } from '../Pdata'
 import { useLoaderData, LoaderFunctionArgs } from 'react-router-dom';
 import './styleProduct.css'
 import Slider from "react-slick"
@@ -54,14 +54,28 @@ const SamplePrevArrow: React.FC<ArrowProps> = (props) => {
     )
 }
 
-const ViewTest: React.FC = () => {
-    const product = useLoaderData() as ProductItem | null;
-    console.log('Product in ViewTest:', useLoaderData() as ProductItem | null);
+interface ProductDetailProps{
+    addToCart: (product: ProductItem, qty: number) => void;
+}
 
-    const [count, setCount] = useState(0);
-    const increment = () => {
-        setCount(count + 1)
-    }
+const ProductDetail: React.FC<ProductDetailProps> = ({addToCart}) => {
+    const product = useLoaderData() as ProductItem | null;
+    const [count, setCount] = useState(1);
+    const handleProductClick = (product: ProductItem) => {
+        addToCart(product, count)
+        
+    };
+
+    
+    const incrementQty = () => {
+        setCount(count + 1);
+    };
+
+    const decrementQty = () => {
+        if (count > 1) {
+            setCount(count - 1);
+        }
+    };
     const settings = {
         dots: false,
         infinite: true,
@@ -109,10 +123,10 @@ const ViewTest: React.FC = () => {
 
                                 <div className="wrapper">
 
-                                    <span className="price" data-total-price>${product.price}</span>
+                                    <span className="price" data-total-price>{((product.price*product.discount)/100)*count}</span>
                                     <span className="badge">{product.discount}</span>
 
-                                    <del className="del">$40.00</del>
+                                    <del className="del">{product.price * count}</del>
 
                                 </div>
 
@@ -120,19 +134,19 @@ const ViewTest: React.FC = () => {
 
                                     <div className="counter-wrapper">
 
-                                        <button className="counter-btn" data-qty-minus>
+                                        <button className="counter-btn" onClick={decrementQty} data-qty-minus>
                                             <i className="fa-solid fa-minus"></i>
                                         </button>
 
-                                        <span className="span" data-qty>1</span>
+                                        <span className="span" data-qty>{count}</span>
 
-                                        <button className="counter-btn" data-qty-plus>
+                                        <button className="counter-btn" onClick={incrementQty} data-qty-plus>
                                             <i className="fa-solid fa-plus"></i>
                                         </button>
 
                                     </div>
 
-                                    <button className="cart-btn" >
+                                    <button className="cart-btn" onClick={() => handleProductClick(product)}>
                                         <i className="fa-solid fa-bag-shopping"></i>
                                         <span className="span">Add to cart</span>
                                     </button>
@@ -152,4 +166,4 @@ const ViewTest: React.FC = () => {
 
 };
 
-export default ViewTest
+export default ProductDetail

@@ -5,43 +5,12 @@ import "slick-carousel/slick/slick-theme.css"
 import './style.css'
 import { Link } from "react-router-dom"
 
-import { RootState, useAppDispatch, useAppSelector } from '../../store/Store';
-import { addCart, loadProduct } from "../../store/Action"
-import { ProductItem } from "../Pdata"
+import { CartItem, ProductItem } from "../Pdata"
 
 
-
-
-
-export const Test: React.FC = () => {
-    const products = useAppSelector((state: RootState) => state.products);
-
-    const dispatch = useAppDispatch();
-    const handleAddToCart = (product: ProductItem) => {
-        // dispatch(addCart((product)));
-    };
-
-    return (<div>
-
-        <div className="row">
-            {products.map(product => (
-                <GameOnline key={product.id}
-                    productOns={[product]}
-
-                    addToCart={handleAddToCart}
-                />
-            ))}
-        </div>
-    </div>
-    );
-}
-
-
-// Định nghĩa kiểu cho các props của FlashCard
 interface GameOnlineProps {
     productOns: ProductItem[];
-
-    addToCart: (product: ProductItem) => void;
+    addToCart: (product: CartItem) => void;
 }
 
 const GameOnline: React.FC<GameOnlineProps> = ({ productOns, addToCart }) => {
@@ -49,10 +18,9 @@ const GameOnline: React.FC<GameOnlineProps> = ({ productOns, addToCart }) => {
     const increment = () => {
         setCount(count + 1)
     }
-    const dispatch = useAppDispatch();
 
     const handleProductClick = (product: ProductItem) => {
-        dispatch(loadProduct([product]));
+        addToCart({...product, qty: 1})
     };
 
 
@@ -74,7 +42,7 @@ const GameOnline: React.FC<GameOnlineProps> = ({ productOns, addToCart }) => {
                                 <div className='box f-grid-col'>
 
                                     <div className='product mtop'>
-                                        <Link to={`/v/${product.id}`}>
+                                        <Link to={`/productDetail/${product.id}`}>
                                             <div className='img'>
                                                 <span className='discount'>{product.discount}% Off</span>
                                                 <img className="cover__gameOff" src={product.cover} alt='' />
@@ -95,7 +63,7 @@ const GameOnline: React.FC<GameOnlineProps> = ({ productOns, addToCart }) => {
                                             </div>
                                             <div className='price'>
                                                 <h4>${product.price}.00 </h4>
-                                                <button onClick={() => addToCart(product)}>
+                                                <button onClick={() => handleProductClick(product)}>
                                                     <a href="/public/gameOff.json" download="/public/gameOff.json"></a>
                                                     <i className='fa fa-plus'></i>
                                                 </button>

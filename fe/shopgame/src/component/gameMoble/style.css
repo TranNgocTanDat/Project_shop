@@ -1,0 +1,35 @@
+.flash {
+  background: #f6f9fc;
+  padding: 50px 0;
+}
+
+.top__game {
+  width: auto;
+  height: 100px;
+  background-color: antiquewhite;
+  position: relative;
+}
+.top__game .top__game--title {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translateY(-50%);
+}
+
+.center__game .f-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -1rem;
+  flex-flow: row wrap;
+}
+.center__game .f-grid-col {
+  height: 500px;
+  flex: 1 -1;
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.cover__gameOff {
+  width: 240px;
+  height: 270px;
+}/*# sourceMappingURL=style.css.map */
