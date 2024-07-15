@@ -25,7 +25,9 @@ export const updateUser = (users: DataUser, newBalance: number): DataUser | null
     const user = check(users.userName, users.passWord);
     if(user){
         user.balance = newBalance;
+        console.log(user)
         return user;
+    }else{
+        return null;
     }
-    return null;
 }
