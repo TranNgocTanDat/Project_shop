@@ -7,6 +7,7 @@ export interface DataUser{
     phone: string;
     adress: string;
     cccd: string;
+    balance: number;
 }
 
 const users: DataUser[]=[
@@ -18,7 +19,8 @@ const users: DataUser[]=[
         mail: "danh@gmail.com",
         phone: "0111",
         adress: "Tay Ninh",
-        cccd: "1818"
+        cccd: "1818",
+        balance: 2000
     },
     {
         id: 2,
@@ -28,7 +30,8 @@ const users: DataUser[]=[
         mail: "dat@gmail.com",
         phone: "0222",
         adress: "Da Lat",
-        cccd: "1212"
+        cccd: "1212",
+        balance: 2000
     }
 ];
 

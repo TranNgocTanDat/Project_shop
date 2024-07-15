@@ -31,6 +31,7 @@ const Infor: React.FC<InforProps> = ({user}) => {
                 <div className="infor__phone">Phone: {user.phone}</div>
                 <div className="infor__adress">Adress: {user.adress}</div>
                 <div className="infor__cccd">CCCD: {user.cccd}</div>
+                <div className="infor__cccd">balance: {user.balance}</div>
             </div>
         </div>
     );

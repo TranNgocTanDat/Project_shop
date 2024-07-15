@@ -96,3 +96,14 @@
   text-align: center;
   margin: 20px 0;
 }
+
+.pay .bnt_pay{
+  margin-top: 50px;
+  width: 100%;
+  height: 45px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: #e94560;
+  border-radius: 10px;
+}
