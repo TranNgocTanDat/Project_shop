@@ -39,7 +39,6 @@ const User: React.FC = () => {
             setError('Invalid username or password');
         }
     };
-
     // đăng xuất
 
     const handleLogout = () => {
@@ -51,7 +50,7 @@ const User: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="main">
             {user ? (
                 <>
                     <Infor user={user} balance={balance} />

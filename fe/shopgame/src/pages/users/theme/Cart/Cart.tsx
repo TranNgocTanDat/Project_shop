@@ -17,7 +17,6 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
   const cart = useAppSelector((state: RootState) => state.cart);
   const [user, setUser] = useState<DataUser | null>(null);
   const [balance, setBalance] = useState<number | null>(null);
-
   const [message, setMessage] = useState<string | null>(null);
 
   let total = 0;
@@ -56,7 +55,6 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
       setMessage("Số dư không đủ");
     }
   };
-
   return (
     <>
       <section className='cart-items'>

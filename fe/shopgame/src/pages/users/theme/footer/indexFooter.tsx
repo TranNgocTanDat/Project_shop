@@ -6,8 +6,8 @@ const Footer = () => {
             <footer>
                 <div className='container grid2'>
                     <div className='box'>
-                        <h1>Bonik</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat et lectus vel ut sollicitudin elit at amet.</p>
+                        <h1>Double D</h1>
+                        <p> Chúng tôi mang đến những trãi nghiệm thu vị cho các bạn, sự hài lòng về trãi nghiệm của các bạn chính là niềm hạnh phúc của chúng tôi. </p>
                         <div className='icon d_flex'>
                             <div className='img d_flex'>
                                 <i className='fa-brands fa-google-play'></i>
@@ -20,31 +20,28 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='box'>
-                        <h2>About Us</h2>
+                        <h2>Về Chúng tôi</h2>
                         <ul>
-                            <li>Careers</li>
-                            <li>Our Stores</li>
-                            <li>Our Cares</li>
-                            <li>Terms & Conditions</li>
-                            <li>Privacy Policy</li>
+                            <li>Hotline: 0868849543</li>
+                            <li>doubleD@gmail.com</li>
+                            <li>Nhà sáng lập: 2</li>
+
                         </ul>
                     </div>
                     <div className='box'>
-                        <h2>Customer Care</h2>
+                        <h2>Nhà sáng lập</h2>
                         <ul>
-                            <li>Help Center </li>
-                            <li>How to Buy </li>
-                            <li>Track Your Order </li>
-                            <li>Corporate & Bulk Purchasing </li>
-                            <li>Returns & Refunds </li>
+                            <li>Danh Nguyen</li>
+                            <li>Tan Dat</li>
                         </ul>
                     </div>
                     <div className='box'>
-                        <h2>Contact Us</h2>
+                        <h2>Thể loại game</h2>
                         <ul>
-                            <li>70 Washington Square South, New York, NY 10012, United States </li>
-                            <li>Email: uilib.help@gmail.com</li>
-                            <li>Phone: +1 1123 456 780</li>
+                            <li>Online</li>
+                            <li>Offline</li>
+                            <li>Mobile</li>
+                            <li>Develop</li>
                         </ul>
                     </div>
                 </div>
