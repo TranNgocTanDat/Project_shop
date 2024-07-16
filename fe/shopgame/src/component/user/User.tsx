@@ -45,7 +45,7 @@ const User: React.FC = () => {
     const handleLogout = () => {
         setUser(null);
         setBalance(null);
-        setIsLoggedIn(false);
+        
         localStorage.removeItem('user');
         setError('');
     };

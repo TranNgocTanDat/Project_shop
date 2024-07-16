@@ -8,15 +8,15 @@ import user from "../../../../component/user/User";
 import { DataUser } from "../../../../component/user/dataUser";
 
 interface CartProps {
-  user: DataUser | null;
-  balance: number | null;
-  handlePayment: (total: number) => string;
   addToCart: (item: CartItemType) => void;
   decreaseQty: (item: CartItemType) => void;
+  removeToCart:(item: CartItemType) => void;
 }
 
-const Cart: React.FC<CartProps> = ({user, balance, handlePayment, addToCart, decreaseQty }) => {
+const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => {
   const cart = useAppSelector((state: RootState) => state.cart);
+  const [user, setUser] = useState<DataUser | null>(null);
+  const [balance, setBalance] = useState<number | null>(null);
 
   const [message, setMessage] = useState<string | null>(null);
 
@@ -26,9 +26,35 @@ const Cart: React.FC<CartProps> = ({user, balance, handlePayment, addToCart, dec
       total += item?.price * item?.qty;
   });
 
-  const handlePaymentClick = () => {
-    const resultMessage = handlePayment(total);
-    setMessage(resultMessage);
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      const balance = getBalance(user);
+      setBalance(balance);
+      setUser(user);
+    }
+  }, []);
+
+  const handlePayment = () => {
+    const storedUser = localStorage.getItem('user');
+    if (!storedUser) {
+      setMessage("Vui lòng đăng nhập");
+      return;
+    }
+
+    const user = JSON.parse(storedUser);
+    const balance = getBalance(user);
+
+    if (balance !== null && balance >= total) {
+      const newBalance = balance - total;
+      setBalance(newBalance);
+      updateUser(user, newBalance);
+      console.log(newBalance);
+      setMessage("Thanh toán thành công");
+    } else {
+      setMessage("Số dư không đủ");
+    }
   };
 
   return (
@@ -54,7 +80,7 @@ const Cart: React.FC<CartProps> = ({user, balance, handlePayment, addToCart, dec
                     </div>
                     <div className='cart-items-function'>
                       <div className='removeCart'>
-                        <button className='removeCart'>
+                        <button className='removeCart' onClick={() => removeToCart(item)}>
                           <i className='fa-solid fa-xmark'></i>
                         </button>
                       </div>
@@ -62,7 +88,10 @@ const Cart: React.FC<CartProps> = ({user, balance, handlePayment, addToCart, dec
                         <button className='incCart' onClick={() => addToCart(item)}>
                           <i className='fa-solid fa-plus'></i>
                         </button>
-                        <span>{item.qty}</span>
+                        <div className="cart-qty">
+                          <span>{item.qty}</span>
+                        </div>
+                        
                         <button className='desCart' onClick={() => decreaseQty(item)}>
                           <i className='fa-solid fa-minus'></i>
                         </button>
@@ -81,7 +110,7 @@ const Cart: React.FC<CartProps> = ({user, balance, handlePayment, addToCart, dec
               <h3>{total}.00</h3>
             </div>
             <div className="pay">
-              <button className="bnt_pay" onClick={handlePaymentClick}>
+              <button className="bnt_pay" onClick={handlePayment}>
                 THANH TOÁN
               </button>
             </div>

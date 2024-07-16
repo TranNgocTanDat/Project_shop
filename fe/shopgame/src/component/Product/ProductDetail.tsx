@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CartItem, ProductItem, productItems, productOffs, productOns } from '../Pdata'
+import { CartItem, ProductItem, productItems, productOffs, productOns, productPlays, productSteams } from '../Pdata'
 import { useLoaderData, LoaderFunctionArgs } from 'react-router-dom';
 import './styleProduct.css'
 import Slider from "react-slick"
@@ -7,7 +7,11 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 async function getProduct(id: number): Promise<ProductItem | undefined> {
-    return productOffs.find((product) => product.id === id) || productItems.find((product) => product.id === id) ||  productOns.find((product) => product.id === id);
+    return productOffs.find((product) => product.id === id) || 
+    productItems.find((product) => product.id === id) ||  
+    productOns.find((product) => product.id === id) || 
+    productPlays.find((product) => product.id === id) ||
+    productSteams.find((product) => product.id === id);
 
 }
 
@@ -123,10 +127,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({addToCart}) => {
 
                                 <div className="wrapper">
 
-                                    <span className="price" data-total-price>{((product.price*product.discount)/100)*count}</span>
-                                    <span className="badge">{product.discount}</span>
+                                    <span className="price" data-total-price>{((product.price*product.discount)/100)*count}$</span>
+                                    <span className="badge">{product.discount}%</span>
 
-                                    <del className="del">{product.price * count}</del>
+                                    <del className="del">{product.price * count}$</del>
 
                                 </div>
 
