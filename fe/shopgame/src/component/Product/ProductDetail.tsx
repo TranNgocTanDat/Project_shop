@@ -1,5 +1,14 @@
 import React, { useState } from 'react'
-import { CartItem, ProductItem, productItems, productOffs, productOns, productPlays, productSteams } from '../Pdata'
+import {
+    CartItem,
+    ProductItem,
+    productItems,
+    productMobile,
+    productOffs,
+    productOns,
+    productPlays,
+    productSteams
+} from '../Pdata'
 import { useLoaderData, LoaderFunctionArgs } from 'react-router-dom';
 import './styleProduct.css'
 import Slider from "react-slick"
@@ -11,7 +20,8 @@ async function getProduct(id: number): Promise<ProductItem | undefined> {
     productItems.find((product) => product.id === id) ||  
     productOns.find((product) => product.id === id) || 
     productPlays.find((product) => product.id === id) ||
-    productSteams.find((product) => product.id === id);
+    productSteams.find((product) => product.id === id) ||
+    productMobile.find((product) => product.id === id) ;
 
 }
 
@@ -121,8 +131,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({addToCart}) => {
                                 <h1 className="h1 product-title">Fall Limited Edition Sneakers</h1>
 
                                 <p className="product-text">
-                                    These low-profile sneakers are your perfect casual wear companion. Featuring a
-                                    durable rubber outer sole, they’ll withstand everything the weather can offer.
+                                    {product.infor}
                                 </p>
 
                                 <div className="wrapper">

@@ -6,6 +6,7 @@ import { getBalance, check, updateUser } from "../../../../component/user/checkL
 import Infor from "../../../../component/user/Infor";
 import user from "../../../../component/user/User";
 import { DataUser } from "../../../../component/user/dataUser";
+import PaymentModal from "./PaymentModal";
 
 interface CartProps {
   addToCart: (item: CartItemType) => void;
@@ -18,6 +19,12 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
   const [user, setUser] = useState<DataUser | null>(null);
   const [balance, setBalance] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [showModal, setShowModal] = useState(false);
+
+  //check thanh toán thành công
+  const [paySuccess, setPaySuccess] = useState<boolean>(false);
+  //tạo một cái link để download
+  // const [download, setDownload] = useState<string[]>([]);
 
   let total = 0;
   cart.forEach((item) => {
@@ -39,6 +46,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
     const storedUser = localStorage.getItem('user');
     if (!storedUser) {
       setMessage("Vui lòng đăng nhập");
+      setShowModal(true);
       return;
     }
 
@@ -51,9 +59,24 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
       updateUser(user, newBalance);
       console.log(newBalance);
       setMessage("Thanh toán thành công");
+      setPaySuccess(true);
+      setShowModal(true);
+
+      //lấy ra fileGame từ data
+      // const links = cart.map(item => item.fileGmae);
+      // setDownload(links);
     } else {
       setMessage("Số dư không đủ");
+      setPaySuccess(false);
+      setShowModal(true);
     }
+  };
+
+
+  // đóng trang thông báo
+  const closeModal = () => {
+    setShowModal(false);
+    setMessage(null);
   };
   return (
     <>
@@ -82,18 +105,25 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
                           <i className='fa-solid fa-xmark'></i>
                         </button>
                       </div>
-                      <div className='cartControl d_flex'>
-                        <button className='incCart' onClick={() => addToCart(item)}>
-                          <i className='fa-solid fa-plus'></i>
-                        </button>
-                        <div className="cart-qty">
-                          <span>{item.qty}</span>
-                        </div>
-                        
-                        <button className='desCart' onClick={() => decreaseQty(item)}>
-                          <i className='fa-solid fa-minus'></i>
-                        </button>
-                      </div>
+                      {paySuccess && (
+                          <div className="download__Game">
+                            <a href={item.fileGmae} className="download-button" download>
+                              Tải về
+                            </a>
+                          </div>
+                      )}
+                      {/*<div className='cartControl d_flex'>*/}
+                      {/*  <button className='incCart' onClick={() => addToCart(item)}>*/}
+                      {/*    <i className='fa-solid fa-plus'></i>*/}
+                      {/*  </button>*/}
+                      {/*  <div className="cart-qty">*/}
+                      {/*    <span>{item.qty}</span>*/}
+                      {/*  </div>*/}
+
+                      {/*  <button className='desCart' onClick={() => decreaseQty(item)}>*/}
+                      {/*    <i className='fa-solid fa-minus'></i>*/}
+                      {/*  </button>*/}
+                      {/*</div>*/}
                     </div>
                   </div>
                 )
@@ -116,6 +146,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
           </div>
         </div>
       </section>
+      {showModal && <PaymentModal message={message || ''} onClose={closeModal} />}
     </>
   );
 };
