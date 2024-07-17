@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, RouteObject, RouterProvider, Routes, createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { CartItem, CartItem as CartItemType, ProductItem, cartItems, productItems, productOns, productPlays, productSteams } from "../component/Pdata";
+import { CartItem, CartItem as CartItemType, ProductItem, cartItems, productItems, productOns, productPlays, productSteams, productMobile} from "../component/Pdata";
 import ProductDetail, { loadProduct } from "../component/Product/ProductDetail";
 import HomePage from "../pages/users/homePage/indexHome";
 import UserPage from "../pages/users/userPage/indexUser";
@@ -15,6 +15,8 @@ import { addCart, rmCart } from "../store/Action";
 import GameOnline from "../component/gameOnline/gameOn";
 import GamePlay from "../component/gamePlaystation/GamePlay";
 import GameStem from "../component/gameSteam/GameSteam";
+import GameMoblie from "../component/gameMoble/gameMoblie";
+
 
 
 
@@ -90,7 +92,10 @@ const AppRouter: React.FC = () => {
         }, {
             path: '/game_steam',
             element: <GameStem produceSteams={productSteams} addToCart={addToCart} />,
-        },
+        },{
+            path: '/game_moblie',
+            element: <GameMoblie productOffs={productMobile} addToCart={addToCart}/>
+        }
     ];
 
     const router = createBrowserRouter([
