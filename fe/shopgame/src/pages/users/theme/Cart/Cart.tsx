@@ -10,11 +10,11 @@ import { DataUser } from "../../../../component/user/dataUser";
 interface CartProps {
   addToCart: (item: CartItemType) => void;
   decreaseQty: (item: CartItemType) => void;
+  removeToCart:(item: CartItemType) => void;
 }
 
-const Cart: React.FC<CartProps> = ({addToCart, decreaseQty }) => {
+const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => {
   const cart = useAppSelector((state: RootState) => state.cart);
-
   const [user, setUser] = useState<DataUser | null>(null);
   const [balance, setBalance] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -78,7 +78,7 @@ const Cart: React.FC<CartProps> = ({addToCart, decreaseQty }) => {
                     </div>
                     <div className='cart-items-function'>
                       <div className='removeCart'>
-                        <button className='removeCart'>
+                        <button className='removeCart' onClick={() => removeToCart(item)}>
                           <i className='fa-solid fa-xmark'></i>
                         </button>
                       </div>
@@ -86,7 +86,10 @@ const Cart: React.FC<CartProps> = ({addToCart, decreaseQty }) => {
                         <button className='incCart' onClick={() => addToCart(item)}>
                           <i className='fa-solid fa-plus'></i>
                         </button>
-                        <span>{item.qty}</span>
+                        <div className="cart-qty">
+                          <span>{item.qty}</span>
+                        </div>
+                        
                         <button className='desCart' onClick={() => decreaseQty(item)}>
                           <i className='fa-solid fa-minus'></i>
                         </button>

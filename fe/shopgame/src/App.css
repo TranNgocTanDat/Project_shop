@@ -248,3 +248,14 @@ button {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
+
+.block__catgroies{
+  width: 90%;
+  position: absolute;
+  left: 0;
+  z-index: 1000; /* Đảm bảo hiển thị lớn hơn các phần tử khác */
+  margin-left: 76px;
+}
+
+
+

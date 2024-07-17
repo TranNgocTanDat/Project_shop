@@ -2,11 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { Route, RouteObject, RouterProvider, Routes, createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { CartItem as CartItemType, ProductItem, cartItems, productItems, productOns, productPlays, productSteams } from "../component/Pdata";
+import { CartItem, CartItem as CartItemType, ProductItem, cartItems, productItems, productOns, productPlays, productSteams } from "../component/Pdata";
 import ProductDetail, { loadProduct } from "../component/Product/ProductDetail";
 import HomePage from "../pages/users/homePage/indexHome";
 import UserPage from "../pages/users/userPage/indexUser";
-
 import { productOffs } from "../component/Pdata";
 import GameOffline from "../component/gameOffline/gameOff";
 import Cart from "../pages/users/theme/Cart/Cart";
@@ -16,8 +15,7 @@ import { addCart, rmCart } from "../store/Action";
 import GameOnline from "../component/gameOnline/gameOn";
 import GamePlay from "../component/gamePlaystation/GamePlay";
 import GameStem from "../component/gameSteam/GameSteam";
-import { DataUser } from "../component/user/dataUser";
-import { getBalance, updateUser } from "../component/user/checkLogin";
+
 
 
 const AppRouter: React.FC = () => {
@@ -57,9 +55,15 @@ const AppRouter: React.FC = () => {
             }
         }
     };
-
-
-
+    const removeToCart = (product: CartItem) => {
+        const productExist = CartItem.find((item) => item.id === product.id);
+        let newCartItems;
+        if(productExist) {
+            newCartItems = CartItem.filter((item) => item.id !== product.id);
+                setCartItem(newCartItems);
+                dispatch(rmCart(newCartItems));
+        }
+    }
 
     const userRouters: RouteObject[] = [
         {
@@ -72,7 +76,7 @@ const AppRouter: React.FC = () => {
         },
         {
             path: '/cart',
-            element: <Cart addToCart={addToCart} decreaseQty={decreaseQty} />,
+            element: <Cart addToCart={addToCart} decreaseQty={decreaseQty} removeToCart={removeToCart}/>,
         },
         {
             path: '/game_offline',

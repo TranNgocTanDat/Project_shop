@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-// import logo from "../../components/assets/images/logo.svg"
+import logo from "../../../../../public/images/logo.png"
 import {Link, Outlet} from "react-router-dom"
 import User from "../../../../component/user/User";
 import { RootState, useAppSelector } from '../../../../store/Store';
@@ -27,7 +27,7 @@ const Search:React.FC = () => {
       <section className='search'>
         <div className='container c_flex'>
           <div className='logo width '>
-            {/* <img src={} alt='' /> */}
+          <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt='Logo' />
           </div>
 
           <div className='search-box f_flex'>
