@@ -2,14 +2,19 @@ import React from "react"
 import Categories from "./Categories"
 import "./Home.css"
 import SliderHome from "./Slider"
+import { ProductItem, SlideCardData } from "../Pdata"
 
-const Home = () => {
+interface HomeProps{
+  slide: SlideCardData[];
+}
+
+const Home:React.FC<HomeProps> = ({slide}) => {
   return (
     <>
       <section className='home'>
         <div className='container d_flex'>
           <Categories />
-          <SliderHome />
+          <SliderHome slide={slide} />
         </div>
       </section>
     </>

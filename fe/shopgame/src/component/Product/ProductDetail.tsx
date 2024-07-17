@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CartItem, ProductItem, productItems, productOffs, productOns, productPlays, productSteams } from '../Pdata'
+import { CartItem, ProductItem, productItems, productOffs, productOns, productPlays, productSlide, productSteams } from '../Pdata'
 import { useLoaderData, LoaderFunctionArgs } from 'react-router-dom';
 import './styleProduct.css'
 import Slider from "react-slick"
@@ -11,7 +11,8 @@ async function getProduct(id: number): Promise<ProductItem | undefined> {
     productItems.find((product) => product.id === id) ||  
     productOns.find((product) => product.id === id) || 
     productPlays.find((product) => product.id === id) ||
-    productSteams.find((product) => product.id === id);
+    productSteams.find((product) => product.id === id) ||
+    productSlide.find((product) => product.id === id) ;
 
 }
 
@@ -136,7 +137,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({addToCart}) => {
 
                                 <div className="btn-group">
 
-                                    <div className="counter-wrapper">
+                                    {/* <div className="counter-wrapper">
 
                                         <button className="counter-btn" onClick={decrementQty} data-qty-minus>
                                             <i className="fa-solid fa-minus"></i>
@@ -148,7 +149,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({addToCart}) => {
                                             <i className="fa-solid fa-plus"></i>
                                         </button>
 
-                                    </div>
+                                    </div> */}
 
                                     <button className="cart-btn" onClick={() => handleProductClick(product)}>
                                         <i className="fa-solid fa-bag-shopping"></i>

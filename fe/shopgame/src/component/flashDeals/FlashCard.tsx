@@ -87,7 +87,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({ productItems, addToCart })
                     <i className='fa fa-star'></i>
                   </div>
                   <div className='price'>
-                    <h4>${product.price}.00 </h4>
+                    <h4>${product.price}$ </h4>
                     {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}

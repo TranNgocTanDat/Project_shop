@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from '../../../component/MainPage/Home'
 import FlashDeals from '../../../component/flashDeals/FlashDeals'
-import {productItems} from '../../../component/Pdata'
+import {productItems, slide} from '../../../component/Pdata'
 import TopCate from '../../../component/top/TopCate';
 import NewArrivals from '../../../component/newarrivals/NewArrivals';
 import Discount from '../../../component/discount/Discount';
@@ -15,7 +15,7 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ addToCart }) => {
     return (
         <>
-            <Home  />
+            <Home  slide={slide}/>
             <FlashDeals productItems={productItems} addToCart={addToCart} />
             <TopCate/>
             <NewArrivals/>

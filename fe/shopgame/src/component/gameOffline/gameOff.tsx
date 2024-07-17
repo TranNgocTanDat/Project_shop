@@ -16,6 +16,21 @@ interface GameOfflineProps {
 
 const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart}) => {
     const [count, setCount] = useState(0)
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 8; 
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentProducts = productOffs.slice(indexOfFirstItem, indexOfLastItem);
+
+    const nextPage = () => {
+        setCurrentPage(currentPage + 1);
+    };
+
+    const prevPage = () => {
+        setCurrentPage(currentPage - 1);
+    };
+
     const increment = () => {
         setCount(count + 1)
     }
@@ -39,7 +54,7 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart}) => {
             <div className="center__game">
                 <div className="f-grid">
 
-                    {products.map((product) => {
+                    {currentProducts.map((product) => {
                         return (
                             <>
                                 <div className='box f-grid-col'>
@@ -78,6 +93,14 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart}) => {
                             </>
                         )
                     })}
+                </div>
+                <div className="pagination">
+                    {currentPage > 1 && (
+                        <button onClick={prevPage}>Previous</button>
+                    )}
+                    {currentProducts.length === itemsPerPage && (
+                        <button onClick={nextPage}>Next</button>
+                    )}
                 </div>
             </div>
 

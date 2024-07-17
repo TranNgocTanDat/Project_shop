@@ -1,10 +1,15 @@
-import React from "react"
-import Sdata from "./Sdata"
+import React, {useState} from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ProductItem, SlideCardData } from "../Pdata";
+import { Link } from "react-router-dom"
 
-const SlideCard:React.FC = () => {
+interface SlideCardProps{
+ slide: SlideCardData[];
+}
+
+const SlideCard:React.FC<SlideCardProps> = ({slide}) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -15,20 +20,25 @@ const SlideCard:React.FC = () => {
       return <ul style={{ margin: "0px" }}>{dots}</ul>
     },
   }
+
+  const [products, setProducts] = useState(slide);
+
   return (
     <>
       <Slider {...settings}>
-        {Sdata.map((value, index) => {
+        {products.map((product) => {
           return (
             <>
-              <div className='box d_flex top' key={index}>
+              <div className='box d_flex top' >
                 <div className='left'>
-                  <h1>{value.title}</h1>
-                  <p>{value.desc}</p>
+                  <h1>{product.title}</h1>
+                  <p>{product.desc}</p>
+                  <Link to={`/productDetail/${product.id}`}>
                   <button className='btn-primary'>Visit Collections</button>
+                  </Link>
                 </div>
                 <div className='right'>
-                  <img className="image" src={value.cover} alt='' />
+                  <img className="image" src={product.cover} alt='' />
                 </div>
               </div>
             </>

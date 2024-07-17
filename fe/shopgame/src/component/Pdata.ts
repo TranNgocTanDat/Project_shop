@@ -14,6 +14,11 @@ export interface CartItem extends ProductItem {
   qty: number;
 }
 
+export interface SlideCardData extends ProductItem{
+  title: string;
+  
+}
+
 
 const productItems: ProductItem[] = [
   {
@@ -145,7 +150,6 @@ const productOffs: ProductItem[] = [
     id: 12,
     discount: 50,
     cover: "/images/gameOff/gameoff-11.png",
-
     name: "Minecraft",
     price: 100,
   },
@@ -413,6 +417,69 @@ const productSteams: ProductItem[] = [
   },
 ];
 
+const productSlide: ProductItem[] = [
+  {
+    id: 55,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-11.png",
+    name: "Minecraft",
+    price: 100,
+  },
+  {
+    id: 56,
+    discount: 40,
+    cover: "/images/gameOn/gameon-1.png",
+    name: "PUBG",
+    price: 50,
+  },
+  {
+    id: 57,
+    discount: 40,
+    cover: "/images/gameOn/gameon-3.png",
+    name: "CROSS FIRE",
+    price: 50,
+  },
+  {
+    id: 58,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-2.png",
+    name: "Goose goose Duck",
+    price: 20,
+  }
+]
+
+
+const slide: SlideCardData[] = 
+  // {
+  //   id: 1,
+  //   title: "Giảm 50% cho lần thực hiện giao dịch đầu tiên",
+  //   desc: "Minecraft thể loại game xây dựng tính sáng tạo của trẻ em.",
+  //   cover: "./images/SlideCard/slide-1.png",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Giảm 50% cho lần thực hiện giao dịch đầu tiên",
+  //   desc: "Pubg kịnh tính từ phút từng giây, nhặt vũ khí trang bị tiêu diệt kẻ địch.",
+  //   cover: "./images/SlideCard/slide-2.png" ,
+  // },
+  // {
+  //   id: 3,
+  //   title: "Giảm 50% cho lần thực hiện giao dịch đầu tiên",
+  //   desc: "Đột kích nhanh chóng hạ gục kẻ địch bất khờ, góc nhìn chân thật.",
+  //   cover: "./images/SlideCard/slide-3.png",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Giảm 50% cho lần thực hiện giao dịch đầu tiên",
+  //   desc: "Ai là vịt ai là ngỗng, ai là bạn ai là thù.",
+  //   cover: "./images/SlideCard/slide-4.png",
+  // },
+  productSlide.map(product => ({
+    ...product,
+    title: "Giảm 50% cho lần thực hiện giao dịch đầu tiên", // Đặt qty mặc định là 1
+  }));
+
+
 
 // Chuyển đổi ProductItem thành CartItem
 const cartItems: CartItem[] = productItems.map(product => ({
@@ -421,5 +488,5 @@ const cartItems: CartItem[] = productItems.map(product => ({
 }));
 
 
-export { productItems, productOffs, productOns, productPlays, productSteams, cartItems};
+export { productItems, productOffs, productOns, productPlays, productSteams, productSlide, cartItems, slide};
 

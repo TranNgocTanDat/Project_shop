@@ -22,7 +22,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
   let total = 0;
   cart.forEach((item) => {
     if (item.id)
-      total += item?.price * item?.qty;
+      total += item?.price;
   });
 
   useEffect(() => {
@@ -72,8 +72,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
                     <div className='cart-details'>
                       <h3>{item.name}</h3>
                       <h4>
-                        {item.price}.00 * {item.qty}
-                        <span>{productQty}.00</span>
+                        <span>{item.price}$</span>
                       </h4>
                     </div>
                     <div className='cart-items-function'>
@@ -82,7 +81,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
                           <i className='fa-solid fa-xmark'></i>
                         </button>
                       </div>
-                      <div className='cartControl d_flex'>
+                      {/* <div className='cartControl d_flex'>
                         <button className='incCart' onClick={() => addToCart(item)}>
                           <i className='fa-solid fa-plus'></i>
                         </button>
@@ -93,7 +92,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
                         <button className='desCart' onClick={() => decreaseQty(item)}>
                           <i className='fa-solid fa-minus'></i>
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 )
@@ -105,7 +104,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
             <h2>Cart Summary</h2>
             <div className='d_flex'>
               <h4>Total Price :</h4>
-              <h3>{total}.00</h3>
+              <h3>{total}$</h3>
             </div>
             <div className="pay">
               <button className="bnt_pay" onClick={handlePayment}>
