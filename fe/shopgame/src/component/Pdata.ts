@@ -16,6 +16,11 @@ export interface CartItem extends ProductItem {
   qty: number;
 }
 
+export interface SlideCardData extends ProductItem{
+  title: string;
+  
+}
+
 
 const productItems: ProductItem[] = [
   {
@@ -541,6 +546,52 @@ const productSteams: ProductItem[] = [
   },
 ];
 
+const productSlide: ProductItem[] = [
+  {
+    id: 55,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-11.png",
+    name: "Minecraft",
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: " ",
+    price: 100,
+  },
+  {
+    id: 56,
+    discount: 40,
+    cover: "/images/gameOn/gameon-1.png",
+    name: "PUBG",
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: " ",
+    price: 50,
+  },
+  {
+    id: 57,
+    discount: 40,
+    cover: "/images/gameOn/gameon-3.png",
+    name: "CROSS FIRE",
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: " ",
+    price: 50,
+  },
+  {
+    id: 58,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-2.png",
+    name: "Goose goose Duck",
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: " ",
+    price: 20,
+  }
+];
+
+
+const slide: SlideCardData[] = 
+  productSlide.map(product => ({
+    ...product,
+    title: "Giảm 50% cho lần thực hiện giao dịch đầu tiên", // Đặt qty mặc định là 1
+  }));
+
 const productMobile: ProductItem[] = [
   {
     id: 59,
@@ -672,4 +723,6 @@ const cartItems: CartItem[] = productItems.map(product => ({
 }));
 
 
-export { productItems, productOffs, productOns, productPlays, productSteams,productMobile, cartItems};
+export { productItems, productOffs, productOns, productPlays, productSteams,productMobile, productSlide, cartItems, slide};
+
+

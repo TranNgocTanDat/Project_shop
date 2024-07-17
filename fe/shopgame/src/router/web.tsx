@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, RouteObject, RouterProvider, Routes, createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { CartItem, CartItem as CartItemType, ProductItem, cartItems, productItems, productOns, productPlays, productSteams, productMobile} from "../component/Pdata";
+import { CartItem, CartItem as CartItemType, ProductItem, productOns, productPlays, productSteams, productMobile, slide} from "../component/Pdata";
 import ProductDetail, { loadProduct } from "../component/Product/ProductDetail";
 import HomePage from "../pages/users/homePage/indexHome";
 import UserPage from "../pages/users/userPage/indexUser";
