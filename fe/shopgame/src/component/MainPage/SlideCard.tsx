@@ -14,7 +14,7 @@ const SlideCard:React.FC<SlideCardProps> = ({slide}) => {
     dots: true,
     infinite: true,
     slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToScroll: 0,
     autoplay: true,
     appendDots: (dots:React.ReactNode) => {
       return <ul style={{ margin: "0px" }}>{dots}</ul>

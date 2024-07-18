@@ -8,7 +8,7 @@ import { useAppDispatch } from '../src/store/Store';
 import { productItems } from './component/Pdata';
 import MasterLayout from './pages/users/theme/masterLayout';
 
-import  './pages/users/theme/footer/style.css'
+
 
 function App() {
   const dispatch = useAppDispatch();
