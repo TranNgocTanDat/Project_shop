@@ -78,9 +78,9 @@
   position: absolute;
   left: 0;
   z-index: 10;
-  width: 56%;
+  width: 51%;
   height: 600px;
-  margin-left: 277px;
+  margin-left: 372px;
   background-color: #fff;
   overflow: hidden;
   scrollbar-width: none; /* Ẩn thanh cuộn Firefox */
@@ -117,11 +117,18 @@
 
 /*------catgrories-----------*/
 .catgrories {
-  background-color: #f6f9fc;
+  background-color: #b3b4b5;
   padding: 0px 30px;
   border-radius: 5px;
   height: 6vh;
   margin-top: 5px;
+  width: 314px;
+  /* border: solid 2px; */
+}
+
+.cd_flex{
+  display: flex;
+  justify-content: left;
 }
 .catgrories span {
   margin-right: 20px;

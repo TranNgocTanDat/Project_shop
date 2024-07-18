@@ -73,16 +73,17 @@ button {
 /*---------category----------*/
 .contentWidth {
   width: 77%;
+  height: 510px;
 }
 .category {
   box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
   background-color: #fff;
   width: 23%;
-  height: 510px;
+  height: 250px;
   padding: 15px 0;
   border-radius: 5px;
   margin-top: 5px;
-  border: solid 2px;
+  /* border: solid 2px; */
 }
 .category img {
   width: 30px;
@@ -252,6 +253,7 @@ button {
 
 .block__catgroies{
   width: 90%;
+  height: 230px;
   position: absolute;
   left: 0;
   z-index: 1000; /* Đảm bảo hiển thị lớn hơn các phần tử khác */
