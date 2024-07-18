@@ -17,7 +17,6 @@ body {
 }
 .container {
   max-width: 90%;
-  height: 100%;
   margin: auto;
 }
 .d_flex {
@@ -73,19 +72,17 @@ button {
 
 /*---------category----------*/
 .contentWidth {
-  width: 75%;
-  height: 510px;
-  margin-left: -30px;
+  width: 77%;
 }
 .category {
   box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
-  background-color: #ffffff;
+  background-color: #fff;
   width: 23%;
-  height: 229Px;
+  height: 510px;
+  padding: 15px 0;
   border-radius: 5px;
-  border: solid black; 
-  margin-right: 30px;
-
+  margin-top: 5px;
+  border: solid 2px;
 }
 .category img {
   width: 30px;
@@ -100,7 +97,6 @@ button {
 .category .box {
   transition: 0.5s;
   padding: 0 20px;
-  border: 0.5px solid black;
 }
 .category .box:hover {
   background-color: #ffe1e6;
@@ -262,13 +258,5 @@ button {
   margin-left: 76px;
 }
 
-.slick-dots{
-  top: 450px;
-}
-
-.slick-slider{
-  width: 100%;
-  height: 100%;
-}
 
 
