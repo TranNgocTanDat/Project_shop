@@ -9,7 +9,7 @@ import { Link } from "react-router-dom"
 const Categories: React.FC = () => {
   return (
     <>
-      <div className='category home_border'>
+      <div className='category'>
         {/* {data.map((value, index) => { */}
             <div className='box f_flex'>
               <Link to='/game_offline'>
