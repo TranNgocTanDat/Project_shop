@@ -37,11 +37,11 @@ const Search: React.FC = () => {
             <i className='fa fa-search'></i>
             <input
               type='text'
-              placeholder='Search and hit enter...'
+              placeholder='Tìm kiếm trò chơi...'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <span>All Category</span>
+            
           </div>
 
           <div className='icon f_flex width'>
