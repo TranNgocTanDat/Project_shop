@@ -47,7 +47,7 @@ const GamePlay: React.FC<GamePlayProps> = ({ productPlays, addToCart}) => {
         <>
             <div className="top__game">
                 <h1 className="top__game--title">
-                    GameePlay
+                    Game Playstation
                 </h1>
                
             </div>

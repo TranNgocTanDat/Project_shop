@@ -46,7 +46,7 @@ const GameSteam: React.FC<GameSteamProps> = ({ produceSteams, addToCart }) => {
         <>
             <div className="top__game">
                 <h1 className="top__game--title">
-                    GameeSteam
+                    Game Steam
                 </h1>
 
             </div>
