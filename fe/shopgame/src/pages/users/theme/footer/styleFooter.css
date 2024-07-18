@@ -1,5 +1,5 @@
 footer {
-  background-color: #0f3460;
+  background-color: #000000;
   padding: 100px 0;
   color: #fff;
 }
@@ -10,7 +10,7 @@ footer h1 {
   font-style: italic;
 }
 footer .img {
-  background-color:#0f3460;
+  background-color: #000000;
   padding: 15px 20px;
   border-radius: 5px;
 }
