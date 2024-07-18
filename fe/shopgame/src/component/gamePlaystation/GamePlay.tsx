@@ -16,6 +16,21 @@ interface GamePlayProps {
 
 const GamePlay: React.FC<GamePlayProps> = ({ productPlays, addToCart}) => {
     const [count, setCount] = useState(0)
+    
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 8;
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentProducts = productPlays.slice(indexOfFirstItem, indexOfLastItem);
+
+    const goToPage = (pageNumber: number) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const totalPages = Math.ceil(productPlays.length / itemsPerPage);
+
+
     const increment = () => {
         setCount(count + 1)
     }
@@ -39,7 +54,7 @@ const GamePlay: React.FC<GamePlayProps> = ({ productPlays, addToCart}) => {
             <div className="center__game">
                 <div className="f-grid">
 
-                    {products.map((product) => {
+                    {currentProducts.map((product) => {
                         return (
                             <>
                                 <div className='box f-grid-col'>
@@ -79,6 +94,23 @@ const GamePlay: React.FC<GamePlayProps> = ({ productPlays, addToCart}) => {
                         )
                     })}
                 </div>
+            </div>
+            <div className="pagination">
+            {currentPage > 1 && (
+                    <button className="pagination_btn" onClick={() => goToPage(currentPage - 1)}><i className="fa-solid fa-chevron-left"></i></button>
+                )}
+                {Array.from({ length: totalPages }, (_, index) => (
+                    <button className="pagination_btn"
+                        key={index + 1}
+                        onClick={() => goToPage(index + 1)}
+                        disabled={currentPage === index + 1}
+                    >
+                        {index + 1}
+                    </button>
+                ))}
+                {currentPage < totalPages && (
+                    <button className="pagination_btn" onClick={() => goToPage(currentPage + 1)}><i className="fa-solid fa-chevron-right"></i></button>
+                )}
             </div>
 
 
