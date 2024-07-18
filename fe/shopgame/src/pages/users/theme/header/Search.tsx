@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { RootState, useAppSelector } from '../../../../store/Store';
-import { ProductItem, productItems, productOffs, productOns, productPlays, productSteams } from "../../../../component/Pdata";
+import { ProductItem, productItems, productMobile, productOffs, productOns, productPlays, productSteams } from "../../../../component/Pdata";
 
 const Search: React.FC = () => {
   const cart = useAppSelector((state: RootState) => state.cart);
@@ -15,7 +15,7 @@ const Search: React.FC = () => {
     if (searchTerm.trim() === "") {
       setSearchResults([]);
     } else {
-      const allProducts = [...productOffs, ...productOns, ...productPlays, ...productSteams];
+      const allProducts = [...productOffs, ...productOns, ...productPlays, ...productSteams, ...productMobile];
 
       const results = allProducts.filter(game =>
         game.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -30,6 +30,7 @@ const Search: React.FC = () => {
         <div className='container c_flex'>
           <div className='logo width '>
             <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt='Logo' />
+            <h3>Douxble D</h3>
           </div>
 
           <div className='search-box f_flex'>

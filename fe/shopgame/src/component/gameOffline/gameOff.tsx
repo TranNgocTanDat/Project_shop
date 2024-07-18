@@ -96,7 +96,7 @@ const GameOffline: React.FC<GameOfflineProps> = ({ productOffs, addToCart}) => {
                 </div>
                 <div className="pagination">
                     {currentPage > 1 && (
-                        <button onClick={prevPage}>Previous</button>
+                        <button className="bnt__prevPage" onClick={prevPage}>Previous</button>
                     )}
                     {currentProducts.length === itemsPerPage && (
                         <button onClick={nextPage}>Next</button>
