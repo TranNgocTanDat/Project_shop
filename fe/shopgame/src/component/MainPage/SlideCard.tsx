@@ -34,7 +34,7 @@ const SlideCard:React.FC<SlideCardProps> = ({slide}) => {
                   <h1>{product.title}</h1>
                   <p>{product.desc}</p>
                   <Link to={`/productDetail/${product.id}`}>
-                  <button className='btn-primary'>Visit Collections</button>
+                  <button className='btn-primary'>Vào trò chơi</button>
                   </Link>
                 </div>
                 <div className='right'>

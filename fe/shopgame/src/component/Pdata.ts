@@ -7,6 +7,7 @@ export interface ProductItem {
   discount: number;
   fileGmae: string;
   infor: string;
+  Category: string;
   [key: string]: any; // Các thuộc tính khác nếu có
 
 }
@@ -30,7 +31,8 @@ const productItems: ProductItem[] = [
     name: "Goose goose Duck",
     price: 20,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Đến lúc trở thành một con Ngỗng Ngu Nghịch! Đắm mình vào các môi trường đa dạng/môi trường không ngừng mở rộng của Vũ trụ Chim trong Goose Goose Duck. Một trò chơi đòi hỏi kỹ năng phân tích xã hội, nơi bạn và những người bạn ngỗng phải cùng nhau hoàn thành nhiệm vụ. Hãy cẩn thận với những con Ngan độc ác và những con Gà hoang, đã xâm nhập vào đội của bạn và sẽ làm bất cứ điều gì để ngăn bạn!"
+    infor: "Đến lúc trở thành một con Ngỗng Ngu Nghịch! Đắm mình vào các môi trường đa dạng/môi trường không ngừng mở rộng của Vũ trụ Chim trong Goose Goose Duck. Một trò chơi đòi hỏi kỹ năng phân tích xã hội, nơi bạn và những người bạn ngỗng phải cùng nhau hoàn thành nhiệm vụ. Hãy cẩn thận với những con Ngan độc ác và những con Gà hoang, đã xâm nhập vào đội của bạn và sẽ làm bất cứ điều gì để ngăn bạn!",
+    Category: ""
   },
   {
     id: 50,
@@ -39,7 +41,8 @@ const productItems: ProductItem[] = [
     name: "solitaired",
     price: 50,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Solitaire, còn được gọi là Card Solitaire hoặc Patience, là trò chơi bài một người chơi phổ biến nhất trên thế giới. Nếu bạn thích Solitaire cổ điển, bạn sẽ thích trò chơi solitaire sắc nét và rõ ràng này!"
+    infor: "Solitaire, còn được gọi là Card Solitaire hoặc Patience, là trò chơi bài một người chơi phổ biến nhất trên thế giới. Nếu bạn thích Solitaire cổ điển, bạn sẽ thích trò chơi solitaire sắc nét và rõ ràng này!",
+    Category: ""
   },
   {
     id: 51,
@@ -48,7 +51,8 @@ const productItems: ProductItem[] = [
     name: "Temple Run",
     price: 50,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Bạn đã đánh cắp tượng thần bị nguyền rủa từ một ngôi đền. Bây giờ, bạn phải tìm cách chạy thoát khỏi những con Khỉ Ác Quỷ lúc nào cũng bám sát đằng sau bạn để sống sót. Hãy kiểm tra khả năng phản xạ của bạn khi chạy dọc theo những bức tường cổ của ngôi đền và những vách đá dốc. Trượt để quẹo, nhảy và trượt để tránh chướng ngại vật, thu thập xu và mua bùa tăng lực, mở khóa nhân vật mới"
+    infor: "Bạn đã đánh cắp tượng thần bị nguyền rủa từ một ngôi đền. Bây giờ, bạn phải tìm cách chạy thoát khỏi những con Khỉ Ác Quỷ lúc nào cũng bám sát đằng sau bạn để sống sót. Hãy kiểm tra khả năng phản xạ của bạn khi chạy dọc theo những bức tường cổ của ngôi đền và những vách đá dốc. Trượt để quẹo, nhảy và trượt để tránh chướng ngại vật, thu thập xu và mua bùa tăng lực, mở khóa nhân vật mới",
+    Category: ""
   },
   {
     id: 52,
@@ -57,7 +61,8 @@ const productItems: ProductItem[] = [
     name: "Angry birds",
     price: 200,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Những chú heo con xấu tính không thể sánh được với súng cao su của bạn trong Angry Birds Friends! Nắm vững nghệ thuật bắn súng cao su và hướng tới vinh quang 3 sao trong trò chơi Angry Birds cổ điển luôn mới mẻ!"
+    infor: "Những chú heo con xấu tính không thể sánh được với súng cao su của bạn trong Angry Birds Friends! Nắm vững nghệ thuật bắn súng cao su và hướng tới vinh quang 3 sao trong trò chơi Angry Birds cổ điển luôn mới mẻ!",
+    Category: ""
   },
   {
     id: 53,
@@ -71,7 +76,8 @@ const productItems: ProductItem[] = [
         "Người chơi nhận nuôi thú cưng ảo này, giúp Tom luôn vui vẻ và giúp Tom khám phá thế giới của mình.\n" +
         "\n" +
         "- Tom Biết Nói là chú mèo thực sự biết nói chuyện\n" +
-        "- Thu thập các vật phẩm thời trang và nội thất"
+        "- Thu thập các vật phẩm thời trang và nội thất",
+    Category: ""
   },
   {
     id: 54,
@@ -84,7 +90,8 @@ const productItems: ProductItem[] = [
         "Game thách thức đầy vui nhộn và làm xáo trộn trí tưởng tượng của bạn\n" +
         "Sự kết hợp thử thách hoàn hảo giữa IQ và tư duy logic, phản xạ, trí nhớ và khả năng sáng tạo\n" +
         "Muốn qua cửa? Phải quá vỡ quy tắc! Không có cách nào là không thể qua cửa, chỉ có những đáp án mà bạn không nghĩ ra được\n" +
-        "Vô số các cửa với những điều kỳ quặc chắc chắn sẽ đem đến cho bạn những niềm vui bất tận!"
+        "Vô số các cửa với những điều kỳ quặc chắc chắn sẽ đem đến cho bạn những niềm vui bất tận!",
+    Category: ""
   },
 ];
 
@@ -98,7 +105,8 @@ const productOffs: ProductItem[] = [
     fileGmae: "/images/fileGame/game2.docx",
     infor: "Trở thành ông trùm mỏ vàng trong trò chơi siêu kinh điển Đào Vàng 2023\n" +
         "Nhận ngay thật nhiều vàng và kim cương to lớn. Vượt qua 1001+ màn chơi gây cấn. Đào vàng 2023\n" +
-        "Gold mining games - Trò chơi kinh điển Đào vàng 2023 có mặt tại Mobile. Trở thành tay game đào vàng cừ khôi"
+        "Gold mining games - Trò chơi kinh điển Đào vàng 2023 có mặt tại Mobile. Trở thành tay game đào vàng cừ khôi",
+    Category: "Game Offline"
   },
   {
     id: 2,
@@ -107,7 +115,8 @@ const productOffs: ProductItem[] = [
     name: "Goose goose Duck",
     price: 20,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Đến lúc trở thành một con Ngỗng Ngu Nghịch! Đắm mình vào các môi trường đa dạng/môi trường không ngừng mở rộng của Vũ trụ Chim trong Goose Goose Duck. Một trò chơi đòi hỏi kỹ năng phân tích xã hội, nơi bạn và những người bạn ngỗng phải cùng nhau hoàn thành nhiệm vụ. Hãy cẩn thận với những con Ngan độc ác và những con Gà hoang, đã xâm nhập vào đội của bạn và sẽ làm bất cứ điều gì để ngăn bạn!"
+    infor: "Đến lúc trở thành một con Ngỗng Ngu Nghịch! Đắm mình vào các môi trường đa dạng/môi trường không ngừng mở rộng của Vũ trụ Chim trong Goose Goose Duck. Một trò chơi đòi hỏi kỹ năng phân tích xã hội, nơi bạn và những người bạn ngỗng phải cùng nhau hoàn thành nhiệm vụ. Hãy cẩn thận với những con Ngan độc ác và những con Gà hoang, đã xâm nhập vào đội của bạn và sẽ làm bất cứ điều gì để ngăn bạn!",
+    Category: "Game Offline"
   },
   {
     id: 3,
@@ -116,7 +125,8 @@ const productOffs: ProductItem[] = [
     name: "Subway surfers",
     price: 200,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Ghép, nổ và trang trí với các nhân vật yêu thích của bạn từ vũ trụ Subway Surfers! Giải các câu đố và khám phá những điều kỳ diệu mới mỗi ngày."
+    infor: "Ghép, nổ và trang trí với các nhân vật yêu thích của bạn từ vũ trụ Subway Surfers! Giải các câu đố và khám phá những điều kỳ diệu mới mỗi ngày.",
+    Category: "Game Offline"
   },
   {
     id: 4,
@@ -125,7 +135,8 @@ const productOffs: ProductItem[] = [
     name: "solitaired",
     price: 50,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Solitaire, còn được gọi là Card Solitaire hoặc Patience, là trò chơi bài một người chơi phổ biến nhất trên thế giới. Nếu bạn thích Solitaire cổ điển, bạn sẽ thích trò chơi solitaire sắc nét và rõ ràng này!"
+    infor: "Solitaire, còn được gọi là Card Solitaire hoặc Patience, là trò chơi bài một người chơi phổ biến nhất trên thế giới. Nếu bạn thích Solitaire cổ điển, bạn sẽ thích trò chơi solitaire sắc nét và rõ ràng này!",
+    Category: "Game Offline"
   },
   {
     id: 5,
@@ -134,7 +145,8 @@ const productOffs: ProductItem[] = [
     name: "Plants vs zombies",
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Chơi cuộc phiêu lưu chiến lược hành động ăn khách, nơi bạn gặp gỡ, chào đón và đánh bại quân đoàn thây ma vui nhộn từ bình minh cho đến cuối ngày. Tích lũy một đội quân thực vật tuyệt vời, nạp đầy chúng với Plant Food và đưa ra kế hoạch tối ưu để bảo vệ bộ não của bạn.\n"
+    infor: "Chơi cuộc phiêu lưu chiến lược hành động ăn khách, nơi bạn gặp gỡ, chào đón và đánh bại quân đoàn thây ma vui nhộn từ bình minh cho đến cuối ngày. Tích lũy một đội quân thực vật tuyệt vời, nạp đầy chúng với Plant Food và đưa ra kế hoạch tối ưu để bảo vệ bộ não của bạn.\n",
+    Category: "Game Offline"
   },
   {
     id: 6,
@@ -143,7 +155,8 @@ const productOffs: ProductItem[] = [
     name: "Candy crush saga",
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Trở thành cao thủ giải đố xếp chuỗi 3 huyền thoại trong tựa game đến từ King! Với hơn một nghìn tỷ màn xếp kẹo đã được chơi, Candy Crush Saga là tựa game giải đố xếp chuỗi 3 vô cùng nổi tiếng."
+    infor: "Trở thành cao thủ giải đố xếp chuỗi 3 huyền thoại trong tựa game đến từ King! Với hơn một nghìn tỷ màn xếp kẹo đã được chơi, Candy Crush Saga là tựa game giải đố xếp chuỗi 3 vô cùng nổi tiếng.",
+    Category: "Game Offline"
   },
   {
     id: 7,
@@ -157,7 +170,8 @@ const productOffs: ProductItem[] = [
         "Người chơi nhận nuôi thú cưng ảo này, giúp Tom luôn vui vẻ và giúp Tom khám phá thế giới của mình.\n" +
         "\n" +
         "- Tom Biết Nói là chú mèo thực sự biết nói chuyện\n" +
-        "- Thu thập các vật phẩm thời trang và nội thất"
+        "- Thu thập các vật phẩm thời trang và nội thất",
+    Category: "Game Offline"
   },
   {
     id: 8,
@@ -166,7 +180,8 @@ const productOffs: ProductItem[] = [
     name: "Angry birds",
     price: 200,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Những chú heo con xấu tính không thể sánh được với súng cao su của bạn trong Angry Birds Friends! Nắm vững nghệ thuật bắn súng cao su và hướng tới vinh quang 3 sao trong trò chơi Angry Birds cổ điển luôn mới mẻ!"
+    infor: "Những chú heo con xấu tính không thể sánh được với súng cao su của bạn trong Angry Birds Friends! Nắm vững nghệ thuật bắn súng cao su và hướng tới vinh quang 3 sao trong trò chơi Angry Birds cổ điển luôn mới mẻ!",
+    Category: "Game Offline"
   },
   {
     id: 9,
@@ -175,7 +190,8 @@ const productOffs: ProductItem[] = [
     name: "Temple Run",
     price: 50,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Bạn đã đánh cắp tượng thần bị nguyền rủa từ một ngôi đền. Bây giờ, bạn phải tìm cách chạy thoát khỏi những con Khỉ Ác Quỷ lúc nào cũng bám sát đằng sau bạn để sống sót. Hãy kiểm tra khả năng phản xạ của bạn khi chạy dọc theo những bức tường cổ của ngôi đền và những vách đá dốc. Trượt để quẹo, nhảy và trượt để tránh chướng ngại vật, thu thập xu và mua bùa tăng lực, mở khóa nhân vật mới"
+    infor: "Bạn đã đánh cắp tượng thần bị nguyền rủa từ một ngôi đền. Bây giờ, bạn phải tìm cách chạy thoát khỏi những con Khỉ Ác Quỷ lúc nào cũng bám sát đằng sau bạn để sống sót. Hãy kiểm tra khả năng phản xạ của bạn khi chạy dọc theo những bức tường cổ của ngôi đền và những vách đá dốc. Trượt để quẹo, nhảy và trượt để tránh chướng ngại vật, thu thập xu và mua bùa tăng lực, mở khóa nhân vật mới",
+    Category: "Game Offline"
   },
   {
     id: 10,
@@ -188,7 +204,8 @@ const productOffs: ProductItem[] = [
         "Game thách thức đầy vui nhộn và làm xáo trộn trí tưởng tượng của bạn\n" +
         "Sự kết hợp thử thách hoàn hảo giữa IQ và tư duy logic, phản xạ, trí nhớ và khả năng sáng tạo\n" +
         "Muốn qua cửa? Phải quá vỡ quy tắc! Không có cách nào là không thể qua cửa, chỉ có những đáp án mà bạn không nghĩ ra được\n" +
-        "Vô số các cửa với những điều kỳ quặc chắc chắn sẽ đem đến cho bạn những niềm vui bất tận!\n"
+        "Vô số các cửa với những điều kỳ quặc chắc chắn sẽ đem đến cho bạn những niềm vui bất tận!\n",
+    Category: "Game Offline"
   },
   {
     id: 11,
@@ -197,7 +214,8 @@ const productOffs: ProductItem[] = [
     name: "Minecraft",
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Minecraft là một trò chơi được làm từ các khối mà bạn có thể biến đổi thành bất cứ thứ gì bạn có thể tưởng tượng. Chơi ở chế độ Sáng tạo với tài nguyên không giới hạn hoặc tìm kiếm các công cụ để chống lại nguy hiểm ở chế độ Sinh tồn. Với lối chơi đa nền tảng liền mạch trên Minecraft: Bedrock Edition, bạn có thể phiêu lưu một mình hoặc cùng bạn bè, đồng thời khám phá một thế giới vô tận, được tạo ngẫu nhiên với đầy các khối để khai thác, các quần xã sinh vật để khám phá và mob để kết bạn (hoặc chiến đấu). Sự lựa chọn là của bạn trong Minecraft – vì vậy hãy chơi theo cách của bạn!"
+    infor: "Minecraft là một trò chơi được làm từ các khối mà bạn có thể biến đổi thành bất cứ thứ gì bạn có thể tưởng tượng. Chơi ở chế độ Sáng tạo với tài nguyên không giới hạn hoặc tìm kiếm các công cụ để chống lại nguy hiểm ở chế độ Sinh tồn. Với lối chơi đa nền tảng liền mạch trên Minecraft: Bedrock Edition, bạn có thể phiêu lưu một mình hoặc cùng bạn bè, đồng thời khám phá một thế giới vô tận, được tạo ngẫu nhiên với đầy các khối để khai thác, các quần xã sinh vật để khám phá và mob để kết bạn (hoặc chiến đấu). Sự lựa chọn là của bạn trong Minecraft – vì vậy hãy chơi theo cách của bạn!",
+    Category: "Game Offline"
   },
   {
     id: 12,
@@ -207,7 +225,8 @@ const productOffs: ProductItem[] = [
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
     infor: "Tấn công thành phố bằng binh đoàn zombie. Biến người đi bộ thành zombie và tạo dựng binh đoàn lớn nhất.\n" +
-        "Ăn thịt bạn bè và rượt đuổi thách thức họ bằng cách phá hủy tất cả mọi thứ trên đường đi."
+        "Ăn thịt bạn bè và rượt đuổi thách thức họ bằng cách phá hủy tất cả mọi thứ trên đường đi.",
+    Category: "Game Offline"
   },
   {
     id: 71,
@@ -216,7 +235,8 @@ const productOffs: ProductItem[] = [
     name: "Chặt Heo",
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Tham gia thế giới vui nhộn ở làng ỦN ỈN Chặt Heo với các giải đấu của lối chơi Tiến Lên Miền Nam để tìm ra được ĐỖ THÁNH vô địch xưng bá thiên hạ trong vô số các anh tài sống khắp mọi miền Tổ Quốc."
+    infor: "Tham gia thế giới vui nhộn ở làng ỦN ỈN Chặt Heo với các giải đấu của lối chơi Tiến Lên Miền Nam để tìm ra được ĐỖ THÁNH vô địch xưng bá thiên hạ trong vô số các anh tài sống khắp mọi miền Tổ Quốc.",
+    Category: "Game Offline"
   },
   {
     id: 72,
@@ -226,7 +246,8 @@ const productOffs: ProductItem[] = [
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
     infor: "Game bắn gà kinh điển trên điện thoại\n" +
-        "Binh đoàn gà xâm lược đã tấn công và tiêu diệt toàn bộ các hành tinh trong vũ trụ. Bọn chúng đang tiến về trái đất, tấn công trái đất thân yêu của chúng ta. Các bạn hãy mau chóng chơi ngay phiên bản game bắn gà để giúp những siêu nhân địa cầu chống lại bọn gà tàn ác này.  "
+        "Binh đoàn gà xâm lược đã tấn công và tiêu diệt toàn bộ các hành tinh trong vũ trụ. Bọn chúng đang tiến về trái đất, tấn công trái đất thân yêu của chúng ta. Các bạn hãy mau chóng chơi ngay phiên bản game bắn gà để giúp những siêu nhân địa cầu chống lại bọn gà tàn ác này.  ",
+    Category: "Game Offline"
   },
   {
     id: 73,
@@ -235,11 +256,13 @@ const productOffs: ProductItem[] = [
     name: "Helix Jump",
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Helix Jump là trò chơi arcade 3D đỉnh cao sẽ khiến bạn không thể ngồi yên! Đập, va đập và nảy theo cách của bạn thông qua các bệ xoắn ốc xoay tròn để đi đến cuối cùng. Nhưng được cảnh báo, nó không dễ dàng như nó có vẻ!"
+    infor: "Helix Jump là trò chơi arcade 3D đỉnh cao sẽ khiến bạn không thể ngồi yên! Đập, va đập và nảy theo cách của bạn thông qua các bệ xoắn ốc xoay tròn để đi đến cuối cùng. Nhưng được cảnh báo, nó không dễ dàng như nó có vẻ!",
+    Category: "Game Offline"
   },
   {
     id: 74,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-16.png",
     name: "Minion Rush",
     price: 100,
@@ -251,6 +274,7 @@ const productOffs: ProductItem[] = [
   {
     id: 75,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-17.png",
     name: "Shadow Fight 2",
     price: 100,
@@ -262,6 +286,7 @@ const productOffs: ProductItem[] = [
   {
     id: 76,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-18.png",
     name: "Hay Day",
     price: 100,
@@ -271,6 +296,7 @@ const productOffs: ProductItem[] = [
   {
     id: 77,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-19.png",
     name: "Tangle Rope 3D",
     price: 100,
@@ -281,6 +307,7 @@ const productOffs: ProductItem[] = [
   {
     id: 78,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-20.png",
     name: "Crossy Road",
     price: 100,
@@ -292,6 +319,7 @@ const productOffs: ProductItem[] = [
   {
     id: 79,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-21.png",
     name: "Fishdom – VTC Game",
     price: 100,
@@ -303,6 +331,7 @@ const productOffs: ProductItem[] = [
   {
     id: 80,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-22.png",
     name: "Dream League Soccer 2024",
     price: 100,
@@ -312,6 +341,7 @@ const productOffs: ProductItem[] = [
   {
     id: 81,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-23.png",
     name: "Asphalt 8",
     price: 100,
@@ -321,6 +351,7 @@ const productOffs: ProductItem[] = [
   {
     id: 82,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-24.png",
     name: "Cover Fire",
     price: 100,
@@ -331,6 +362,7 @@ const productOffs: ProductItem[] = [
   {
     id: 83,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-25.png",
     name: "Township – VTC Game",
     price: 100,
@@ -342,6 +374,7 @@ const productOffs: ProductItem[] = [
   {
     id: 84,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-26.png",
     name: "Dead Target",
     price: 100,
@@ -351,6 +384,7 @@ const productOffs: ProductItem[] = [
   {
     id: 85,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-27.png",
     name: "Ramboat - Offline Action Game",
     price: 100,
@@ -360,6 +394,7 @@ const productOffs: ProductItem[] = [
   {
     id: 86,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-28.png",
     name: "Angela Biết Nói Của Tôi",
     price: 100,
@@ -369,6 +404,7 @@ const productOffs: ProductItem[] = [
   {
     id: 87,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-29.png",
     name: "Piano Fire 2",
     price: 100,
@@ -378,6 +414,7 @@ const productOffs: ProductItem[] = [
   {
     id: 88,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-30.png",
     name: "Royal Match",
     price: 100,
@@ -387,6 +424,7 @@ const productOffs: ProductItem[] = [
   {
     id: 89,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-31.png",
     name: "Alto's Adventure",
     price: 100,
@@ -396,6 +434,7 @@ const productOffs: ProductItem[] = [
   {
     id: 90,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-32.png",
     name: "Pokémon",
     price: 100,
@@ -409,6 +448,7 @@ const productOns:ProductItem[] = [
   {
     id: 13,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-2.png",
     name: "Goose goose Duck",
     price: 20,
@@ -418,6 +458,7 @@ const productOns:ProductItem[] = [
   {
     id: 14,
     discount: 40,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-1.png",
     name: "PUBG",
     price: 50,
@@ -427,6 +468,7 @@ const productOns:ProductItem[] = [
   {
     id: 15,
     discount: 40,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-3.png",
     name: "CROSS FIRE",
     price: 50,
@@ -436,6 +478,7 @@ const productOns:ProductItem[] = [
   {
     id: 16,
     discount: 40,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-4.png",
     name: "League of Legends",
     price: 200,
@@ -445,6 +488,7 @@ const productOns:ProductItem[] = [
   {
     id: 17,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-5.png",
     name: "GTA-5",
     price: 200,
@@ -454,6 +498,7 @@ const productOns:ProductItem[] = [
   {
     id: 18,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-6.png",
     name: "Zing Speed",
     price: 100,
@@ -463,6 +508,7 @@ const productOns:ProductItem[] = [
   {
     id: 19,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-7.png",
     name: "Audision",
     price: 20,
@@ -472,6 +518,7 @@ const productOns:ProductItem[] = [
   {
     id: 20,
     discount: 40,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-8.png",
     name: "Võ Lâm",
     price: 50,
@@ -481,6 +528,7 @@ const productOns:ProductItem[] = [
   {
     id: 21,
     discount: 40,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-9.png",
     name: "MU",
     price: 50,
@@ -490,6 +538,7 @@ const productOns:ProductItem[] = [
   {
     id: 22,
     discount: 40,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-10.png",
     name: "Avata Star",
     price: 200,
@@ -499,6 +548,7 @@ const productOns:ProductItem[] = [
   {
     id: 23,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-11.png",
     name: "Chiến Cơ Huyền Thoại",
     price: 20,
@@ -509,6 +559,7 @@ const productOns:ProductItem[] = [
   {
     id: 24,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-12.png",
     name: "Quyền Vương",
     price: 100,
@@ -518,6 +569,7 @@ const productOns:ProductItem[] = [
   {
     id: 91,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-13.png",
     name: "Among Us",
     price: 100,
@@ -531,6 +583,7 @@ const productOns:ProductItem[] = [
   {
     id: 92,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-14.png",
     name: "Coin Master",
     price: 100,
@@ -540,6 +593,7 @@ const productOns:ProductItem[] = [
   {
     id: 93,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-15.png",
     name: "Lords Mobile",
     price: 100,
@@ -551,6 +605,7 @@ const productOns:ProductItem[] = [
   {
     id: 94,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-16.png",
     name: "CLASH OF CLANS",
     price: 100,
@@ -560,6 +615,7 @@ const productOns:ProductItem[] = [
   {
     id: 95,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-17.png",
     name: "Chuyến đi Mario Kart",
     price: 100,
@@ -569,6 +625,7 @@ const productOns:ProductItem[] = [
   {
     id: 96,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-18.png",
     name: "Genshin Impact",
     price: 100,
@@ -579,6 +636,7 @@ const productOns:ProductItem[] = [
   {
     id: 97,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-19.png",
     name: "Honkai Impact",
     price: 100,
@@ -588,6 +646,7 @@ const productOns:ProductItem[] = [
   {
     id: 98,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-20.png",
     name: "Honkai: Star Rail",
     price: 100,
@@ -598,6 +657,7 @@ const productOns:ProductItem[] = [
   {
     id: 99,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-21.png",
     name: "Epic Seven",
     price: 100,
@@ -610,6 +670,7 @@ const productOns:ProductItem[] = [
   {
     id: 100,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-22.png",
     name: "Chrono Travelers",
     price: 100,
@@ -619,6 +680,7 @@ const productOns:ProductItem[] = [
   {
     id: 101,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-23.png",
     name: "Gaia Odyssey",
     price: 100,
@@ -628,6 +690,7 @@ const productOns:ProductItem[] = [
   {
     id: 102,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-24.png",
     name: "Legacy Fate",
     price: 100,
@@ -637,6 +700,7 @@ const productOns:ProductItem[] = [
   {
     id: 103,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-25.png",
     name: "Tamashi",
     price: 100,
@@ -646,6 +710,7 @@ const productOns:ProductItem[] = [
   {
     id: 104,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-26.png",
     name: "Epic Conquest",
     price: 100,
@@ -655,6 +720,7 @@ const productOns:ProductItem[] = [
   {
     id: 105,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-27.png",
     name: "Swordash",
     price: 100,
@@ -664,6 +730,7 @@ const productOns:ProductItem[] = [
   {
     id: 106,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-28.png",
     name: "20 Minutes Till Dawn",
     price: 100,
@@ -673,6 +740,7 @@ const productOns:ProductItem[] = [
   {
     id: 107,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-29.png",
     name: "Legend of Survivors",
     price: 100,
@@ -682,6 +750,7 @@ const productOns:ProductItem[] = [
   {
     id: 108,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-30.png",
     name: "Hero Survival IO",
     price: 100,
@@ -692,6 +761,7 @@ const productOns:ProductItem[] = [
   {
     id: 109,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-31.png",
     name: "Magica.io",
     price: 100,
@@ -702,6 +772,7 @@ const productOns:ProductItem[] = [
   {
     id: 110,
     discount: 50,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-32.png",
     name: "Ronin",
     price: 100,
@@ -714,6 +785,7 @@ const productPlays:ProductItem[] = [
   {
     id: 25,
     discount: 50,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-1.png",
     name: "FIFA 4",
     price: 20,
@@ -723,6 +795,7 @@ const productPlays:ProductItem[] = [
   {
     id: 26,
     discount: 40,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-2.png",
     name: "Super Mario",
     price: 50,
@@ -732,6 +805,7 @@ const productPlays:ProductItem[] = [
   {
     id: 27,
     discount: 40,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-3.png",
     name: "Hollow Knight",
     price: 50,
@@ -741,6 +815,7 @@ const productPlays:ProductItem[] = [
   {
     id: 28,
     discount: 40,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-4.png",
     name: "Devil May Cry 5",
     price: 200,
@@ -750,6 +825,7 @@ const productPlays:ProductItem[] = [
   {
     id: 29,
     discount: 50,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-5.png",
     name: "Nioh",
     price: 200,
@@ -759,6 +835,7 @@ const productPlays:ProductItem[] = [
   {
     id: 30,
     discount: 50,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-6.png",
     name: "Cuphead",
     price: 100,
@@ -767,6 +844,7 @@ const productPlays:ProductItem[] = [
   },{
     id: 31,
     discount: 50,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-7.png",
     name: "Sonic & Sega All-Stars Racing",
     price: 20,
@@ -776,6 +854,7 @@ const productPlays:ProductItem[] = [
   {
     id: 32,
     discount: 40,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-8.png",
     name: "Đấu Trường Thú 3",
     price: 50,
@@ -785,6 +864,7 @@ const productPlays:ProductItem[] = [
   {
     id: 33,
     discount: 40,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-9.png",
     name: "Disney Universe",
     price: 50,
@@ -794,6 +874,7 @@ const productPlays:ProductItem[] = [
   {
     id: 34,
     discount: 40,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-10.png",
     name: "Renegade Ops",
     price: 200,
@@ -803,6 +884,7 @@ const productPlays:ProductItem[] = [
   {
     id: 35,
     discount: 50,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-11.png",
     name: "Deathspank Trilogy",
     price: 20,
@@ -812,6 +894,7 @@ const productPlays:ProductItem[] = [
   {
     id: 36,
     discount: 50,
+    Category: "Game Playstation",
     cover: "/images/gamePlay/gameplay-12.png",
     name: "Naruto Shippuden Ninja Storm 3",
     price: 100,
@@ -825,6 +908,7 @@ const productSteams: ProductItem[] = [
   {
     id: 37,
     discount: 50,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-1.png",
     name: "APEX",
     price: 20,
@@ -834,6 +918,7 @@ const productSteams: ProductItem[] = [
   {
     id: 38,
     discount: 40,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-2.png",
     name: "Back 4 Blood",
     price: 50,
@@ -843,6 +928,7 @@ const productSteams: ProductItem[] = [
   {
     id: 39,
     discount: 40,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-3.png",
     name: "MUCK",
     price: 50,
@@ -852,6 +938,7 @@ const productSteams: ProductItem[] = [
   {
     id: 40,
     discount: 40,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-4.png",
     name: "PALADINS",
     price: 200,
@@ -861,6 +948,7 @@ const productSteams: ProductItem[] = [
   {
     id: 41,
     discount: 50,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-5.png",
     name: "UNDERLORDS",
     price: 200,
@@ -870,6 +958,7 @@ const productSteams: ProductItem[] = [
   {
     id: 42,
     discount: 50,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-6.png",
     name: "SEA OF THIEVES",
     price: 100,
@@ -879,6 +968,7 @@ const productSteams: ProductItem[] = [
   {
     id: 43,
     discount: 50,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-7.png",
     name: "BRAWHALLA",
     price: 20,
@@ -888,6 +978,7 @@ const productSteams: ProductItem[] = [
   {
     id: 44,
     discount: 40,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-8.png",
     name: "REALM ROYALE",
     price: 50,
@@ -897,6 +988,7 @@ const productSteams: ProductItem[] = [
   {
     id: 45,
     discount: 40,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-9.png",
     name: "BUSINESS TOUR",
     price: 50,
@@ -906,6 +998,7 @@ const productSteams: ProductItem[] = [
   {
     id: 46,
     discount: 40,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-10.png",
     name: "COUNTER STRIKE",
     price: 200,
@@ -915,6 +1008,7 @@ const productSteams: ProductItem[] = [
   {
     id: 47,
     discount: 50,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-11.png",
     name: "JUST ACT NATUPAL",
     price: 20,
@@ -924,6 +1018,7 @@ const productSteams: ProductItem[] = [
   {
     id: 48,
     discount: 50,
+    Category: "Game Steams",
     cover: "/images/gameSteam/gamesteam-12.png",
     name: "Cry of Fear",
     price: 100,
@@ -936,37 +1031,41 @@ const productSlide: ProductItem[] = [
   {
     id: 55,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-11.png",
     name: "Minecraft",
     fileGmae: "/images/fileGame/game1.docx",
-    infor: " ",
+    infor: "Minecraft là một trò chơi được làm từ các khối mà bạn có thể biến đổi thành bất cứ thứ gì bạn có thể tưởng tượng. Chơi ở chế độ Sáng tạo với tài nguyên không giới hạn hoặc tìm kiếm các công cụ để chống lại nguy hiểm ở chế độ Sinh tồn. Với lối chơi đa nền tảng liền mạch trên Minecraft: Bedrock Edition, bạn có thể phiêu lưu một mình hoặc cùng bạn bè, đồng thời khám phá một thế giới vô tận, được tạo ngẫu nhiên với đầy các khối để khai thác, các quần xã sinh vật để khám phá và mob để kết bạn (hoặc chiến đấu). Sự lựa chọn là của bạn trong Minecraft – vì vậy hãy chơi theo cách của bạn! ",
     price: 100,
   },
   {
     id: 56,
     discount: 40,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-1.png",
     name: "PUBG",
     fileGmae: "/images/fileGame/game1.docx",
-    infor: " ",
+    infor: "Rất nhiều sự kiện để bạn khám phá. Leo lên đỉnh cao trong PUBG MOBILE và bắn theo ý muốn. PUBG MOBILE là trò chơi battle royale nguyên gốc trên thiết bị di động và là một trong những trò chơi bắn súng di động hay nhất ",
     price: 50,
   },
   {
     id: 57,
     discount: 40,
+    Category: "Game Online",
     cover: "/images/gameOn/gameon-3.png",
     name: "CROSS FIRE",
     fileGmae: "/images/fileGame/game1.docx",
-    infor: " ",
+    infor: "Game bắn súng góc nhìn thứ nhất Free to Play, trong game có hai lực lượng là Black List (BL) và Global Risk (GR) giao tranh với nhau trong một cuộc chiến có quy mô toàn cầu.",
     price: 50,
   },
   {
     id: 58,
     discount: 50,
+    Category: "Game Offline",
     cover: "/images/gameOff/gameoff-2.png",
     name: "Goose goose Duck",
     fileGmae: "/images/fileGame/game1.docx",
-    infor: " ",
+    infor: "Đến lúc trở thành một con Ngỗng Ngu Nghịch! Đắm mình vào các môi trường đa dạng/môi trường không ngừng mở rộng của Vũ trụ Chim trong Goose Goose Duck. Một trò chơi đòi hỏi kỹ năng phân tích xã hội, nơi bạn và những người bạn ngỗng phải cùng nhau hoàn thành nhiệm vụ. Hãy cẩn thận với những con Ngan độc ác và những con Gà hoang, đã xâm nhập vào đội của bạn và sẽ làm bất cứ điều gì để ngăn bạn!",
     price: 20,
   }
 ];
@@ -982,6 +1081,7 @@ const productMobile: ProductItem[] = [
   {
     id: 59,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-1.png",
     name: "Liên Quân",
     price: 100,
@@ -991,6 +1091,7 @@ const productMobile: ProductItem[] = [
   {
     id: 60,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-2.png",
     name: "Free Fire",
     price: 100,
@@ -1005,6 +1106,7 @@ const productMobile: ProductItem[] = [
   {
     id: 61,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-3.png",
     name: "Tốc Chiến",
     price: 100,
@@ -1014,6 +1116,7 @@ const productMobile: ProductItem[] = [
   {
     id: 62,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-4.png",
     name: "Mobile Legends",
     price: 100,
@@ -1023,6 +1126,7 @@ const productMobile: ProductItem[] = [
   {
     id: 63,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-5.png",
     name: "TFT",
     price: 100,
@@ -1032,6 +1136,7 @@ const productMobile: ProductItem[] = [
   {
     id: 64,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-6.png",
     name: "8 Ball Pool",
     price: 100,
@@ -1041,6 +1146,7 @@ const productMobile: ProductItem[] = [
   {
     id: 65,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-7.png",
     name: "Roblox",
     price: 100,
@@ -1050,6 +1156,7 @@ const productMobile: ProductItem[] = [
   {
     id: 66,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-8.png",
     name: "Piano",
     price: 100,
@@ -1061,6 +1168,7 @@ const productMobile: ProductItem[] = [
   {
     id: 67,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-9.png",
     name: "Hungry Shark",
     price: 100,
@@ -1071,6 +1179,7 @@ const productMobile: ProductItem[] = [
   {
     id: 68,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-10.png",
     name: "Zing Play",
     price: 100,
@@ -1080,6 +1189,7 @@ const productMobile: ProductItem[] = [
   {
     id: 69,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-11.png",
     name: "Rise of Kingdoms",
     price: 100,
@@ -1092,6 +1202,7 @@ const productMobile: ProductItem[] = [
   {
     id: 70,
     discount: 50,
+    Category: "Game Mobile",
     cover: "/images/gameMobile/gamemobile-12.png",
     name: "Hơi Thở Mặt Trời",
     price: 100,
