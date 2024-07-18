@@ -339,6 +339,69 @@ const productOffs: ProductItem[] = [
         "\n" +
         "Township là sự kết hợp độc đáo giữa xây dựng thành phố và nông trại!"
   },
+  {
+    id: 84,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-26.png",
+    name: "Dead Target",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Hơn 130 triệu người chơi đang phải đối đầu với thử thách sống còn trong game bắn súng khủng nhất hiện nay, bạn còn chờ gì mà không tham gia bắn zombie và trở thành người giỏi nhất!"
+  },
+  {
+    id: 85,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-27.png",
+    name: "Ramboat - Offline Action Game",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Ramboat - Trò chơi hành động bắn súng Chơi miễn phí và ngoại tuyến. Giúp Mambo và nhóm ưu tú của anh ấy trong nhiệm vụ bất khả thi này. Vượt qua tất cả các thử thách, nâng cấp súng của bạn, lái xe nhanh và đánh bại kẻ thù của bạn trên một trong những trò chơi ngoại tuyến hay nhất. Hãy là một chiến binh và tham gia vào quân đội trong cuộc chạy đua và súng đầy thử thách này, cảm nhận adrenaline trong chế độ sinh tồn này, một trò chơi vô tận. Nhảy và bắn trong trò chơi ngoại tuyến này, một trong những trò chơi bắn súng hay nhất."
+  },
+  {
+    id: 86,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-28.png",
+    name: "Angela Biết Nói Của Tôi",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Angela Biết Nói là một thú cưng ảo siêu vui nhộn luôn nóng lòng được nhảy múa và hát ca theo cách của mình để vươn tới đỉnh cao."
+  },
+  {
+    id: 87,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-29.png",
+    name: "Piano Fire 2",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Yêu âm nhạc và muốn thể hiện cảm giác nhịp nhàng của mình? Còn chờ gì nữa, hãy thử \"Piano Fire 2\" - trò chơi mới dành cho những người yêu âm nhạc! Đó là một cuộc phiêu lưu đầy thú vị qua nhiều thể loại âm nhạc khác nhau, khai thác theo nhạc rock, pop, cổ điển và jazz. Bạn sẽ bắt kịp nhịp điệu và rèn luyện phản xạ của mình ngay lập tức!"
+  },
+  {
+    id: 88,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-30.png",
+    name: "Royal Match",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Chào mừng bạn đến với Royal Match, vua của các trò chơi giải đố! Vuốt màu, giải các câu đố ghép 3 và giúp Vua Robert trang trí lâu đài của mình. Một cuộc phiêu lưu thú vị đang gọi bạn!"
+  },
+  {
+    id: 89,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-31.png",
+    name: "Alto's Adventure",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Tham gia Alto và bạn bè của mình khi họ bắt tay vào một cuộc phiêu lưu trượt tuyết vô tận. Hành trình trên đồi núi cao đẹp của vùng hoang dã bản địa của họ, thông qua các làng lân cận, rừng cổ, và tàn tích lâu bị bỏ rơi."
+  },
+  {
+    id: 90,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-32.png",
+    name: "Pokémon",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Một trò chơi giải đố hoàn toàn mới, nơi bạn giải các câu đố để chiến đấu với Pokémon"
+  },
 ];
 
 
@@ -451,6 +514,199 @@ const productOns:ProductItem[] = [
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
     infor: "Quyền Vương Chiến là tựa game dàn trận chiến thuật cực kỳ hấp dẫn. Trò chơi là sự kết hợp của những cái tên nổi tiếng như The King of Fighters, Samurai Shodown và The Last Blade. Người chơi sẽ bắt gặp những cái tên quen thuộc cùng đồng hành chiến đấu vì mục tiêu trở thành những đấu sĩ mạnh mẽ nhất. "
+  },
+  {
+    id: 91,
+    discount: 50,
+    cover: "/images/gameOn/gameon-13.png",
+    name: "Among Us",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "- VAI TRÒ MỚI: Theo dõi. Đặt thiết bị theo dõi lên bất kỳ ai và xem liệu mọi người có thực sự ở nơi họ nói không.\n" +
+        "- VAI TRÒ MỚI: Người tạo tiếng ồn. Khi bị giết, phát ra cảnh báo cho mọi người. Cái chết của bạn có thể phơi bày sự thật!\n" +
+        "- VAI TRÒ MỚI: Bóng ma: Tàng hình và trốn thoát sau khi giết người.\n" +
+        "- Cài đặt sảnh được cải tiến: Danh sách cài đặt khổng lồ đã được thay đổi thành một menu mới sạch sẽ để xem khi tham gia sảnh\n" +
+        "- Nhạc sảnh được thêm vào Dropship"
+  },
+  {
+    id: 92,
+    discount: 50,
+    cover: "/images/gameOn/gameon-14.png",
+    name: "Coin Master",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Hãy tận hưởng thế giới vui vẻ, hồi hộp và phần thưởng lớn ngay trong tầm tay bạn. Hãy đảm bảo trò chơi của bạn được cập nhật để bạn thực sự có thể trải nghiệm tất cả những gì có trong đó."
+  },
+  {
+    id: 93,
+    discount: 50,
+    cover: "/images/gameOn/gameon-15.png",
+    name: "Lords Mobile",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "．Thêm cảnh báo bệnh viện nhàn rỗi\n" +
+        "．Thêm tùy chọn tự động đóng cửa sổ xếp hàng cho cả [Hàng Đợi Lãnh Địa] và [Hàng Đợi Quân Đội]\n" +
+        "．Thêm nút [Cài đặt ( Nút Bánh Răng)] mới ở trên cùng bên phải của cửa sổ xếp hàng"
+  },
+  {
+    id: 94,
+    discount: 50,
+    cover: "/images/gameOn/gameon-16.png",
+    name: "CLASH OF CLANS",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Vào Đấu trường! Xây dựng Bộ bài Chiến đấu của bạn và chiến thắng kẻ thù trong các trận chiến thời gian thực nhanh chóng. Từ những người sáng tạo CLASH OF CLANS, một trò chơi chiến đấu nhiều người chơi trong thời gian thực với sự tham gia của các nhân vật Clash yêu thích của bạn và hơn thế nữa. Bắt đầu chiến đấu với những người chơi từ khắp nơi trên thế giới!"
+  },
+  {
+    id: 95,
+    discount: 50,
+    cover: "/images/gameOn/gameon-17.png",
+    name: "Chuyến đi Mario Kart",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Bạn có thể chạy đua với tối đa bảy người chơi khác, cho dù họ đã đăng ký làm bạn bè trong trò chơi, ở gần đó hoặc rải rác trên khắp thế giới."
+  },
+  {
+    id: 96,
+    discount: 50,
+    cover: "/images/gameOn/gameon-18.png",
+    name: "Genshin Impact",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Lục địa Teyvat rộng lớn, nơi vô số sinh vật sinh sôi và hội tụ.\n" +
+        "Đây chính là thế giới do bảy vị Thần thống trị, cũng là nơi bảy loại nguyên tố tụ hội"
+  },
+  {
+    id: 97,
+    discount: 50,
+    cover: "/images/gameOn/gameon-19.png",
+    name: "Honkai Impact",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "v7.5 Crusade of Chasing Shadows được phát hành! Tham gia vào các sự kiện đăng nhập để nhận được tùy chọn vết thánh A Forged Light, Thẻ cung cấp thiết bị x12, v.v."
+  },
+  {
+    id: 98,
+    discount: 50,
+    cover: "/images/gameOn/gameon-20.png",
+    name: "Honkai: Star Rail",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "\"Honkai: Star Rail\" là tựa game RPG Vũ Trụ Kỳ Ảo mới nhất được HoYoverse phát triển.\n" +
+        "Trong sản phẩm này, người chơi sẽ bước lên Đội Tàu Astral, trải nghiệm những kỳ quan ảo diệu rực rỡ xuyên suốt dải ngân hà, mạo hiểm và kịch tính là tiết tấu chính xuyên suốt cuộc hành trình."
+  },
+  {
+    id: 99,
+    discount: 50,
+    cover: "/images/gameOn/gameon-21.png",
+    name: "Epic Seven",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Và thế là Thế giới thứ 7 bắt đầu...\n" +
+        "Diche, Nữ thần Sự sống, đã triệu hồi toàn bộ sức mạnh đang suy yếu của mình\n" +
+        "và một lần nữa tạo hình cho những Người bảo vệ và Người thừa kế Giao ước.\n" +
+        "“Hỡi các con, ta giao phó thế giới này cho các con.”"
+  },
+  {
+    id: 100,
+    discount: 50,
+    cover: "/images/gameOn/gameon-22.png",
+    name: "Chrono Travelers",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Chơi ngay để tận hưởng vô số phần thưởng độc quyền bao gồm nguyên liệu quý hiếm, trang phục và Tinh linh!”"
+  },
+  {
+    id: 101,
+    discount: 50,
+    cover: "/images/gameOn/gameon-23.png",
+    name: "Gaia Odyssey",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "[Gaia Odyssey] là một game nhập vai hành động 3D mang đến cho bạn sứ mệnh cứu cả một vương quốc."
+  },
+  {
+    id: 102,
+    discount: 50,
+    cover: "/images/gameOn/gameon-24.png",
+    name: "Legacy Fate",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Trò chơi nhập vai nhàn rỗi hấp dẫn nhất năm 2024! Hãy đăng ký trước để nhận HẠN CHẾ Phần thưởng độc quyền! Đừng bỏ lỡ - Đăng ký trước NGAY BÂY GIỜ để nhận được Quà tặng hấp dẫn!"
+  },
+  {
+    id: 103,
+    discount: 50,
+    cover: "/images/gameOn/gameon-25.png",
+    name: "Tamashi",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Tamashi: Rise of Yokai là MMOARPG 3D theo phong cách anime, nơi bạn có thể vượt qua con đường và chiến đấu sát cánh với tất cả các loại yokai và linh hồn hộ mệnh được gọi là Tamashi."
+  },
+  {
+    id: 104,
+    discount: 50,
+    cover: "/images/gameOn/gameon-26.png",
+    name: "Epic Conquest",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Một trò chơi tuyệt vời được tạo ra bởi tình yêu và niềm đam mê cháy bỏng của một nhóm nhỏ gồm 2 người. Sau 3 năm phát triển, trò chơi này cuối cùng đã sẵn sàng để được mọi người thưởng thức!"
+  },
+  {
+    id: 105,
+    discount: 50,
+    cover: "/images/gameOn/gameon-27.png",
+    name: "Swordash",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Con người sẽ không bao giờ quên ngày hôm đó - khi một vật chất kỳ dị đột ngột xuất hiện trên bầu trời, kéo theo đó là sự đột biến tập thể của loài người mà không có dấu hiệu báo trước."
+  },
+  {
+    id: 106,
+    discount: 50,
+    cover: "/images/gameOn/gameon-28.png",
+    name: "20 Minutes Till Dawn",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Sống sót qua những đợt tấn công dữ dội của vô số quái vật trong 20 phút!"
+  },
+  {
+    id: 107,
+    discount: 50,
+    cover: "/images/gameOn/gameon-29.png",
+    name: "Legend of Survivors",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Bóng tối đã bao trùm thế giới, và anh hùng của chúng ta phải tìm cách sống sót trước lũ thế lực tà ác và trở thành người sống sót cuối cùng. Tham gia vào các trận chiến hoành tráng trong game nhập vai hành động 3D Roguelike, trang bị các trang bị mạnh mẽ và tạo ra vô số sự kết hợp của các công trình độc đáo để trở nên mạnh hơn kẻ thù của bạn."
+  },
+  {
+    id: 108,
+    discount: 50,
+    cover: "/images/gameOn/gameon-30.png",
+    name: "Hero Survival IO",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Trái đất năm 2201, các nhà phát minh lỗi lạc nhất của tổ chức Skynet đã cho ra đời cỗ máy có thể di chuyển xuyên không thời gian.\n" +
+        "Nhân vật chính của chúng ta, Yasuo, mang trong mình sứ mệnh thực hiện chuyến du hành này. Tuy nhiên, một vụ nổ lớn đã xảy ra, và Yasuo, lạc trong dòng thời gian, đến với một nơi xa lạ, nơi những con quái vật nguy hiểm luôn chực chờ, sinh tồn lúc này là mục tiêu tối thượng."
+  },
+  {
+    id: 109,
+    discount: 50,
+    cover: "/images/gameOn/gameon-31.png",
+    name: "Magica.io",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Đã đến lúc trở thành nhà vô địch!\n" +
+        "Magica.io là trò chơi Đấu trường sinh tồn trên điện thoại di động dành cho những nhà lãnh đạo thực thụ! Hãy đánh bại những người chơi khác trên đấu trường và chinh phục các bảng xếp hạng!"
+  },
+  {
+    id: 110,
+    discount: 50,
+    cover: "/images/gameOn/gameon-32.png",
+    name: "Ronin",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Kỷ nguyên chiến tranh ở Nhật Bản, nơi cái chết và sự phản bội luôn rình rập. Một người sống sót đơn độc - một chiến binh bị ruồng bỏ - đã không thể cứu lãnh chúa của mình. Không còn nơi nào để đi và không còn gì để mất, samurai đó nắm chặt chuôi kiếm và lên đường báo thù."
   },
 ];
 
