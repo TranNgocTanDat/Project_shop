@@ -22,7 +22,7 @@ async function getProduct(id: number): Promise<ProductItem | undefined> {
     productOns.find((product) => product.id === id) || 
     productPlays.find((product) => product.id === id) ||
     productSteams.find((product) => product.id === id) ||
-    productSlide.find((product) => product.id === id) ;
+    productSlide.find((product) => product.id === id) ||
     productMobile.find((product) => product.id === id) ;
 
 }

@@ -25,7 +25,8 @@
   background-color: none;
 }
 .search .width {
-  width: 10%;
+  width: 30%;
+  display: flex;
 }
 .search-box {
   width: 80%;
