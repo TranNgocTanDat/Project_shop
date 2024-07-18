@@ -49,7 +49,11 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
       setShowModal(true);
       return;
     }
-
+    if(cart.length === 0){
+      setMessage("Vui lòng thêm sản phẩm");
+      setShowModal(true);
+      return;
+    }
     const user = JSON.parse(storedUser);
     const balance = getBalance(user);
 
@@ -61,6 +65,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
       setMessage("Thanh toán thành công");
       setPaySuccess(true);
       setShowModal(true);
+
 
       //lấy ra fileGame từ data
       // const links = cart.map(item => item.fileGmae);
@@ -153,7 +158,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
                 THANH TOÁN
               </button>
             </div>
-            {message && <div className="message">{message}</div>}
+            {/*{message && <div className="message">{message}</div>}*/}
           </div>
         </div>
       </section>

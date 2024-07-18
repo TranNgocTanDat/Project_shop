@@ -95,7 +95,7 @@ const productOffs: ProductItem[] = [
     cover: "/images/gameOff/gameoff-1.png",
     name: "Đào vàng",
     price: 100,
-    fileGmae: "/images/fileGame/game1.docx",
+    fileGmae: "/images/fileGame/game2.docx",
     infor: "Trở thành ông trùm mỏ vàng trong trò chơi siêu kinh điển Đào Vàng 2023\n" +
         "Nhận ngay thật nhiều vàng và kim cương to lớn. Vượt qua 1001+ màn chơi gây cấn. Đào vàng 2023\n" +
         "Gold mining games - Trò chơi kinh điển Đào vàng 2023 có mặt tại Mobile. Trở thành tay game đào vàng cừ khôi"
@@ -202,13 +202,143 @@ const productOffs: ProductItem[] = [
   {
     id: 12,
     discount: 50,
-    cover: "/images/gameOff/gameoff-11.png",
-    name: "Minecraft",
+    cover: "/images/gameOff/gameoff_12.png",
+    name: "Zombie Tsunami",
     price: 100,
     fileGmae: "/images/fileGame/game1.docx",
-    infor: "Minecraft là một trò chơi được làm từ các khối mà bạn có thể biến đổi thành bất cứ thứ gì bạn có thể tưởng tượng. Chơi ở chế độ Sáng tạo với tài nguyên không giới hạn hoặc tìm kiếm các công cụ để chống lại nguy hiểm ở chế độ Sinh tồn. Với lối chơi đa nền tảng liền mạch trên Minecraft: Bedrock Edition, bạn có thể phiêu lưu một mình hoặc cùng bạn bè, đồng thời khám phá một thế giới vô tận, được tạo ngẫu nhiên với đầy các khối để khai thác, các quần xã sinh vật để khám phá và mob để kết bạn (hoặc chiến đấu). Sự lựa chọn là của bạn trong Minecraft – vì vậy hãy chơi theo cách của bạn!"
+    infor: "Tấn công thành phố bằng binh đoàn zombie. Biến người đi bộ thành zombie và tạo dựng binh đoàn lớn nhất.\n" +
+        "Ăn thịt bạn bè và rượt đuổi thách thức họ bằng cách phá hủy tất cả mọi thứ trên đường đi."
   },
-
+  {
+    id: 71,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-13.png",
+    name: "Chặt Heo",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Tham gia thế giới vui nhộn ở làng ỦN ỈN Chặt Heo với các giải đấu của lối chơi Tiến Lên Miền Nam để tìm ra được ĐỖ THÁNH vô địch xưng bá thiên hạ trong vô số các anh tài sống khắp mọi miền Tổ Quốc."
+  },
+  {
+    id: 72,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-14.png",
+    name: "Bắn Gà",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Game bắn gà kinh điển trên điện thoại\n" +
+        "Binh đoàn gà xâm lược đã tấn công và tiêu diệt toàn bộ các hành tinh trong vũ trụ. Bọn chúng đang tiến về trái đất, tấn công trái đất thân yêu của chúng ta. Các bạn hãy mau chóng chơi ngay phiên bản game bắn gà để giúp những siêu nhân địa cầu chống lại bọn gà tàn ác này.  "
+  },
+  {
+    id: 73,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-15.png",
+    name: "Helix Jump",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Helix Jump là trò chơi arcade 3D đỉnh cao sẽ khiến bạn không thể ngồi yên! Đập, va đập và nảy theo cách của bạn thông qua các bệ xoắn ốc xoay tròn để đi đến cuối cùng. Nhưng được cảnh báo, nó không dễ dàng như nó có vẻ!"
+  },
+  {
+    id: 74,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-16.png",
+    name: "Minion Rush",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Đã đến lúc thử sức với sự hoang dã với những chú Minion cực kỳ vui nhộn và vô cùng táo bạo!\n" +
+        "\n" +
+        "Illumination, Universal và Gameloft mang đến cho bạn Minion Rush, một trò chơi chạy bất tận có thể chơi ngoại tuyến, bất cứ lúc nào! Chạy qua rất nhiều địa điểm thú vị, né tránh những cái bẫy quanh co, chiến đấu với những kẻ xấu xa hèn hạ và thu thập vô số Chuối đẹp đẽ, tươi sáng!"
+  },
+  {
+    id: 75,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-17.png",
+    name: "Shadow Fight 2",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Phần tiếp theo của cú hit Facebook nổi tiếng với 40 triệu người dùng\n" +
+        "\n" +
+        "Shadow Fight 2 là sự kết hợp ăn ý giữa RPG và Chiến đấu cổ điển. Trò chơi này cho phép bạn trang bị cho nhân vật của mình vô số vũ khí sát thương và bộ áo giáp quý hiếm, đồng thời có hàng tá kỹ thuật Võ thuật hoạt hình sống động như thật! Đè bẹp kẻ thù của bạn, làm nhục những tên trùm quỷ và là người đóng Cổng Bóng tối. Bạn có những gì cần thiết để đá, đấm, nhảy và chém theo cách của bạn để chiến thắng? Chỉ có một cách để tìm ra."
+  },
+  {
+    id: 76,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-18.png",
+    name: "Hay Day",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Chào mừng đến với Hay Day. Xây dựng nông trại, chăn nuôi gia súc gia cầm, khám phá Thung lũng, làm nông, trang trí và tạo ra vùng đất thiên đường của riêng bạn."
+  },
+  {
+    id: 77,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-19.png",
+    name: "Tangle Rope 3D",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Bạn đang tìm cách để thư giãn và rèn luyện trí óc trong thời gian rảnh rỗi? Không cần tìm đâu xa ngoài Tangle Rope 3D: Trò chơi giải đố Untwist Knots.\n" +
+        "Với trò chơi giải đố Tangle Rope 3D: Untwist Knots, bạn sẽ bước vào cuộc phiêu lưu giải đố 3D."
+  },
+  {
+    id: 78,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-20.png",
+    name: "Crossy Road",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Tại sao con gà băng qua đường?\n" +
+        "Tại sao Bồ câu lại để ĐÓ ở đó?\n" +
+        "Tại sao Unihorse lại ăn hết số kẹo đó?"
+  },
+  {
+    id: 79,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-21.png",
+    name: "Fishdom – VTC Game",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "VTC Game và Playrix đồng phát hành trò chơi Fishdom tại Việt Nam.\n" +
+        "\n" +
+        "Bạn chưa từng chơi Fishdom bao giờ? Hãy hít thở thật sâu và đắm mình vào thế giới dưới nước đầy thú vị với trò chơi ghép hình 3 cùng Fishdom, một trò chơi miễn phí hoàn toàn mới!"
+  },
+  {
+    id: 80,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-22.png",
+    name: "Dream League Soccer 2024",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Dream League Soccer 2024 đưa bạn vào trung tâm của trận đấu bóng đá với giao diện mới mẻ và các tính năng hoàn toàn mới! Thu thập đội bóng trong mơ của bạn từ hơn 4.100 cầu thủ bóng đá được cấp phép FIFPRO ™ và ra sân thi đấu với các câu lạc bộ bóng đá hay nhất thế giới! Vượt qua 8 hạng đấu trong khi thưởng thức toàn bộ chuyển động của người chơi được ghi lại bằng chuyển động 3D, bình luận sâu sắc trong trò chơi, tùy chỉnh đội và nhiều hơn thế nữa. Trò chơi đẹp chưa bao giờ hay đến thế!"
+  },
+  {
+    id: 81,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-23.png",
+    name: "Asphalt 8",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Là một phần trong nhượng quyền thương mại Asphalt của Gameloft, Asphalt 8 cung cấp một bộ sưu tập phong phú gồm hơn 300 ô tô và xe máy được cấp phép, mang đến những cuộc đua đầy hành động trên hơn 75 đường đua. Đắm chìm trong thế giới ly kỳ của cuộc đua tốc độ cao khi bạn ngồi vào ghế lái."
+  },
+  {
+    id: 82,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-24.png",
+    name: "Cover Fire",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "Nhiệm vụ của bạn là dẫn đầu trận chiến và trở thành người bắn súng và bắn tỉa giỏi nhất.\n" +
+        "Tải xuống miễn phí ngay bây giờ một trong những trò chơi bắn súng ngoại tuyến hay nhất trên điện thoại di động"
+  },
+  {
+    id: 83,
+    discount: 50,
+    cover: "/images/gameOff/gameoff-25.png",
+    name: "Township – VTC Game",
+    price: 100,
+    fileGmae: "/images/fileGame/game1.docx",
+    infor: "VTC Game và Playrix đồng phát hành trò chơi Township tại Việt Nam.\n" +
+        "\n" +
+        "Township là sự kết hợp độc đáo giữa xây dựng thành phố và nông trại!"
+  },
 ];
 
 
