@@ -128,9 +128,9 @@ const ProductDetail: React.FC<ProductDetailProps> = ({addToCart}) => {
 
                             <div className="product-content">
 
-                                <p className="product-subtitle">{product.name}</p>
+                                <p className="product-subtitle">{product.Category}</p>
 
-                                <h1 className="h1 product-title">Fall Limited Edition Sneakers</h1>
+                                <h1 className="h1 product-title">{product.name}</h1>
 
                                 <p className="product-text">
                                     {product.infor}
