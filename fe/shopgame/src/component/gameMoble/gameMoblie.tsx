@@ -16,19 +16,6 @@ interface GameMoblieProps {
 
 const GameMoblie: React.FC<GameMoblieProps> = ({ productOffs, addToCart}) => {
     const [count, setCount] = useState(0)
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 8;
-
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentProducts = productOffs.slice(indexOfFirstItem, indexOfLastItem);
-
-    const goToPage = (pageNumber: number) => {
-        setCurrentPage(pageNumber);
-    };
-
-    const totalPages = Math.ceil(productOffs.length / itemsPerPage);
-
     const increment = () => {
         setCount(count + 1)
     }
@@ -45,14 +32,14 @@ const GameMoblie: React.FC<GameMoblieProps> = ({ productOffs, addToCart}) => {
         <>
             <div className="top__game">
                 <h1 className="top__game--title">
-                    Game Moblie
+                    GameeMoblie
                 </h1>
                
             </div>
             <div className="center__game">
                 <div className="f-grid">
 
-                    {currentProducts.map((product) => {
+                    {products.map((product) => {
                         return (
                             <>
                                 <div className='box f-grid-col'>
@@ -93,23 +80,7 @@ const GameMoblie: React.FC<GameMoblieProps> = ({ productOffs, addToCart}) => {
                     })}
                 </div>
             </div>
-            <div className="pagination">
-            {currentPage > 1 && (
-                    <button className="pagination_btn" onClick={() => goToPage(currentPage - 1)}><i className="fa-solid fa-chevron-left"></i></button>
-                )}
-                {Array.from({ length: totalPages }, (_, index) => (
-                    <button className="pagination_btn"
-                        key={index + 1}
-                        onClick={() => goToPage(index + 1)}
-                        disabled={currentPage === index + 1}
-                    >
-                        {index + 1}
-                    </button>
-                ))}
-                {currentPage < totalPages && (
-                    <button className="pagination_btn" onClick={() => goToPage(currentPage + 1)}><i className="fa-solid fa-chevron-right"></i></button>
-                )}
-            </div>
+
 
         </>
     )

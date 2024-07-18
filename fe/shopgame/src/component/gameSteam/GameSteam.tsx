@@ -4,39 +4,25 @@ import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 import './style.css'
 
-import { CartItem, ProductItem, productSteams } from "../Pdata"
+import { CartItem, ProductItem } from "../Pdata"
 
 
 // Định nghĩa kiểu cho các props của FlashCard
 interface GameSteamProps {
     produceSteams: ProductItem[];
     addToCart: (product: CartItem) => void;
-
+    
 }
 
-const GameSteam: React.FC<GameSteamProps> = ({ produceSteams, addToCart }) => {
+const GameSteam: React.FC<GameSteamProps> = ({ produceSteams, addToCart}) => {
     const [count, setCount] = useState(0)
-
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 8;
-
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentProducts = produceSteams.slice(indexOfFirstItem, indexOfLastItem);
-
-    const goToPage = (pageNumber: number) => {
-        setCurrentPage(pageNumber);
-    };
-
-    const totalPages = Math.ceil(productSteams.length / itemsPerPage);
-
     const increment = () => {
         setCount(count + 1)
     }
 
     const handleProductClick = (product: ProductItem) => {
-        addToCart({ ...product, qty: 1 })
-
+        addToCart({...product, qty: 1})
+        
     };
 
 
@@ -48,12 +34,12 @@ const GameSteam: React.FC<GameSteamProps> = ({ produceSteams, addToCart }) => {
                 <h1 className="top__game--title">
                     GameeSteam
                 </h1>
-
+               
             </div>
             <div className="center__game">
                 <div className="f-grid">
 
-                    {currentProducts.map((product) => {
+                    {products.map((product) => {
                         return (
                             <>
                                 <div className='box f-grid-col'>
@@ -95,23 +81,6 @@ const GameSteam: React.FC<GameSteamProps> = ({ produceSteams, addToCart }) => {
                 </div>
             </div>
 
-            <div className="pagination">
-                {currentPage > 1 && (
-                    <button className="pagination_btn" onClick={() => goToPage(currentPage - 1)}><i className="fa-solid fa-chevron-left"></i></button>
-                )}
-                {Array.from({ length: totalPages }, (_, index) => (
-                    <button className="pagination_btn"
-                        key={index + 1}
-                        onClick={() => goToPage(index + 1)}
-                        disabled={currentPage === index + 1}
-                    >
-                        {index + 1}
-                    </button>
-                ))}
-                {currentPage < totalPages && (
-                    <button className="pagination_btn" onClick={() => goToPage(currentPage + 1)}><i className="fa-solid fa-chevron-right"></i></button>
-                )}
-            </div>
 
         </>
     )
