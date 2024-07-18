@@ -51,7 +51,7 @@ const GameOnline: React.FC<GameOnlineProps> = ({ productOns, addToCart }) => {
         <>
             <div className="top__game">
                 <h1 className="top__game--title">
-                    Game Offline
+                    Game Online
                 </h1>
             </div>
             <div className="center__game">
