@@ -20,6 +20,7 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
   const [balance, setBalance] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
+  const [downloadedFiles, setDownloadedFiles] = useState<string[]>([]);
 
   //check thanh toán thành công
   const [paySuccess, setPaySuccess] = useState<boolean>(false);
@@ -40,7 +41,14 @@ const Cart: React.FC<CartProps> = ({ addToCart, decreaseQty, removeToCart }) => 
       setBalance(balance);
       setUser(user);
     }
+    
+    const storedFiles = localStorage.getItem('downloadedFiles');
+      if (storedFiles) {
+        setDownloadedFiles(JSON.parse(storedFiles));
+      }
   }, []);
+
+  
 
   const handlePayment = () => {
     const storedUser = localStorage.getItem('user');
