@@ -9,7 +9,7 @@ interface SliderHomeProps{
 const SliderHome:React.FC<SliderHomeProps> = ({slide}) => {
   return (
     <>
-      <section className='homeSlide contentWidth'>
+      <section className='homeSlide contentWidth '>
         <div className='container'>
           <SlideCard slide={slide}/>
         </div>

@@ -12,7 +12,7 @@ const Home:React.FC<HomeProps> = ({slide}) => {
   return (
     <>
       <section className='home'>
-        <div className='container d_flex'>
+        <div className='container d_flex '>
           <Categories />
           <SliderHome slide={slide} />
         </div>

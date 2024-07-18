@@ -4,6 +4,23 @@ import { RootState, useAppSelector } from '../../../../store/Store';
 import { ProductItem, productItems, productMobile, productOffs, productOns, productPlays, productSteams } from "../../../../component/Pdata";
 
 const Search: React.FC = () => {
+
+  // fixed Header
+  useEffect(() => {
+    const handleScroll = () => {
+      const search = document.querySelector(".search");
+      if (search) {
+        search.classList.toggle("active", window.scrollY > 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const cart = useAppSelector((state: RootState) => state.cart);
 
   // State để lưu giá trị tìm kiếm và kết quả tìm kiếm
@@ -28,20 +45,22 @@ const Search: React.FC = () => {
     <>
       <section className='search'>
         <div className='container c_flex'>
-          <div className='logo width '>
-            <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt='Logo' />
-            <h3>Douxble D</h3>
-          </div>
+          <Link className='link_test' to='/'>
+            <div className='logo width '>
+              <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt='Logo' />
+              <h3>Douxble D</h3>
+            </div>
+          </Link>
 
           <div className='search-box f_flex'>
-            <i className='fa fa-search'></i>
+
             <input
               type='text'
               placeholder='Search and hit enter...'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <span>All Category</span>
+            <i className='fa fa-search icon_f'></i>
           </div>
 
           <div className='icon f_flex width'>
@@ -62,19 +81,19 @@ const Search: React.FC = () => {
             {searchResults.map(game => (
               <Link to={`/productDetail/${game.id}`}>
                 <div key={game.id} className='search-result-item'>
-                <div className="seacrh__img">
-                    <img src={game.cover} alt="" className="s_img"/>
-                </div>
-                <div className="name_price">
-                  <div className="seacrh__name">
-                      {game.name}
+                  <div className="seacrh__img">
+                    <img src={game.cover} alt="" className="s_img" />
                   </div>
-                  <div className="search__price">{game.price}   {game.discount}</div>
-                </div>
+                  <div className="name_price">
+                    <div className="seacrh__name">
+                      {game.name}
+                    </div>
+                    <div className="search__price">{game.price}   {game.discount}</div>
+                  </div>
 
-              </div>
+                </div>
               </Link>
-              
+
             ))}
           </div>
         )}
